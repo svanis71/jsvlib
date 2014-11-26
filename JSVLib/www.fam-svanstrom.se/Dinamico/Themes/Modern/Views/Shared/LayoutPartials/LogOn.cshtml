@@ -1,0 +1,5 @@
+﻿@if(Request.IsAuthenticated) 
+{
+	<span id="logon" class="item authenticated"><a href="@Url.Action("LogOff", "Membership")">@Content.Translate["Log off"] <strong>@Context.User.Identity.Name</strong></a></span>
+}
+

@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Contacts.Models.Page.Contact>
+@using MvcContrib.UI.Grid
+
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/grid.css")" />
+
+@Html.Grid(Model).Columns(c => { 
+    c.For(x => x.Lastname + ", " + x.Firstname).Named("Namn");
+    c.For(x => x.Email);
+    c.For(x => Html.ActionLink("Edit", "Edit", new { x.Id }));
+})
+
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="480" height="640" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
+ <defs>
+  <filter height="200%" width="200%" y="-50%" x="-50%" id="svg_1_blur">
+   <feGaussianBlur stdDeviation="5.1" in="SourceGraphic"/>
+  </filter>
+  <linearGradient y2="0.898438" x2="0.503906" y1="0.171875" x1="0.164063" id="svg_2">
+   <stop stop-color="#ba891f" offset="0"/>
+   <stop stop-color="#ffff00" offset="1"/>
+  </linearGradient>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <path filter="url(#svg_1_blur)" id="svg_1" d="m32.336281,25l-19.336285,120l8.141594,189l17.300884,171l-16.283186,82l31.548674,33l69.203537,3l25.442474,-12l58.00885,-9l58.00885,15l98.716827,8l43.761047,-12l58.00885,14l8.141602,-157l-49.867249,-119l48.849548,-179l1.0177,-137l-236.106201,-33l-204.557518,23z" stroke-width="10" stroke="#c4a8a8" fill="url(#svg_2)"/>
+  <rect opacity="0.25" id="svg_3" height="535" width="355" y="49" x="54" stroke="#c4a8a8" fill="#f9f9fc"/>
+ </g>
+</svg>

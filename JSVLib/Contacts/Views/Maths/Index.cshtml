@@ -1,0 +1,20 @@
+﻿@model Contacts.Models.Page.MathTraingViewModel
+           
+<h2>Matteträning</h2>
+
+@using (Html.BeginForm("Train", "Maths", FormMethod.Post))
+{
+
+   <fieldset>
+    <legend>Välj svårighetsgrad</legend>
+    <div>    
+        @Html.LabelFor(p => p.Difficulties)
+        @Html.DropDownListFor(p => p.difficulty, Model.Difficulties)
+    </div>
+    <div>
+        @Html.LabelFor(p => p.NumberCount)
+        @Html.DropDownListFor(p => p.numbers, Model.NumberCount)
+    </div>
+   </fieldset>
+    <button class="button">Kör igång!</button>
+}

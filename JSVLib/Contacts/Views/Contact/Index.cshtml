@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Contacts.Models.Page.Contact>
+
+<h2>Kontaktlista</h2>
+
+<script type="text/javascript">
+    $(function () {
+        // Dialog			
+        $('#itemDialog').dialog({
+            autoOpen: false,
+            width: 641,
+            title: 'Ändra kontakt',
+            modal: true,
+            position: 'top',
+            close: function () {
+                location.reload();
+            },
+            open: function () {
+
+            }
+        });
+        // Dialog Link
+        $('#addButton').click(function () {
+            $('#itemDialog').load(this.href).dialog("option", "title", 'Ny kontakt').dialog('open');
+            return false;
+        });
+
+        $("a[id*='editLink']").click(function () {
+            $("#itemDialog").load(this.href).dialog("option", "title", 'Ändra kontakt').dialog("open");
+            return false;
+        });
+    });
+
+</script>
+
+
+<div id="itemDialog">&nbsp;</div>
+
+<ul class="contactList">
+@foreach (var item in Model) {
+    <li class="contactListItem">
+        <div class="photo">
+            <a href="@Url.Action("UploadPhoto", new { item.Id })"><img class="photo" src="@Url.Content(item.PhotoUrl)" alt="Klick för att ladda upp ett foto" /></a>
+        </div>
+        <div class="contactCardRow">
+            Namn: @Html.DisplayFor(modelItem => item.Lastname), @Html.DisplayFor(modelItem => item.Firstname)
+        </div>
+        <div class="contactCardRow">
+            E-post: @Html.DisplayFor(modelItem => item.Email)
+        </div>
+        <div class="contactItemMenu">
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @id = "editLink_" + item.Id.ToString()}) | @Html.ActionLink("Details", "Details", new { id=item.Id }) | @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </div>
+    </li>
+}
+    <li class="contactListItem">
+        <div class="bigPlus">
+            @Html.ActionLink("+", "Create", new { }, new { @id = "addButton", @class = "bigPlus" })
+        </div>
+    </li>
+</ul>

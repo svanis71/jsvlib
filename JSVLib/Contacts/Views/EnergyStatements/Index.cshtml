@@ -1,0 +1,44 @@
+﻿@model Contacts.Models.Page.EnergystatementModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#tbFilename").val("deklaration_");
+        $("#tbDeklid").keyup(function () {
+            var f = $("#tbFilename").val();
+            if (f.search(/^deklaration_[0-9]*$/) >= 0) {
+                $("#tbFilename").val("deklaration_" + $(this).val() + ".pdf");
+            }
+        });
+    });    
+</script>
+<h2>Index</h2>
+
+@using(Html.BeginForm())
+{
+    <fieldset>
+        <legend>Hämta energideklaration</legend>
+        <section>
+            <section class="editor-label">
+                @Html.LabelFor(m => m.DeklId)
+            </section>
+            <section class="editor-field">
+                @Html.TextBoxFor(m => m.DeklId, new {@id="tbDeklid"})
+            </section>
+        </section>
+        <section>
+            <section class="editor-label">
+                @Html.LabelFor(m => m.Filename)
+            </section>
+            <section class="editor-field">
+                @Html.TextBoxFor(m => m.Filename, new {@id = "tbFilename"})
+            </section>
+        </section>
+    </fieldset>
+    <button id="btnGet">Hämta</button>
+}
+

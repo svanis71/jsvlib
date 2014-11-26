@@ -1,0 +1,296 @@
+@import "style.css";
+
+body
+{
+    color: #000000;
+}
+
+#container
+{
+    width: 1024px;
+}
+
+#page
+{
+    display: inline-block;
+    width: 1024px;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+}
+
+#main
+{
+    width: 900px;
+    margin-left: 4px;
+    display: inline-block;
+    padding: 30px 5px 5px;
+}
+
+footer, #footer
+{
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    color: #fff;
+    background: #000;
+}
+
+#footerLeft
+{
+    float: left;
+}
+
+#footerRight
+{
+    float: right;
+}
+
+#footerCenter
+{
+    margin: 0px auto;
+}
+
+aside#leftPanel
+{
+    background: #ffffff;
+    vertical-align: top;
+    display: inline-block;
+    width: 100px;
+    height: auto;
+}
+
+/* Styles for basic forms
+-----------------------------------------------------------*/
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+
+/* TAB MENU   
+----------------------------------------------------------*/
+
+ul#mymenu
+{
+    border: 1px none;
+    border-radius: 6px;
+    position: relative;
+    margin-right: 30px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    text-align: left;
+    height: 50px;
+}
+
+ul#mymenu li
+{
+    color: #00aa00;
+    float: right;
+    list-style-type: none;
+    padding: 2px 2px 3px 3px;
+    margin: 0em 0.7em 0em 0.7em;
+    height: 30px;
+    font-size: medium;
+    vertical-align: middle;
+    text-align: center;
+    width: 100px;
+    display: inline;
+}
+
+ul#mymenu li a
+{
+    padding: 10px 20px;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 2.8em;
+    border-radius: 4px 4px 0 0;
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+    color: #00aa00;
+    text-decoration: none;
+}
+
+ul#mymenu li a:visited
+{
+    color: #00aa00;
+    text-decoration: none;
+}
+
+ul#mymenu li a:hover
+{
+    color: #33ff33;
+    font-weight: bold;
+}
+
+ul.contactList li
+{
+    list-style-type: none;
+    border: 2px solid;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    width: 400px;
+    height: 150px;
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+
+div.contactItemMenu
+{
+    text-align: right;
+    width: 150px;
+    margin: 68px 10px;
+    font-size: small;
+    float: right;
+    bottom: 0px;
+}
+
+div.photo
+{
+    display: inline-block;
+    width: 125px;
+    height: 145px;
+    border: none;
+    float: left;
+    margin: 5px auto auto 5px;
+}
+
+img.photo
+{
+    width: 120px;
+    height: 120px;
+}
+
+div.contactCardRow
+{
+    margin: 5px;
+    line-height: 1.5em;
+}
+
+#itemDialog
+{
+    width: 500px;
+    height: 400px;
+    overflow: hidden;
+}
+
+div.bigPlus {
+    display: inline-block;
+    width: 390px;
+    height: 120px;
+    border: none;
+    float: left;
+    text-align: center;
+    margin: 5px auto auto 5px;   
+}
+
+a.bigPlus
+{
+    font-family: Verdana Arial;
+    font-size: 150pt;
+    text-decoration: none;
+    position: relative;
+    top: 60px;
+    /*margin-left: 150px;*/
+    /*text-align: center; 
+    padding-top: 128px;
+    padding-left: 155px;
+    vertical-align: middle;*/
+}
+
+a.bigPlus:visited
+{
+    text-decoration: none;
+}
+
+table#phonenumbers > tbody > tr:nth-child(odd)
+{
+    background-color: #00ff00;
+}
+table#phonenumbers > tbody > tr:nth-child(even)
+{
+    background-color: #00ffff;
+}
+
+.linkButton:hover
+{
+    cursor: pointer;
+}
+
+ul#trainList
+{
+    list-style: none;
+    width: 300px;
+    margin: 0px 0px 0px 0px;
+    line-height: 2.0em;
+}
+
+ul#trainList li
+{
+    padding: 5px 0px 5px 0px;
+    color: #ffffff;
+    font-size: medium;
+    float:left;
+}
+
+ul#trainList img
+{
+    display:none;
+    width: 24px;
+    height: 24px;
+    vertical-align:middle;
+}
+
+span.number
+{
+}
+span.operator
+{
+}
+input.tb
+{
+    width: 30px;
+    font-size: medium;
+}
+
+.button
+{
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNkNGU0ZWYiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjODZhZWNjIiBzdG9wLW9wYWNpdHk9IjAuNzUiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-radial-gradient(center, ellipse cover,  rgba(212,228,239,1) 0%, rgba(134,174,204,0.75) 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(212,228,239,1)), color-stop(100%,rgba(134,174,204,0.75))); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover,  rgba(212,228,239,1) 0%,rgba(134,174,204,0.75) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover,  rgba(212,228,239,1) 0%,rgba(134,174,204,0.75) 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover,  rgba(212,228,239,1) 0%,rgba(134,174,204,0.75) 100%); /* IE10+ */
+    background: radial-gradient(center, ellipse cover,  rgba(212,228,239,1) 0%,rgba(134,174,204,0.75) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4e4ef', endColorstr='#bf86aecc',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+    border: 1px solid rgba(0, 0, 0, 0.7);
+    border-radius: 4px 4px 4px 4px;
+    font-family: Comic Sans MS;
+    font-size: large;
+    height: 40px;
+    width: 120px;
+}
+
+div.button
+{
+    margin: 1.4em 0 2em 0;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+}
+p.buttontext 
+{
+    line-height: 40px;
+}
+
+.nomargin { margin: 0;}
+.nopadding { padding: 0; }
+.nooutline { outline: 0; }
+
+canvas#headCanvas
+{
+    width: 1024px;
+    height: 50px;    
+}

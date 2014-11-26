@@ -1,0 +1,51 @@
+﻿@model Dinamico.Models.ContentPart
+@using N2.Web.Mvc.Html
+@{ Content.Define(ie =>
+       {
+           ie.Title = "HTML5 cirklar";
+       }); }
+<div id="circleCanvas">
+</div>
+<section id="startStop">
+    <button id="btStartstop">Pause</button>
+</section>
+<section id="newCircleSection">
+    <fieldset>
+        <legend>Ny cirkel</legend>
+        <div>
+            <div class="editor-label">
+                Storlek
+            </div>
+            <div class="editor-field">
+                <input type="text" id="tRadius" value="20" />
+            </div>
+        </div>
+        <div>
+            <div class="editor-label">
+                Hastighet i X-led
+            </div>
+            <div class="editor-field">
+                <input type="text" id="tXSpeed" value="2" />
+            </div>
+        </div>
+        <div>
+            <div class="editor-label">
+                Hastighet i Y-led
+            </div>
+            <div class="editor-field">
+                <input type="text" id="tYSpeed" value="2" />
+            </div>
+        </div>
+        <div>
+            <button id="btNewCircle">Lägg till</button>
+        </div>
+    </fieldset>
+</section>
+<script type="text/javascript" src="@Url.ThemedContent("~/Scripts/mycircles.js")"></script>
+<style type="text/css">
+    #c1
+    {
+        -moz-border-radius: 15px;
+        border-radius: 15px;
+    }
+</style>

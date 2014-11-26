@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Contacts.Models.Page.MathItem>
+           
+<ul id="trainList">
+    @foreach (var item in Model)
+    {
+        <li>
+            <div class="question">
+                <span class="number">@item.Number1</span><span class="operator">@item.Operator</span>
+                <span class="number">@item.Number2</span><span class="operator">=</span>
+            </div>
+            <input type="text" class="tb" />
+            <img src="@Url.Content("~/Content/Images/ok.png")" class="imgcorr" alt="" />
+            <img src="@Url.Content("~/Content/Images/wrong.png")" class="imgwrong" alt="" />
+        </li>   
+    }
+</ul>
+<div id="btnValidate" class="button">
+    <p class="buttontext nomargin nopadding nooutline">
+        Rätta</p>
+</div>
+<script type="text/javascript" src="@Url.Content("~/Content/Scripts/mathtrain.js")"></script>

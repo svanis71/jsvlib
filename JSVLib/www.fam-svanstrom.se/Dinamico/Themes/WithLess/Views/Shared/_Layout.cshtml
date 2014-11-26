@@ -1,0 +1,99 @@
+﻿@using System.Web.Optimization
+@using www.fam_svanstrom.se.Web.Html
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="se-SV" class="no-js">
+<!--<![endif]-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>@Content.Data.Title</title>
+    <link href='http://fonts.googleapis.com/css?family=Oxygen:400,700,300' rel='stylesheet' type='text/css'>
+    @Scripts.Render("~/bundles/mobile")
+    @Scripts.Render("~/bundles/modernizr", "~/bundles/knockoutjs", "~/bundles/jquery", "~/bundles/jqueryui", "~/bundles/jqueryval", "~/bundles/openid")
+    @{ Html.RenderPartial("LayoutPartials/Head"); }
+    @{Content.PrependDefinition(re =>
+        {
+            re.Tab("Content", "Content");
+            re.PublishedRange().Container("Metadata");
+        });
+    }
+    @if (IsSectionDefined("head"))
+    { @RenderSection("head") }
+
+</head>
+<body>
+    @{ Html.RenderControlPanel(); }
+    <section id="wrapper">
+        <section id="top" class="clearfix">
+            @{ Html.RenderPartial("LayoutPartials/Top"); }
+        </section>
+        <section id="header" class="clearfix">
+            @{ Html.RenderPartial("LayoutPartials/Header"); }
+            @{ Html.DroppableZone("Banner").Render(); }
+        </section>
+        <section id="page">
+            @if (IsSectionDefined("main"))
+            { 
+                <section id="main">
+                    @RenderSection("main")
+                </section>
+            }
+            else
+            {
+                <section id="main">
+                    @{ Html.RenderPartial("LayoutPartials/PreContent"); }
+                    <article id="content">
+                        @RenderBody()
+                    </article>
+                    @{ Html.RenderPartial("LayoutPartials/PostContent"); }
+                </section>
+            }
+            <aside id="sidebarRight">
+                @{ Html.DroppableZone("Right").Render(); }
+            </aside>
+        </section>
+        <section id="footer" class="clearfix">
+            @{ Html.RenderPartial("LayoutPartials/Footer"); }
+        </section>
+    </section>
+    @{ Html.Resources().JavaScript(Url.ThemedContent("~/Scripts/site.js")); }
+    @{ Html.DroppableZone("Scripts").Render(); }
+    @if (IsSectionDefined("scripts"))
+    { @RenderSection("scripts") }
+    @Scripts.Render("~/bundles/load")
+    <script type="text/javascript">
+        $(function() {
+            var meny = JSON.parse('@Html.MenuJson(Content.Traverse.StartPage)');
+            $("#nav").jsvMenu({ items: meny, type: MenuType.Tab });
+            $("#logon").on("click", function () {
+                $("#logonDialog").dialog("open");
+            });
+            $("#logonDialog").load("@Url.Action("LogOn", "Membership")");
+        });
+    </script>
+    @if (!Request.Url.Host.Contains("localhost"))
+    {
+        <script type="text/javascript">
+
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-25686459-1']);
+            _gaq.push(['_trackPageview']);
+
+            (function () {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+
+        </script>    
+    }
+
+</body>
+
+</html>

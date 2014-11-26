@@ -1,0 +1,49 @@
+﻿@menuWidth: 90%;
+@menuTextCol: #fff;
+
+dd.jsv-menu {
+    display: block;
+    background: #aaa;
+    padding: 0;
+    width: @menuWidth;
+    border-bottom: solid 1px rgba(95,154,207,0.7);
+
+    a.jsv-menu-link {
+        text-decoration: none;
+        color: #e2e0e0;
+
+        :hover {
+            font-size: large;
+            color: #f00;
+            text-decoration: underline;
+            text-decoration-color: #2f0c87;
+        }
+    }
+
+    dl.jsv-topmenuitem {
+        color: @menuTextCol;
+        padding: 0px 2px 0px 0px;
+        width: 100px;
+        height: 100%;
+        overflow: hidden;
+        display: block;
+        margin-right: 2px;
+    }
+
+    dl.current {
+        font-weight: bold;
+    }
+}
+
+.jsv-dropdown {
+    display: none;
+}
+
+.current {
+    display: block;
+}
+
+.jsv-dropdown-ph {
+    background: rgba(128, 128, 255, 0.3);
+    height: 2em;
+}

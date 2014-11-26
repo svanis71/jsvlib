@@ -1,0 +1,107 @@
+﻿	/* navigation */
+	#tabs {
+		background:#ddd url(http://static.flowplayer.org/img/global/gradient/h300_reverse.png);
+		border-bottom:1px solid #CCCCCC;
+		height:80px;	
+		width:570px;
+	}
+	
+	#tabs ul {	
+		width:570px;
+		margin:0 auto;	
+	}
+	
+	#tabs li {	
+		border-right:1px solid #ddd;
+		float:left;
+		padding-left:1px;
+		width:260px;
+		list-style-type:none;
+		text-align:center;
+		margin-top:0px;
+	}
+	
+	#tabs a {
+		color:#333333;
+		display:block;
+		padding:17px;
+		position:relative;
+		word-spacing:-2px;
+		font-size:11px;		
+		height:50px;
+		text-decoration:none;
+	}	
+	
+	#tabs a.current {
+		background:url('/Content/Images/down_large.jpg');	
+		height: 50px !important
+	}
+	
+	#tabs img {
+		background-color:#fff;
+		border:1px solid #ccc;
+		margin:3px 0 5px 27px;
+		padding:4px;		
+		display:block;
+		height: 50px;
+	}
+	
+	#tabs strong {
+		display:block;		
+		font-size:13px;
+	}
+	
+	/* panes */
+	#panes {
+		background:#fff url('/Content/Images/h300_reverse.png') repeat scroll 0 0;
+		border-color:#ccc;
+		border-style:solid;
+		border-width:1px 1px 0;
+		width:609px;	
+		height:255px;
+		margin-bottom:-20px;
+		padding-bottom:20px;
+		
+		/* must be relative so the individual panes can be absolutely positioned */
+		position:relative;
+	}
+	
+	/* crossfading effect needs absolute positioning from the elements */
+	#panes section {
+		display:none;		
+		position:absolute;
+		top:20px;
+		left:20px;
+		font-size:13px;
+		color:#444;	
+		width:560px; 
+	}
+	
+	#panes section fieldset
+	{
+	    width:522px;
+	}
+	
+	#panes img {
+		float:left;
+		margin-right:20px;		
+	}
+	
+	#panes p.more {
+		color:#000;
+		font-weight:bold;
+		font-size:13px;
+	}
+	
+	#panes h3 {
+		margin:0 0 -5px 0;
+		font-size:22px;
+		font-weight:normal;
+	}
+	
+	.overlay {
+		display:none;
+		width:560px;
+		padding:20px;
+		background-color:#ddd;
+	}

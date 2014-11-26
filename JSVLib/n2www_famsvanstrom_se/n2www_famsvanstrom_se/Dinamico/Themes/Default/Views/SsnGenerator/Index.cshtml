@@ -1,0 +1,38 @@
+﻿@model n2www_famsvanstrom_se.Models.SsnGenerator
+
+@{
+    Content.Define(ie => { ie.Title = "Personnummergenerator"; });
+    string uniqueId = Html.UniqueID("ssngen");
+}
+
+
+<section id="@Html.UniqueID("ssn-wrapper")">
+    <header class="header">
+    </header>
+    <form id="form">
+        <section id="input">
+            <fieldset>
+                <legend>Personnummergenerator</legend>
+                <section>
+                    @Html.LabelFor(p => p.DefaultNumberOfSsn, Model.InputTitle, htmlAttributes: new {@class = "input-label"})
+                </section>
+                <section>
+                    @Html.TextBoxFor(p => p.DefaultNumberOfSsn, htmlAttributes: new {@class = "input-numbers", autofocus = "autofocus"})
+                    +´å                </section>
+                <section id="buttons">
+                    <button id="submit" type="submit">Generera</button>
+                    <button id="clear" type="button">Rensa</button>
+                </section>
+            </fieldset>
+        </section>
+    </form>
+    <span id="progressLabel">&nbsp;</span>
+    <fieldset>
+        <legend>Resultat</legend>
+        <section id="result">
+        </section>
+    </fieldset>
+    <footer id="footer">
+    </footer>
+</section>
+

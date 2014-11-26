@@ -1,0 +1,18 @@
+﻿#wrapper {
+	width: 80%;
+	margin: 0 auto;    
+}
+
+section#canvasPH {
+
+}
+	
+canvas {
+	background: #000;
+	border-radius: 6px;
+	margin: 0 auto;
+}
+
+.hidden {
+    display: none;
+}

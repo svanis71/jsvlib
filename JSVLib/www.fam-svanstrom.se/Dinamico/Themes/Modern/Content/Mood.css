@@ -1,0 +1,90 @@
+@import "../../Default/Content/Mood.css";
+
+html
+{
+    background: #ffffff;
+    font-family: Arial, Sans-Serif;
+}
+
+#top
+{
+    background-color: #00aa00;
+}
+
+#top ul a
+{
+    color: #ffffff;
+}
+
+nav ul.topmenu, #nav ul.topmenu
+{
+    font-size: 1.3em;
+    margin-bottom: 0;
+    border-radius: 5px;
+    border-bottom-style: none;
+}
+
+nav ul.topmenu a, #nav ul.topmenu a
+{
+    height: 22px;
+    padding: 15px;
+    color: #12aa56;
+    border-radius: 3px 3px 0 0;
+}
+
+nav ul.topmenu a:hover, #nav ul.topmenu a:hover
+{
+    color: #127712;
+}
+
+nav ul.topmenu li.logo a, #nav ul.topmenu li.logo a
+{
+    border-left: none;
+}
+
+nav ul.topmenu a.current, #nav ul.topmenu a.current, nav ul.topmenu a.trail, #nav ul.topmenu a.trail
+{
+    border-left: none;
+    font-style: italic;
+}
+
+nav ul.submenu, #nav ul.submenu
+{
+    border: none;
+}
+
+nav ul.submenu a, #nav ul.submenu a
+{
+    font-size: 1.1em;
+    color: #12aa56;
+}
+
+nav ul.menu li a.current, #nav ul.menu li a.current {}
+#page
+{
+    margin-top: -1px;
+}
+
+footer, #footer
+{
+    background-color: #239914;
+    opacity: 0.6;
+    box-shadow: #444 0 15px 30px -15px inset;
+    padding-bottom: 40px;
+}
+
+footer a, #footer a, footer a:visited, #footer a:visited
+{
+    color: #000;
+    text-decoration: none;
+    font-style: italic;
+    font-weight: normal;
+    font-size: xx-small;
+}
+
+/* elements */
+.halfSize a.img
+{
+    padding-bottom: 10px;
+    display: inline-block;
+}

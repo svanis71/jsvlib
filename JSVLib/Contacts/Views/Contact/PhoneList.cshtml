@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Contacts.Models.Page.Phone>
+
+    <fieldset>
+        <legend>Phone numbers</legend>
+
+        <table id="phonenumbers">
+        <colgroup>
+            <col width="163px">
+            <col width="163pxpx">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Number</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        @foreach (var phone in Model)
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink(phone.Number, "EditPhone", new { phone.contactId, phone.phoneId }, new { @id = "editPhone_p" + phone.phoneId})
+                </td>
+                <td>
+                    @Html.ActionLink(phone.Type.ToString(), "EditPhone", new { phone.contactId, phone.phoneId }, new { @id = "editPhone_t" + phone.phoneId})
+                </td>
+            </tr>
+        }
+
+        </tbody>
+        </table>
+        @Html.Partial("AddPhone", new ViewDataDictionary() { { "contactId", ViewData["contactId"] } })
+
+    </fieldset>

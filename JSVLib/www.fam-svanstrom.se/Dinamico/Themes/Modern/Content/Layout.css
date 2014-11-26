@@ -1,0 +1,135 @@
+@import "../../Default/Content/Layout.css";
+
+#wrapper
+{
+    width: 1024px;
+    position: relative;
+    margin: 0 auto;
+}
+
+#page
+{
+    width: 1024px;
+    padding-top: 0px;
+}
+
+#main
+{
+    margin-left: 30px;
+    width: 770px;
+    display: inline-block;
+}
+
+#sidebarRight
+{
+    display: inline-block;
+    width: 220px;
+    float:right;
+}
+
+#top
+{
+    padding: 5px;
+    right: 0px;
+    height: 20px;
+}
+#top ul
+{
+    display: block;
+    width: 1024px;
+    margin: 0 auto;
+    text-align: right;
+}
+#top ul > li
+{
+    display: inline-block;
+    margin: 0 5px;
+}
+
+header, #header
+{
+    padding: 0px 0px 0px 0px;
+    margin: 30px 0px 0px 0px;
+    width: auto;
+    left:auto;
+    height: auto;
+}
+
+nav, #nav
+{
+    width: 1024px;
+    margin: 0 auto;
+}
+nav, #nav a
+{
+    text-decoration: none;
+}
+nav, #nav a:hover
+{
+    text-decoration: none;
+}
+nav ul li, #nav ul li
+{
+    vertical-align: top;
+    float: left;
+}
+nav, #nav li a.current
+{
+    font-weight: bold;
+}
+nav ul.topmenu a.logotype, #nav ul.topmenu a.logotype
+{
+    position: static;
+    padding: 10px;
+}
+nav ul.topmenu a.logotype img, #nav ul.topmenu a.logotype img
+{
+    height: 30px;
+}
+nav ul.submenu, #nav ul.submenu
+{
+    margin-top: -1px;
+}
+
+footer div.inner, #footer div.inner
+{
+    width: 1024px;
+    margin: 0 auto;
+}
+
+fieldset {
+    border: 1px solid #ddd;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 0 0 1.5em 0;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Styles for editor and display helpers
+----------------------------------------------------------*/
+.display-label, 
+.editor-label {
+    margin: 1em 0 0 0;
+}
+
+.display-field, 
+.editor-field {
+    margin: 0.5em 0 0 0;
+}
+
+.text-box {
+    width: 30em;
+}
+
+.text-box.multi-line {
+    height: 6.5em;
+}
+
+.tri-state {
+    width: 6em;
+}
+
+label.ui-widget { font-size: 1em; }

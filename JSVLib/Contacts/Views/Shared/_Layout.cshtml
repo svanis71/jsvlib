@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/ui-lightness/jquery-ui.css"
+        rel="stylesheet" type="text/css" />
+    <link href="http://static.flowplayer.org/tools/css/standalone.css" type="text/css"
+        rel="stylesheet">
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script src="http://cdn.jquerytools.org/1.2.6/jquery.tools.min.js"></script>
+    <script type="text/javascript">
+        jQuery.fn.jtTabs = jQuery.fn.tabs;
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"
+        type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/modernizr-1.7.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+    <script src="../../Scripts/jquery.jfeed.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#mymenu li").hover(function () {
+                var wid = $(this).width();
+                var left = $(this).position().left;
+                var svgWid = $("#menuLineSvg").width();
+                var path = "m5,18"; // flytta till x=5 y=18
+                var nextX = left + wid / 2;
+                path += "l" + nextX.toString() + ",0"; // Första delen av linjen
+                /* Triangeln */
+                path += "l11,-12l12,12";
+                var restX = wid - nextX - 23;
+                path += "l" + nextX.toString() + ",0"; // Sista delen av linjen
+                $("#menuLine").attr("d", path);
+            })
+            .mouseleave(function () {
+                $("#menuLine").attr("d", "m5,18l1019,0");
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <section id="container" class="clearfix">
+        <header id="header">
+            <canvas id="headCanvas" />
+        </header>
+        <nav id="nav">
+            <ul id="mymenu">
+                <li>@Html.ActionLink("Energideklaration", "Index", "EnergyStatements")</li>
+                <li>@Html.ActionLink("Matteträning", "Index", "Maths")</li>
+                <li>@Html.ActionLink("MvcContrib", "Index", "ContactsGrid")</li>
+                <li>@Html.ActionLink("Visitkort", "Index", "Contact")</li>
+            </ul>
+            <svg id="menuLineSvg" width="1024" height="27" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+               <g id="svg_1">
+               <path stroke="#282626" id="menuLine" d="m5,18l1019,0" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="3" fill="none"/>
+              </g>
+           </svg>
+        </nav>
+        <section id="page" class="clearfix">
+            <aside id="leftPanel">
+            </aside>
+            <section id="main">
+                @RenderBody()
+            </section>
+        </section>
+        <footer id="footer">
+            <section id="footerLeft">Vänsterfooter</section>
+            <section id="footerCenter">Footer i mitten</section>
+            <section id="footerRight">Footer till höger</section>
+        </footer>
+    </section>
+</body>
+</html>

@@ -1,0 +1,45 @@
+﻿@model Contacts.Models.Page.Phone
+           
+<table>
+    <tr>
+        <td>
+            @Html.Hidden("contactId", ViewData["contactId"])
+            @Html.TextBoxFor(m => m.Number, new { @id = "newnum"})
+        </td>
+        <td>@Html.TextBoxFor(m => m.Type, new { @id = "newtype" })
+        </td>
+        <td>
+            <a id="add" class="linkButton"><h2>+</h2></a>
+        </td>
+    </tr>
+</table>
+
+<script type="text/javascript">
+    $(function () {
+        $("#add").click(function () {
+            var phoneJson = { phoneId: "", contactId: "", Number: "", Type: "" };
+            phoneJson.phoneId = null;
+            phoneJson.contactId = $("#contactId").val();
+            phoneJson.Number = $("#newnum").val();
+            phoneJson.Type = $("#newtype").val();
+
+            $.ajax({
+                url: '/Contact/SavePhone',
+                type: 'POST',
+                data: JSON.stringify(phoneJson),
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    var row = $("#phonenumbers tbody").find("tr:last");
+                    if (row.length == 0) {
+                        $("#phonenumbers tbody").append("<tr><td>" + data.Number + "</td><td>" + data.Type + "</td></tr>");
+                    }
+                    else {
+                        row.after("<tr><td>" + data.Number + "</td><td>" + data.Type + "</td></tr>");
+                    }
+                    $("#newnum").val("");
+                    $("#newtype").val("");
+                }
+            });
+        });
+    });
+</script>

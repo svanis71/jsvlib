@@ -1,0 +1,11 @@
+﻿section#canvasPH 
+{
+    width: 80%;
+    margin: 0 auto;
+}
+
+canvas
+{
+    border-radius: 10px;
+    border: solid 2px #c22697;
+}

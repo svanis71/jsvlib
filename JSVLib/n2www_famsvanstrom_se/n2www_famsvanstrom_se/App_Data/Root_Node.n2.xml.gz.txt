@@ -1,0 +1,2 @@
+<img src="../../Dinamico/Themes/Terracotta/Thumbnail.jpg" style="float:left;"/>
+<b>Nya site</b>, hela web siten exporterad

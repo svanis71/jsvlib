@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    @{ Html.RenderPartial("LayoutPartials/Head"); }
+    @{
+        Content.PrependDefinition(re =>
+        {
+            re.Tab("Content", "Content");
+            re.PublishedRange().Container("Metadata");
+        });
+    }
+    <link href='http://fonts.googleapis.com/css?family=Oxygen:400,700,300' rel='stylesheet' type='text/css'>
+    @if (IsSectionDefined("head"))
+    { @RenderSection("head") }
+</head>
+<body>
+    @{ Html.ControlPanel().Render(); }
+    <section class="wrapper">
+        <section id="top" class="top">
+        </section>
+        <header id="header" class="header">
+        </header> 
+        <section id="page" class="page">
+            @if (IsSectionDefined("main"))
+            { 
+                <section id="main" class="main">
+                    @RenderSection("main")
+8i                </section>
+            }
+            else
+            {
+                <section id="main" class="main">
+                    @{ Html.RenderPartial("LayoutPartials/PreContent"); }
+                    <article id="content" class="content">
+                        @RenderBody()
+                    </article>
+                    @{ Html.RenderPartial("LayoutPartials/PostContent"); }
+                </section>
+            }
+
+        </section>
+    </section>
+</body>
+</html>

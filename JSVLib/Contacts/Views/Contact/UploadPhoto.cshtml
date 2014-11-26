@@ -1,0 +1,11 @@
+﻿@model Contacts.Models.Page.Contact
+           
+@using (@Html.BeginForm("SavePhoto", "Contact", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    @Html.HiddenFor(p => p.Id)
+    @Html.HiddenFor(p => p.PhotoUrl)
+    <div>
+        Filnamn:<input type="file" id="fileName" name="fileName" />
+    </div>
+    <input type="submit" value="Ladda upp" />
+}

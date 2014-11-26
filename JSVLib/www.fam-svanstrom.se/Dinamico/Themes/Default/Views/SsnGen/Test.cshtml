@@ -1,0 +1,15 @@
+﻿@model Dinamico.Dinamico.Models.JSTestModel
+
+@section main {
+<div id="main" class="clearfix">
+	@{ Html.RenderPartial("LayoutPartials/PreContent"); }
+
+    @if(Model != null) {
+            <h1>@Model.PageTitle</h1>
+    }
+    else {
+            <h2>Default title</h2> 
+    }
+	@{ Html.RenderPartial("LayoutPartials/PostContent"); }
+</div>
+}

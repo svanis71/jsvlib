@@ -1,0 +1,13 @@
+﻿<svg width="100" height="75" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
+ <defs>
+  <radialGradient fy="0.28906" fx="0.23438" r="0.5" cy="0.28906" cx="0.23438" id="svg_3">
+   <stop stop-color="#3ae09d" offset="0"/>
+   <stop stop-color="#59b269" offset="1"/>
+  </radialGradient>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <rect id="svg_4" height="75" width="100" y="0" x="0" fill-opacity="0.8" stroke="#000000" fill="url(#svg_3)"/>
+ </g>
+</svg>

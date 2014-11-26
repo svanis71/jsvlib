@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @RenderSection("css", required: false)
+    @Scripts.Render("~/bundles/modernizr", "~/Scripts/util/js")
+</head>
+<body>
+    <header>
+        <nav>
+            <dd>
+                <dt>@Html.ActionLink("Breakout", "Breakout", "Home")</dt>
+                <dt>@Html.ActionLink("Scroller", "Scroller", "Home")</dt>
+            </dd>
+        </nav>
+    </header>
+    <section id="wrapper">
+        <article>
+            @RenderBody()
+        </article>
+    </section>
+    <footer>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

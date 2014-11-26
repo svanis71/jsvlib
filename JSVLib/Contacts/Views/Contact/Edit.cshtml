@@ -1,0 +1,91 @@
+﻿@model Contacts.Models.Page.Contact
+
+<link href="@Url.Content("~/Content/EditTabs.css")" rel="stylesheet" type="text/css" />
+
+<div id="panes">
+    <section>
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+            <fieldset>
+                <legend>Contact</legend>
+                @Html.HiddenFor(model => model.Id)
+                <div style="float:left; margin-right:20px">
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Lastname)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.Lastname)
+                        @Html.ValidationMessageFor(model => model.Lastname)
+                    </div>
+                </div>
+                <div>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Firstname)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.Firstname)
+                        @Html.ValidationMessageFor(model => model.Firstname)
+                    </div>
+                </div>                
+
+                <div style="float:left; margin-right:20px">
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Age)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.Age)
+                        @Html.ValidationMessageFor(model => model.Age)
+                    </div>
+                </div>                
+                <div>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Email)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.Email)
+                        @Html.ValidationMessageFor(model => model.Email)
+                    </div>
+                </div>            </fieldset>
+        
+            <p>
+                <button type="button" id="saveContactBtn">Spara</button>
+            </p>
+
+        }
+    </section>
+    <section>
+		@Html.Partial("PhoneList", Model.PhoneNumbers, new ViewDataDictionary() { { "contactId", Model.Id }, { "types", ViewBag.PhoneTypes } })
+    </section>
+</div> 
+<br clear="all" />
+<ul id="tabs">
+    <li><a href="#1"><strong>Kontaktuppgifter</strong></a></li>
+    <li><a href="#2"><strong>Telefonnummer</strong></a></li>
+</ul>
+
+
+<script type="text/javascript">
+    $(function () {
+        $("ul#tabs").jtTabs("#panes > section", { effect: 'fade', fadeOutSpeed: 400 });
+    });
+</script>
+
+<script type="text/javascript">
+    $(function () {
+        $("#saveContactBtn").click(function () {
+            var contact = { Id: $("#Id").val(), Lastname: $("#Lastname").val(), Firstname: $("#Firstname").val(), Age: $("#Age").val(), Email: $("#Email").val() };
+
+            $.ajax({
+                url: '/Contact/Save',
+                type: 'POST',
+                data: JSON.stringify(contact),
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+
+                }
+            });
+            return false;
+        });
+    });
+</script>
