@@ -43,33 +43,12 @@
     <Reference Include="Ionic.Zip">
       <HintPath>..\packages\DotNetZip.1.9.1.8\lib\net20\Ionic.Zip.dll</HintPath>
     </Reference>
-    <Reference Include="Lucene.Net">
-      <HintPath>..\n2www_famsvanstrom_se\packages\Lucene.Net.3.0.3\lib\NET40\Lucene.Net.dll</HintPath>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
     <Reference Include="N2">
-      <HintPath>..\n2www_famsvanstrom_se\packages\N2CMS.Library.2.6.3.1\lib\net45\N2.dll</HintPath>
-    </Reference>
-    <Reference Include="N2.Extensions">
-      <HintPath>..\n2www_famsvanstrom_se\packages\N2CMS.Management.2.6.3.1\lib\N2.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="N2.IoC.Windsor3">
-      <HintPath>..\n2www_famsvanstrom_se\packages\N2CMS.Management.2.6.3.1\lib\N2.IoC.Windsor3.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="N2.Management">
-      <HintPath>..\n2www_famsvanstrom_se\packages\N2CMS.Management.2.6.3.1\lib\N2.Management.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="N2.Packaging">
-      <HintPath>..\n2www_famsvanstrom_se\packages\N2CMS.Management.2.6.3.1\lib\N2.Packaging.dll</HintPath>
-    </Reference>
-    <Reference Include="N2.ReusableParts">
-      <HintPath>..\n2www_famsvanstrom_se\packages\N2CMS.Management.2.6.3.1\lib\N2.ReusableParts.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="N2.Search.Lucene">
-      <HintPath>..\n2www_famsvanstrom_se\packages\N2CMS.Search.Lucene.2.6.3.1\lib\N2.Search.Lucene.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\N2CMS.Library.2.6.3.1\lib\net45\N2.dll</HintPath>
     </Reference>
     <Reference Include="NHibernate, Version=3.3.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -83,7 +62,30 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.ApplicationServices" />
-    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />

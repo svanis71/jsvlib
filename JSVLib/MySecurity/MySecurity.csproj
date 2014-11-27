@@ -31,14 +31,39 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\packages\Iesi.Collections.3.2.0.1001\lib\Net35\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net">
+      <HintPath>..\packages\Lucene.Net.3.0.3\lib\NET40\Lucene.Net.dll</HintPath>
+    </Reference>
     <Reference Include="N2">
-      <HintPath>..\..\..\..\N2.dll</HintPath>
+      <HintPath>..\packages\N2CMS.Library.2.6.3.1\lib\net40\N2.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="N2.Extensions">
-      <HintPath>..\..\..\..\N2.Extensions.dll</HintPath>
+      <HintPath>..\packages\N2CMS.Management.2.6.3.1\lib\N2.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="N2.IoC.Windsor3">
+      <HintPath>..\packages\N2CMS.Management.2.6.3.1\lib\N2.IoC.Windsor3.dll</HintPath>
     </Reference>
     <Reference Include="N2.Management">
-      <HintPath>..\..\..\..\N2.Management.dll</HintPath>
+      <HintPath>..\packages\N2CMS.Management.2.6.3.1\lib\N2.Management.dll</HintPath>
+    </Reference>
+    <Reference Include="N2.Packaging">
+      <HintPath>..\packages\N2CMS.Management.2.6.3.1\lib\N2.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="N2.ReusableParts">
+      <HintPath>..\packages\N2CMS.Management.2.6.3.1\lib\N2.ReusableParts.dll</HintPath>
+    </Reference>
+    <Reference Include="N2.Search.Lucene">
+      <HintPath>..\packages\N2CMS.Search.Lucene.2.6.3.1\lib\N2.Search.Lucene.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\packages\NHibernate.3.3.3.4001\lib\Net35\NHibernate.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -67,8 +92,19 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>UserRepository.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="N2\N2.zip" />
+    <None Include="N2\n2cms.configuration.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="N2\history.txt" />
+    <Content Include="N2\howto_develop.txt" />
+    <Content Include="N2\howto_install.txt" />
+    <Content Include="N2\license.txt" />
+    <Content Include="N2\n2_readme.txt" />
+    <Content Include="N2\upgrade.txt" />
     <Content Include="UserRepository.edmx.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
