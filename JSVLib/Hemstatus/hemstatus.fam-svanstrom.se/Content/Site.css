@@ -1,0 +1,61 @@
+﻿* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+}
+
+html {
+  font-family: 'Oxygen', sans-serif;
+  font-size: medium;
+    background: #222222;
+    color: #c0c0c0;    
+}
+
+body {
+}
+
+header, footer, nav, section {
+    display: block;
+}
+
+.page {
+	width: 90%;
+	margin: 0 auto;
+}
+
+input[type="checkbox"].lightbulb {
+    display: none;
+}
+
+    input[type="checkbox"].lightbulb + label {
+        cursor: pointer;
+        border-radius: 1em 1em 2em 2em;
+        margin: 0;
+        height: 2.5em;
+        width: 100%;
+        display: inline-block;
+    }
+
+    input[type="checkbox"].lightbulb + label {
+        background: url('/content/img/glodlampa_av.png') 0 0/2em 2em no-repeat;
+    }
+
+    input[type="checkbox"].lightbulb:checked + label {
+        background: url('/content/img/glodlampa.png') 0 0/2em 2em no-repeat;
+    }
+
+        input[type="checkbox"].lightbulb + label > span {
+            margin-left: 1.5em;
+            font-size: 1.5em;
+        }
+
+        input[type="checkbox"].lightbulb:checked + label > span {
+            color: #32cd32;
+        }
+
+
+input[type="checkbox"]:checked {
+    background: #474;
+    border-radius: 5em 5em 1em 1em;
+}

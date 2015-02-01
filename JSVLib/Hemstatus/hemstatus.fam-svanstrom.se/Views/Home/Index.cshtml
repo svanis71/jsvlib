@@ -1,0 +1,69 @@
+﻿@using hemstatus.fam_svanstrom.se.Models
+@using hemstatus.fam_svanstrom.se.Web.Mvc.Html
+
+@model DeviceModelRepo
+@{
+    ViewBag.Title = "Index";
+}
+
+<article class="article">
+    @foreach (var dev in Model)
+    {
+        <section>
+        @Html.LightbulbCheckboxFor(b => dev.Status, new Dictionary<string, object>
+            {
+                {"title", dev.Name},
+                {"id", "checkbox_" + dev.Id + "_" + dev.Name}
+            })
+        </section>
+    }    
+    <form id="frm" action="/api/status" method="POST">
+        <button id="subbe" type="submit">Submit</button>
+    </form>  
+</article>
+ 
+<script type="text/javascript">
+    function Device(id, name, status) {
+        var _id;
+        var _name;
+        var _status;
+
+        _id = id;
+        _name = name;
+        _status = status;
+
+        return {
+            Id: _id,
+            Name: _name,
+            Status: _status
+        };
+    };
+
+    var form = document.getElementById("frm");
+    form.addEventListener("submit", function (e) {
+        var xhr = new XMLHttpRequest();
+        var deviceArray = [];
+
+        deviceArray.push(new Device(1, "Kitchen", "On"));
+        deviceArray.push(new Device(2, "Wall", "On"));
+        deviceArray.push(new Device(3, "Window", "On"));
+        deviceArray.push(new Device(4, "Bookshelf", "On"));
+
+        xhr.open("POST", "/api/status", true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onreadystatechange = function(d) {
+            if (xhr.readyState == 4) {
+                if (xhr.status >= 200 && xhr.status < 250) {
+                    console.log("SUCCESS! ", d);
+                } else {
+                    console.log("FAIL! ", xhr);
+                }
+            }
+        };
+
+        console.log(JSON.stringify(deviceArray));
+        xhr.send(JSON.stringify(deviceArray));
+        e.preventDefault();
+        return false;
+    });
+</script>
