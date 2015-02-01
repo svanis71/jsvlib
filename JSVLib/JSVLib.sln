@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JSVLib", "JSVLib\JSVLib.csproj", "{049B0F74-274D-45A5-9EC9-CA40ADFDC491}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JSVLib.Test", "JSVLib.Test\JSVLib.Test.csproj", "{16436674-7682-4EB9-911A-7EE60E66D589}"
@@ -22,6 +24,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "www.fam-svanstrom.se", "www.fam-svanstrom.se\www.fam-svanstrom.se.csproj", "{3D27EA05-1166-44E0-8339-B1E14B186E18}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "www.fam-svanstrom.se.Tests", "www.fam-svanstrom.se.Tests\www.fam-svanstrom.se.Tests.csproj", "{F3315E61-A9DB-4B89-B353-BC88D180C2E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hemstatus.fam-svanstrom.se", "..\..\..\OneDrive\Kod\Pi\Hemstatus\hemstatus.fam-svanstrom.se\hemstatus.fam-svanstrom.se.csproj", "{3A9E6DF3-4CC6-437D-B3A1-567D32504A84}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,6 +69,10 @@ Global
 		{3D27EA05-1166-44E0-8339-B1E14B186E18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3315E61-A9DB-4B89-B353-BC88D180C2E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F3315E61-A9DB-4B89-B353-BC88D180C2E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A9E6DF3-4CC6-437D-B3A1-567D32504A84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A9E6DF3-4CC6-437D-B3A1-567D32504A84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A9E6DF3-4CC6-437D-B3A1-567D32504A84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A9E6DF3-4CC6-437D-B3A1-567D32504A84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
