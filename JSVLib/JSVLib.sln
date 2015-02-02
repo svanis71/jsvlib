@@ -25,7 +25,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "www.fam-svanstrom.se", "www
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "www.fam-svanstrom.se.Tests", "www.fam-svanstrom.se.Tests\www.fam-svanstrom.se.Tests.csproj", "{F3315E61-A9DB-4B89-B353-BC88D180C2E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hemstatus.fam-svanstrom.se", "..\..\..\OneDrive\Kod\Pi\Hemstatus\hemstatus.fam-svanstrom.se\hemstatus.fam-svanstrom.se.csproj", "{3A9E6DF3-4CC6-437D-B3A1-567D32504A84}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hemstatus.fam-svanstrom.se", "Hemstatus\hemstatus.fam-svanstrom.se\hemstatus.fam-svanstrom.se.csproj", "{3A9E6DF3-4CC6-437D-B3A1-567D32504A84}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
