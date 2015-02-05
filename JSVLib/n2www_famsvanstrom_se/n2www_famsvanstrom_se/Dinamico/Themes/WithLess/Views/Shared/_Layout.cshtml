@@ -21,16 +21,20 @@
 <body>
     @{ Html.ControlPanel().Render(); }
     <section class="wrapper">
-        <section id="top" class="top">
-        </section>
         <header id="header" class="header">
-        </header> 
+            @{ Html.RenderPartial("LayoutPartials/Header"); }
+            <section id="top" class="top"></section>
+        </header>
+        <section id="banner" class="banner">
+            @{Html.DroppableZone("Banner").Render();}
+        </section>
         <section id="page" class="page">
             @if (IsSectionDefined("main"))
             { 
                 <section id="main" class="main">
                     @RenderSection("main")
-8i                </section>
+                    @RenderSection("scripts", required: false)
+                </section>
             }
             else
             {
@@ -38,12 +42,16 @@
                     @{ Html.RenderPartial("LayoutPartials/PreContent"); }
                     <article id="content" class="content">
                         @RenderBody()
+                        @RenderSection("scripts", required: false)
                     </article>
                     @{ Html.RenderPartial("LayoutPartials/PostContent"); }
                 </section>
             }
 
         </section>
+        <footer id="footer">
+            @{Html.RenderPartial("LayoutPartials/Footer"); }
+        </footer>
     </section>
 </body>
 </html>

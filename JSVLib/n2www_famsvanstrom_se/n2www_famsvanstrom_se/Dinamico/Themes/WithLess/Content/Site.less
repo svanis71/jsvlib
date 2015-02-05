@@ -1,5 +1,8 @@
-﻿@base_text_color: #00ff00;
+﻿@base_text_color: #008800;
+@a_base: #00aa00;
+@navborder: #eeeeee;
 @backcolor: #000000;
+@wrapper_background: lighten(@backcolor, 10%);
 
 * {
     -moz-box-sizing: border-box;
@@ -22,15 +25,75 @@ div, section, header, footer, article {
     display: block;
 }
 
-a, a:visited {
-    color: @base_text_color;
-    text-decoration: none;
+hr {
+    border-color: lighten(@backcolor, 30%);
 }
 
-    a:hover {
-        color: #008800;
+a 
+{
+    color: @a_base;
+    text-decoration: none;
+    :visited {
+        color: lighten(@a_base, 30%);
     }
-.wrapper {
-    width: 98%;
-    margin: 0 auto;
+    :hover {
+        color: saturate(@a_base, 15%);
+    }
 }
+
+.wrapper {
+    width: 80%;
+    margin: 0 auto;
+    background: @wrapper_background;
+}
+
+nav.top-navbar 
+{
+    border-bottom: thin solid @navborder;
+    width: 100%;
+
+    ul {
+        
+        li {
+            list-style-type: none;
+            display: inline-block;
+            font-size: 1.4em;
+            line-height: 2.5em;
+            padding: 0.0em 0.6em 0em 0.6em;
+            border-color: @navborder;
+            border-style: solid;
+            border-left-width: thin;
+            border-right-width: thin;
+            border-top-width: thin;
+            border-bottom: none;
+            border-radius: 0.4em 0.8em 0 0;
+        }
+        li:not(:first-child) {
+            margin-left: 1em;
+        }
+        :hover {
+            background:  lighten(@backcolor, 40%);
+        }
+    }
+}
+
+nav.submenu-navbar {
+    line-height: 2em;
+    background: lighten(@wrapper_background, 5%);
+
+    ul {
+        li {
+            list-style-type: none;
+            display: inline-block;
+            font-size: 0.9em;
+            padding: 0.0em 0.6em 0em 0.6em;
+        }
+        li.active {
+            font-weight: bold;
+            font-size: 1.1em;
+            text-shadow: 0.03em 0.03em lighten(@a_base, 15%);
+        }    
+
+    }
+}
+

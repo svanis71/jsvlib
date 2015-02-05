@@ -1,10 +1,15 @@
 ﻿@model n2www_famsvanstrom_se.Models.SsnGenerator
 
 @{
-    Content.Define(ie => { ie.Title = "Personnummergenerator"; });
+    Content.Register.Meta("Author", "fam-svanstrom.se");
+    Content.Define(re =>
+    {
+        re.Title = "Personnummergenerator";
+        re.Text("Description", "Personnummergenerator");
+        re.Text("Keywords", "Personnummergenerator,javascript,dom,jquery,svanström");
+    });
     string uniqueId = Html.UniqueID("ssngen");
 }
-
 
 <section id="@Html.UniqueID("ssn-wrapper")">
     <header class="header">
@@ -17,8 +22,8 @@
                     @Html.LabelFor(p => p.DefaultNumberOfSsn, Model.InputTitle, htmlAttributes: new {@class = "input-label"})
                 </section>
                 <section>
-                    @Html.TextBoxFor(p => p.DefaultNumberOfSsn, htmlAttributes: new {@class = "input-numbers", autofocus = "autofocus"})
-                    +´å                </section>
+                    @Html.TextBoxFor(p => p.DefaultNumberOfSsn, htmlAttributes: new {@class = "input-numbers", autofocus = "autofocus", @placeholder = "Antal"})
+                </section>
                 <section id="buttons">
                     <button id="submit" type="submit">Generera</button>
                     <button id="clear" type="button">Rensa</button>
@@ -36,3 +41,11 @@
     </footer>
 </section>
 
+@section head {
+    @Styles.Render("~/bundles/ssn/css")
+}
+
+@section scripts {
+    <p>Scripts</p>
+    @Scripts.Render("~/bundles/ssn/js")
+}

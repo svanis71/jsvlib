@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\GuidExtensions.cs" />
+    <Compile Include="Extensions\ObjectSerializationExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Logging\ILog.cs" />
     <Compile Include="Logging\JSVLogger.cs" />

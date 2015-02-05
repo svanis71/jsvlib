@@ -16,6 +16,9 @@ namespace n2www_famsvanstrom_se.App_Start
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                 "~/Scripts/jquery.unobtrusive*",
                 "~/Scripts/jquery.validate*"));
+
+            bundles.Add(new ScriptBundle("~/bundles/ssn/js").IncludeDirectory("~/Scripts/ssn", "*.js"));
+            bundles.Add(new StyleBundle("~/bundles/ssn/css").IncludeDirectory("~/Contents/ssbgen", "*.css"));
         }
     }
 }
