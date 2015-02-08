@@ -40,11 +40,7 @@ namespace n2www_famsvanstrom_se.Services
 
             lock (lockObj)
             {
-                // Delete file before saving to prevent the file of being corrupted
-                if (File.Exists(xml))
-                    File.Delete(xml);
-
-                using (var sw = File.OpenWrite(xml))
+                using (var sw = File.Create(xml))
                 {
                     serializer.Serialize(sw, repo);
                     sw.Close();

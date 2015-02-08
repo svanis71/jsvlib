@@ -11,27 +11,6 @@ namespace n2www_famsvanstrom_se.Dinamico.Models
         Off
     }
 
-    public class DeviceModelRepo : List<DeviceModel>
-    {
-
-    }
-
-    public class DeviceModel
-    {
-
-        public DeviceModel(Device device)
-        {
-            Id = device.Id;
-            Name = device.Name;
-            Status = device.Status == DeviceStatus.On;
-        }
-
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public bool Status { get; set; }
-
-    }
-
     [Serializable]
     public class Device
     {

@@ -174,6 +174,7 @@
     <Compile Include="Controllers\SsnGeneratorController.cs" />
     <Compile Include="Dinamico\Controllers\ContentPagesController.cs" />
     <Compile Include="Dinamico\Controllers\ContentPartsController.cs" />
+    <Compile Include="Dinamico\Controllers\DevicesController.cs" />
     <Compile Include="Dinamico\Controllers\FallbackController.cs" />
     <Compile Include="Dinamico\Controllers\FreeFormController.cs" />
     <Compile Include="Dinamico\Controllers\LanguageIntersectionController.cs" />
@@ -186,6 +187,8 @@
     <Compile Include="Dinamico\Models\ContentPage.cs" />
     <Compile Include="Dinamico\Models\ContentPart.cs" />
     <Compile Include="Dinamico\Models\Device.cs" />
+    <Compile Include="Dinamico\Models\DeviceModelRepo.cs" />
+    <Compile Include="Dinamico\Models\DevicePageModel.cs" />
     <Compile Include="Dinamico\Models\DeviceRepository.cs" />
     <Compile Include="Dinamico\Models\FreeForm.cs" />
     <Compile Include="Dinamico\Models\LanguageIntersection.cs" />
@@ -203,6 +206,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Logger.cs" />
     <Compile Include="Services\XmlFileHandler.cs" />
+    <Compile Include="Web\Mvc\Html\HtmlHelpers.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -214,6 +218,8 @@
     <Content Include="App_Data\Root_Node.n2.xml.gz.txt" />
     <Content Include="App_Data\SampleContent.n2.xml.gz.txt" />
     <Content Include="Content\fonts\glyphiconshalflings-regular.svg" />
+    <Content Include="Content\lightbulb\glodlampa.png" />
+    <Content Include="Content\lightbulb\glodlampa_av.png" />
     <Content Include="Content\ssngen\ssngen.css" />
     <Content Include="Dinamico\N2\readme.txt" />
     <Content Include="Dinamico\readme.txt" />
@@ -346,10 +352,11 @@
     <Content Include="Dinamico\Themes\WithLess\Views\Shared\LayoutPartials\TopNavigation.cshtml" />
     <Content Include="Dinamico\Themes\WithLess\Views\Shared\LayoutPartials\Header.cshtml" />
     <Content Include="Dinamico\Themes\WithLess\Views\Shared\LayoutPartials\Footer.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Devices\Index.cshtml" />
     <None Include="N2\n2cms.configuration.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="packages.config" />
+    <Content Include="Scripts\packages.config" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />

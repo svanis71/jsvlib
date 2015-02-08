@@ -1,0 +1,19 @@
+﻿@using JSVLib.Extensions
+@using n2www_famsvanstrom_se.Dinamico.Models
+@using n2www_famsvanstrom.se.Web.Mvc.Html
+
+@model DevicePageModel
+
+<article class="article">
+    @foreach (var dev in Model.Devices)
+    {
+        <section>
+            @Html.LightbulbCheckboxFor(b => dev.Status, new Dictionary<string, object>
+            {
+                {"title", dev.Name},
+                {"id", "checkbox_" + dev.Id + "_" + dev.Name}
+            })
+        </section>
+    }
+</article>
+

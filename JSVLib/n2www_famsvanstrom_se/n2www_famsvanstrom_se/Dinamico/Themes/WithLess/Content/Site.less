@@ -97,3 +97,36 @@ nav.submenu-navbar {
     }
 }
 
+input[type="checkbox"].lightbulb {
+    display: none;
+
+    & + label {
+        cursor: pointer;
+        border-radius: 1em 1em 2em 2em;
+        margin: 0;
+        height: 2.5em;
+        width: 100%;
+        display: inline-block;
+    }
+
+    & + label {
+        background: url('/Content/lightbulb/glodlampa_av.png') no-repeat;
+        background-size: 2em 2em;
+        background-position: 0 0;
+    }
+
+    &:checked + label {
+        background: url('/Content/lightbulb/glodlampa.png') no-repeat;
+        background-size: 2em 2em;
+        background-position: 0 0;
+    }
+
+    & + label > span {
+        margin-left: 1.5em;
+        font-size: 1.5em;
+    }
+
+    & + label > span {
+        color: @base_text_color;
+    }
+}
