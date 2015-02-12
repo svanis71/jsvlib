@@ -1,50 +1,25 @@
-﻿@base_text_color: #008800;
-@a_base: #00aa00;
-@navborder: #eeeeee;
-@backcolor: #000000;
-@wrapper_background: lighten(@backcolor, 10%);
+﻿@import url("myvars.less");
+@import url("elements.less");
+@import url("lightbulb.less");
 
-* {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    margin: 0;
+.header {
+    width: 95%;
+    margin: 0 auto;
 }
 
-html {
-    font-family: 'Oxygen', sans-serif;
-    font-size: medium;
-    color: @base_text_color;
-    background: @backcolor;
-}
-
-body {
-}
-
-div, section, header, footer, article {
-    display: block;
-}
-
-hr {
-    border-color: lighten(@backcolor, 30%);
-}
-
-a 
-{
-    color: @a_base;
-    text-decoration: none;
-    :visited {
-        color: lighten(@a_base, 30%);
-    }
-    :hover {
-        color: saturate(@a_base, 15%);
-    }
-}
-
-.wrapper {
-    width: 80%;
+.page {
+    width: 90%;
     margin: 0 auto;
     background: @wrapper_background;
+}
+
+.content {
+    width: 65%;
+}
+
+.page-right-aside {
+    width: 35%;
+    float: right;
 }
 
 nav.top-navbar 
@@ -97,36 +72,16 @@ nav.submenu-navbar {
     }
 }
 
-input[type="checkbox"].lightbulb {
-    display: none;
+.status-checkbox-group {
+    width: 50%;
+    display: inline-block;
+}
 
-    & + label {
-        cursor: pointer;
-        border-radius: 1em 1em 2em 2em;
-        margin: 0;
-        height: 2.5em;
-        width: 100%;
-        display: inline-block;
-    }
-
-    & + label {
-        background: url('/Content/lightbulb/glodlampa_av.png') no-repeat;
-        background-size: 2em 2em;
-        background-position: 0 0;
-    }
-
-    &:checked + label {
-        background: url('/Content/lightbulb/glodlampa.png') no-repeat;
-        background-size: 2em 2em;
-        background-position: 0 0;
-    }
-
-    & + label > span {
-        margin-left: 1.5em;
-        font-size: 1.5em;
-    }
-
-    & + label > span {
-        color: @base_text_color;
+.house-section {
+    display:inline-block;
+    cursor: pointer;
+    width: 45%;
+    > img {
+        width: 50%;
     }
 }

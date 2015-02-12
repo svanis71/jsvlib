@@ -5,15 +5,25 @@
 @model DevicePageModel
 
 <article class="article">
-    @foreach (var dev in Model.Devices)
-    {
-        <section>
-            @Html.LightbulbCheckboxFor(b => dev.Status, new Dictionary<string, object>
-            {
-                {"title", dev.Name},
-                {"id", "checkbox_" + dev.Id + "_" + dev.Name}
-            })
-        </section>
-    }
+    <section class="status-checkbox-group">
+        @foreach (var dev in Model.Devices) { 
+            @Html.LightbulbCheckboxFor(b => dev.Status, new { @title = dev.Name, @id = "checkbox_" + dev.Id + "_" + dev.Name })
+        }
+    </section>
+    <section class="house-section">
+        <img class="house" src="@Url.ThemedContent("~/Content/img/hus.png")" alt="Klicka här för att skicka in status"
+             title="Klicka här för att skicka in status" />
+    </section>
 </article>
 
+@section scripts {
+
+<script type="text/javascript">
+    $(function () {
+        console.log("Hej");
+    });
+    
+</script>
+
+
+}

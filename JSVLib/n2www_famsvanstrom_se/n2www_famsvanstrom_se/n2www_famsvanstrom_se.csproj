@@ -241,6 +241,7 @@
     <Content Include="Dinamico\Themes\Default\lib\jquery\jquery.highlight-3.js" />
     <Content Include="Dinamico\Themes\Default\Scripts\Site.js" />
     <Content Include="Dinamico\Themes\Default\Thumbnail.JPG" />
+    <Content Include="Dinamico\Themes\Default\Content\img\Hus.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="App_Data\Root_Node.n2.xml.gz" />
@@ -353,6 +354,9 @@
     <Content Include="Dinamico\Themes\WithLess\Views\Shared\LayoutPartials\Header.cshtml" />
     <Content Include="Dinamico\Themes\WithLess\Views\Shared\LayoutPartials\Footer.cshtml" />
     <Content Include="Dinamico\Themes\Default\Views\Devices\Index.cshtml" />
+    <Content Include="Dinamico\Themes\WithLess\Content\myvars.less" />
+    <Content Include="Dinamico\Themes\WithLess\Content\elements.less" />
+    <Content Include="Dinamico\Themes\WithLess\Content\lightbulb.less" />
     <None Include="N2\n2cms.configuration.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -420,6 +424,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Dinamico\Themes\WithLess\Views\ContentParts\" />
+    <Folder Include="Views\Status\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Dinamico\Themes\Default\Views\Shared\LayoutPartials\Head.cshtml" />

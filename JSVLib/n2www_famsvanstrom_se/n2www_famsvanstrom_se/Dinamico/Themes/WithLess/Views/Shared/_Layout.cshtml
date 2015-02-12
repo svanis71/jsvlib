@@ -20,38 +20,39 @@
 </head>
 <body>
     @{ Html.ControlPanel().Render(); }
-    <section class="wrapper">
-        <header id="header" class="header">
-            @{ Html.RenderPartial("LayoutPartials/Header"); }
-            <section id="top" class="top"></section>
-        </header>
-        <section id="banner" class="banner">
-            @{Html.DroppableZone("Banner").Render();}
-        </section>
-        <section id="page" class="page">
-            @if (IsSectionDefined("main"))
-            { 
-                <section id="main" class="main">
-                    @RenderSection("main")
-                    @RenderSection("scripts", required: false)
-                </section>
-            }
-            else
-            {
-                <section id="main" class="main">
-                    @{ Html.RenderPartial("LayoutPartials/PreContent"); }
-                    <article id="content" class="content">
-                        @RenderBody()
-                        @RenderSection("scripts", required: false)
-                    </article>
-                    @{ Html.RenderPartial("LayoutPartials/PostContent"); }
-                </section>
-            }
-
-        </section>
-        <footer id="footer">
-            @{Html.RenderPartial("LayoutPartials/Footer"); }
-        </footer>
+    <header id="header" class="header">
+        @{ Html.RenderPartial("LayoutPartials/Header"); }
+        <section id="top" class="top"></section>
+    </header>
+    <section id="banner" class="banner">
+        @{Html.DroppableZone("Banner").Render();}
     </section>
+    <section id="page" class="page">
+        @if (IsSectionDefined("main"))
+        { 
+            <section id="main" class="main">
+                @RenderSection("main")
+                @RenderSection("scripts", required: false)
+            </section>
+        }
+        else
+        {
+            <section id="main" class="main">
+                <aside class="page-right-aside">
+                    @{Html.DroppableZone("aside").Render();}
+                </aside>
+                @{ Html.RenderPartial("LayoutPartials/PreContent"); }
+                <article id="content" class="content">
+                    @RenderBody()
+                    @RenderSection("scripts", required: false)
+                </article>
+                @{ Html.RenderPartial("LayoutPartials/PostContent"); }
+            </section>
+        }
+
+    </section>
+    <footer id="footer">
+        @{Html.RenderPartial("LayoutPartials/Footer"); }
+    </footer>
 </body>
 </html>

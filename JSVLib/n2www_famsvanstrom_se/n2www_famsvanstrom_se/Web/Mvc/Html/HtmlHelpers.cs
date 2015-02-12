@@ -5,6 +5,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 
 namespace n2www_famsvanstrom.se.Web.Mvc.Html
 {
@@ -12,7 +13,7 @@ namespace n2www_famsvanstrom.se.Web.Mvc.Html
     {
         public static IHtmlString LightbulbCheckboxFor<TModel, TProperty>(this HtmlHelper<TModel> helper,
                                                                           Expression<Func<TModel, TProperty>> expression,
-            Dictionary<string, object> htmlAttributes = null)
+            object htmlAttributes = null)
         {
             var inputBuilder = new TagBuilder("input");
             var model = ModelMetadata.FromLambdaExpression(expression, helper.ViewData);
@@ -22,7 +23,7 @@ namespace n2www_famsvanstrom.se.Web.Mvc.Html
             string title = string.Empty;
 
             if (htmlAttributes != null) 
-                inputBuilder.MergeAttributes(htmlAttributes);
+                inputBuilder.MergeAttributes(new RouteValueDictionary(htmlAttributes));
             title = inputBuilder.Attributes["title"];
 
             inputBuilder.Attributes.Add("type", "checkbox");
