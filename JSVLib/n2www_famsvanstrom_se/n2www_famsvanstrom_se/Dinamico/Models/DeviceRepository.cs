@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using JSVLib.Extensions;
-using n2www_famsvanstrom_se.Services;
+using n2www_famsvanstrom.se.Services;
 
-namespace n2www_famsvanstrom_se.Dinamico.Models
+namespace n2www_famsvanstrom.se.Dinamico.Models
 {
     [Serializable]
     public class DeviceRepository : List<Device>

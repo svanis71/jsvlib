@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 
-namespace n2www_famsvanstrom_se
+namespace n2www_famsvanstrom.se
 {
     public static class WebApiConfig
     {

@@ -1,0 +1,31 @@
+﻿@model Dinamico.Models.MathTraining
+
+@section main {
+    <h1>Matteträning</h1>
+
+@using (Html.BeginForm("Train", "MathTraining", FormMethod.Get))
+{
+
+   <fieldset>
+    <legend>Välj antal tal</legend>
+       <div>
+           <div>
+               @Html.LabelFor(p => p.NumberCount)
+           </div>
+           <div>
+               @Html.DropDownListFor(p => p.numbers, Model.NumberCount)
+           </div>
+       </div>   
+       <div>
+        <div>
+            @Html.LabelFor(m => m.level)
+        </div>
+        <div>
+            @Html.DropDownListFor(m => m.level, Model.Levels)
+        </div>
+       </div>
+    </fieldset>
+    <button class="button">Kör igång!</button>
+}
+}
+

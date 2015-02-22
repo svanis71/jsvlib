@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.Mvc;
 using N2.Web;
 using N2.Web.Mvc;
-using n2www_famsvanstrom_se.Models;
+using n2www_famsvanstrom.se.Models;
 
-namespace n2www_famsvanstrom_se.Controllers
+namespace n2www_famsvanstrom.se.Controllers
 {
     [Controls(typeof(SsnGenerator))]
     public class SsnGeneratorController : ContentController<SsnGenerator>

@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace n2www_famsvanstrom_se
+namespace n2www_famsvanstrom.se
 {
     public class RouteConfig
     {

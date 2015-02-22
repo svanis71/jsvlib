@@ -1,0 +1,15 @@
+﻿@using System.Web.Optimization
+<meta name="generator" content="N2CMS" />
+@*<meta name="viewport" content="initial-scale=1.0; minimum-scale=1.0; maximum-scale=1.0;"/>*@
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+@Content.Register.Meta("Author").Container("Metadata").Display()
+@Content.Register.Meta("Keywords").Container("Metadata").Display()
+@Content.Register.Meta("Description").Container("Metadata").Display()
+<link href="@Url.Content("~/Content/css/slider-base.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.ThemedContent("~/Content/Site.less")" rel="stylesheet" type="text/css" />
+<link href="@Url.ThemedContent("~/Content/openid-shadow.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.ThemedContent("~/Content/openid.css")" rel="stylesheet" type="text/css" />
+<link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/cupertino/jquery-ui.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="@Url.ThemedContent("~/favicon.ico")" />
+<link rel="apple-touch-icon" href="@Url.ThemedContent("~/apple-touch-icon.png")" />
+<link rel="canonical" href="@(Content.Data.Url ?? Request.RawUrl)" />

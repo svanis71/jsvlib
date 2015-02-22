@@ -5,7 +5,7 @@ using N2.Engine;
 using N2.Plugin;
 using N2.Web.Mvc;
 
-namespace n2www_famsvanstrom_se.App_Start
+namespace n2www_famsvanstrom.se.App_Start
 {
 	/// <summary>
 	/// This configures ASP.NET MVC to use N2 for routing and optionally other features (see commented code).

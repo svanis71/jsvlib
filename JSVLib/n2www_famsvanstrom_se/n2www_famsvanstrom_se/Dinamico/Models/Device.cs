@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace n2www_famsvanstrom_se.Dinamico.Models
+namespace n2www_famsvanstrom.se.Dinamico.Models
 {
     public enum DeviceStatus
     {

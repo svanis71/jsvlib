@@ -1,0 +1,10 @@
+﻿@using n2www_famsvanstrom.se.Web.Mvc.Html
+@if (Request.IsAuthenticated)
+{
+    <span class="item authenticated"><a href="@Url.Action("LogOff", "Membership")">@Content.Translate["Log off"] <strong>@Context.User.Identity.Name</strong></a></span>
+}
+else
+{
+    @Html.Image("logon", Url.Content("~/Content/images/login.png"), "Logga in", null, new {@class = "logon", @title="Logga in"})
+}
+

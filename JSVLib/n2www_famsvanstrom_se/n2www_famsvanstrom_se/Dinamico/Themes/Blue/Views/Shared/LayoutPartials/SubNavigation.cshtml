@@ -1,0 +1,11 @@
+﻿@using n2www_famsvanstrom.se.Web.Mvc.Html
+@using N2.Edit
+
+@{
+    int level = 1;
+    foreach (var contentItem in Content.Traverse.AncestorsBetween(level, 2))
+    {
+        level++;
+        @Html.BigBoxList(Content.Traverse.NavigatableChildPages(contentItem))
+    }
+}

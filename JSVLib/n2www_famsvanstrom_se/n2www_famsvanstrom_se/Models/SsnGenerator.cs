@@ -6,7 +6,7 @@ using Dinamico.Models;
 using N2;
 using N2.Details;
 
-namespace n2www_famsvanstrom_se.Models
+namespace n2www_famsvanstrom.se.Models
 {
     [PartDefinition(Title = "Personnummergenerator", TemplateUrl = "SsnGen", IconClass = "")]
     public class SsnGenerator : PartModelBase

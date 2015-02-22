@@ -6,7 +6,7 @@ using System.Web;
 using System.Xml.Serialization;
 using JSVLib.Extensions;
 
-namespace n2www_famsvanstrom_se.Services
+namespace n2www_famsvanstrom.se.Services
 {
     public interface IXmlFileHandler<T>
     {
