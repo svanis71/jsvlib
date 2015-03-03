@@ -52,7 +52,7 @@ namespace hemstatus.fam_svanstrom.se.Controllers
         }
 
         // POST api/status
-        public void Post([FromBody]Device[] indata)
+        public void Post([FromBody]PostStatusRequestData indata)
         {
             try
             {
@@ -60,11 +60,12 @@ namespace hemstatus.fam_svanstrom.se.Controllers
 
                 if (indata != null)
                 {
+
                     //foreach (var device in indata)
                     //{
                     //    if(device.Id <= 0) // Something was very wrong
                     //        continue;
-                        _repository.Modify(indata);
+                        //_repository.Modify(devArray);
                     //}
                     
                 }

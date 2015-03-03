@@ -14,6 +14,7 @@ namespace n2www_famsvanstrom.se.Dinamico.Models
         public string Name { get; set; }
         public bool Status { get; set; }
 
+        public DeviceViewModel() { }
 
         public DeviceViewModel(Device device)
         {
@@ -21,6 +22,18 @@ namespace n2www_famsvanstrom.se.Dinamico.Models
             Name = device.Name;
             Status = (device.Status == DeviceStatus.On);
         }
+
+        public Device AsDevice()
+        {
+            return new Device() { Id = Id, Name = Name, Status = Status ? DeviceStatus.On : DeviceStatus.Off };
+        }
+
+        public override string ToString()
+        {
+            return string.Format("{0}: [Id = {1}, Name = {2}, Status = {3}]",
+                                 this.GetType().Name, Id, Name, Status);
+        }
+
     }
 
     [PageDefinition("DevicesController")]

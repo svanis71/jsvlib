@@ -1,0 +1,10 @@
+﻿@using www.fam_svanstrom.se.Web.Html
+@using N2.Edit
+
+@model Dinamico.Models.ContentPart
+@{ Content.Define(ie => 
+	   {
+		   ie.Title = "Submenu";
+	   }); }
+
+@{ Html.RenderPartial("LayoutPartials/SubNavigation"); }

@@ -19,8 +19,39 @@
 @section scripts {
 
 <script type="text/javascript">
+    var postData = {
+        OutdoorTemprature: 0.2,
+        IndoorTemprature: 20.0,
+        IndoorHumidity: 70.0,
+        DeviceArray: [{
+            Id: 1,
+            Name: "Device 1",
+            Status: true
+        },
+        {
+            Id: 2,
+            Name: "Device 2",
+            Status: false
+        }]
+    };
     $(function () {
-        console.log("Hej");
+        console.log("Hej", postData);
+        console.log("JSON: ", JSON.stringify(postData));
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/api/hemma", true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onreadystatechange = function (d) {
+            if (xhr.readyState == 4) {
+                if (xhr.status >= 200 && xhr.status < 250) {
+                    console.log("SUCCESS! ", d);
+                } else {
+                    console.log("FAIL! ", xhr);
+                }
+            }
+        };
+        xhr.send(JSON.stringify(postData));
+
     });
     
 </script>
