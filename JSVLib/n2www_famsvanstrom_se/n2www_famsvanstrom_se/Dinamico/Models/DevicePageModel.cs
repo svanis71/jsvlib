@@ -41,6 +41,9 @@ namespace n2www_famsvanstrom.se.Dinamico.Models
     public class DevicePageModel : PageModelBase
     {
         DeviceRepository _repo;
+        public float OutdoorTemprature { get; set; }
+        public float IndoorTemprature { get; set; }
+        public float IndoorHumidity { get; set; }
 
         public DevicePageModel()
         {
