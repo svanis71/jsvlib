@@ -1,6 +1,8 @@
 ﻿using n2www_famsvanstrom.se.Dinamico.Models;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -8,18 +10,43 @@ using System.Web;
 
 namespace www.fam_svanstrom.se.Services
 {
-    public class StatusChangeRepository
+    public class DeviceStatusRepository
     {
+        public void UpdateStatus(Device device)
+        {
+            var connString = ConfigurationManager.ConnectionStrings["N2CMS"].ConnectionString;
+            using (var conn = new SqlConnection(connString))
+            {
+                conn.Open();
+                using(var cmd = new SqlCommand("UpdateDevice", conn))
+                {
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@Id", System.Data.SqlDbType.Int).Value = device.Id;
+                    cmd.Parameters.Add("@Name", System.Data.SqlDbType.NVarChar, 30).Value = device.Name;
+                    cmd.Parameters.Add("@Status", System.Data.SqlDbType.Int).Value = device.Status == DeviceStatus.On ? 1 : 0;
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public void UpdateStatus(IEnumerable<Device> devices)
+        {
+            foreach (var device in devices)
+            {
+                UpdateStatus(device);
+            }
+        }
+
         public void ChangeStatus(IEnumerable<Device> devices)
         {
             var file = GetFileName();
             lock (this)
             {
-                if(File.Exists(file))
+                if (File.Exists(file))
                 {
                     File.Delete(file);
                 }
-                using(var sw = new StreamWriter(file))
+                using (var sw = new StreamWriter(file))
                 {
                     var sb = new StringBuilder();
                     foreach (var dev in devices)
