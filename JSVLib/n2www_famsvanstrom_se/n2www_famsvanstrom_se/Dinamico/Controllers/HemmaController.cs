@@ -27,7 +27,7 @@ namespace www.fam_svanstrom.se.Dinamico.Controllers
                 devs.Add(dev.AsDevice());
             }
             new DeviceStatusRepository().UpdateStatus(devs);
-            return "OK";
+            return new DeviceStatusRepository().GetChangedStatus();
         }
     }
 }

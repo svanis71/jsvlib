@@ -5,6 +5,21 @@
 @model DevicePageModel
 
 <article class="article">
+    <section class="weather-box">
+        <header>Klimat</header>
+        <section class="temprature">
+            <section class="sensor-label">Inomhus</section>
+            <section class="sensor-value">@Model.Weather.IndoorTemprature&#176;C</section>
+        </section>
+        <section class="temprature">
+            <section class="sensor-label">Utomhus</section>
+            <section class="sensor-value">@Model.Weather.OutdoorTemprature&#176;C</section>
+        </section>
+        <section class="temprature">
+            <section class="sensor-label">Luftfuktighet inne</section>
+            <section class="sensor-value">@Model.Weather.IndoorHumidity %</section>
+        </section>
+    </section>
     <section class="status-checkbox-group">
         @foreach (var dev in Model.Devices) { 
             @Html.LightbulbCheckboxFor(b => dev.Status, new { @title = dev.Name, @id = "checkbox_" + dev.Id + "_" + dev.Name })
@@ -20,9 +35,9 @@
 
 <script type="text/javascript">
     var postData = {
-        OutdoorTemprature: 0.2,
-        IndoorTemprature: 20.0,
-        IndoorHumidity: 70.0,
+        OutdoorTemprature: -2.30,
+        IndoorTemprature: 21.30,
+        IndoorHumidity: 73.00,
         DeviceArray: [{
             Id: 1,
             Name: "Device 1",
@@ -38,19 +53,19 @@
         console.log("Hej", postData);
         console.log("JSON: ", JSON.stringify(postData));
 
-        //var xhr = new XMLHttpRequest();
-        //xhr.open("POST", "/api/hemma", true);
-        //xhr.setRequestHeader('Content-Type', 'application/json');
-        //xhr.onreadystatechange = function (d) {
-        //    if (xhr.readyState == 4) {
-        //        if (xhr.status >= 200 && xhr.status < 250) {
-        //            console.log("SUCCESS! ", d);
-        //        } else {
-        //            console.log("FAIL! ", xhr);
-        //        }
-        //    }
-        //};
-        //xhr.send(JSON.stringify(postData));
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/api/hemma", true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onreadystatechange = function (d) {
+            if (xhr.readyState == 4) {
+                if (xhr.status >= 200 && xhr.status < 250) {
+                    console.log("SUCCESS! ", d);
+                } else {
+                    console.log("FAIL! ", xhr);
+                }
+            }
+        };
+        xhr.send(JSON.stringify(postData));
 
     });
     

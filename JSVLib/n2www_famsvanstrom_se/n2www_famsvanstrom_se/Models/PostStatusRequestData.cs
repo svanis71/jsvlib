@@ -10,9 +10,9 @@ namespace www.fam_svanstrom.se.Models
     public class PostStatusRequestData
     {
         public DeviceViewModel[] DeviceArray { get; set; }
-        public float OutdoorTemprature { get; set; }
-        public float IndoorTemprature { get; set; }
-        public float IndoorHumidity { get; set; }
+        public double OutdoorTemprature { get; set; }
+        public double IndoorTemprature { get; set; }
+        public double IndoorHumidity { get; set; }
 
         private string DumpDeviceArrayToString()
         {

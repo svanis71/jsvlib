@@ -479,6 +479,7 @@
     <Content Include="Dinamico\Themes\Default\Views\ContentParts\CanYouSeeMe.cshtml" />
     <Content Include="Dinamico\Themes\Default\Views\ContentParts\Html5Circles.cshtml" />
     <Content Include="Dinamico\Themes\Default\Views\ContentParts\Weather.cshtml" />
+    <Content Include="Dinamico\Themes\WithLess\Content\weather.less" />
     <None Include="N2\n2cms.configuration.xsd">
       <SubType>Designer</SubType>
     </None>

@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using www.fam_svanstrom.se.Services;
 
 namespace n2www_famsvanstrom.se.Dinamico.Models
 {
@@ -41,13 +42,20 @@ namespace n2www_famsvanstrom.se.Dinamico.Models
     public class DevicePageModel : PageModelBase
     {
         DeviceRepository _repo;
-        public float OutdoorTemprature { get; set; }
-        public float IndoorTemprature { get; set; }
-        public float IndoorHumidity { get; set; }
+        TempratureDataService _tempratureDataService;
 
         public DevicePageModel()
         {
             _repo = new DeviceRepository();
+            _tempratureDataService = new TempratureDataService();
+        }
+
+        public TempratureDataService.CurrentWeather Weather
+        {
+            get
+            {
+                return _tempratureDataService.Weather;
+            }
         }
 
         public IEnumerable<DeviceViewModel> Devices
