@@ -232,7 +232,7 @@
     <Compile Include="Models\SsnGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Logger.cs" />
-    <Compile Include="Services\StatusChangeRepository.cs" />
+    <Compile Include="Services\DeviceStatusRepository.cs" />
     <Compile Include="Services\TempratureDataService.cs" />
     <Compile Include="Services\XmlFileHandler.cs" />
     <Compile Include="Web\Mvc\Html\MyHtmlHelpers.cs" />

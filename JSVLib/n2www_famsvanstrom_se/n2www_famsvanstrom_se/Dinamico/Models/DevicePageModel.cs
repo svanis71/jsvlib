@@ -41,12 +41,12 @@ namespace n2www_famsvanstrom.se.Dinamico.Models
     [WithEditableTitle, WithEditableName]
     public class DevicePageModel : PageModelBase
     {
-        DeviceRepository _repo;
+        DeviceStatusRepository _repo;
         TempratureDataService _tempratureDataService;
 
         public DevicePageModel()
         {
-            _repo = new DeviceRepository();
+            _repo = new DeviceStatusRepository();
             _tempratureDataService = new TempratureDataService();
         }
 
@@ -63,7 +63,7 @@ namespace n2www_famsvanstrom.se.Dinamico.Models
             get
             {
                 var l = new List<DeviceViewModel>();
-                foreach (var device in _repo.GetAll())
+                foreach (var device in _repo.GetCurrentStatus())
                 {
                     l.Add(new DeviceViewModel(device));
                 }
@@ -71,9 +71,9 @@ namespace n2www_famsvanstrom.se.Dinamico.Models
             }
         }
 
-        public void Save(IEnumerable<Device> devices)
-        {
-            _repo.Modify(devices);
-        }
+        //public void Save(IEnumerable<Device> devices)
+        //{
+        //    _repo.Modify(devices);
+        //}
     }
 }

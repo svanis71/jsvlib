@@ -12,6 +12,33 @@ namespace www.fam_svanstrom.se.Services
 {
     public class DeviceStatusRepository
     {
+        public IEnumerable<Device> GetCurrentStatus()
+        {
+            var list = new List<Device>();
+            var connString = ConfigurationManager.ConnectionStrings["N2CMS"].ConnectionString;
+            using (var conn = new SqlConnection(connString))
+            {
+                conn.Open();
+                using (var cmd = new SqlCommand("select id, name, status from DeviceStatus order by id", conn))
+                {
+                    using (var rdr = cmd.ExecuteReader())
+                    {
+
+                        while (rdr.Read())
+                        {
+                            var dev = new Device();
+                            dev.Id = rdr.GetInt32(0);
+                            dev.Name = rdr.GetString(1);
+                            dev.Status = rdr.GetInt32(2) == 1 ? DeviceStatus.On : DeviceStatus.Off;
+                            list.Add(dev);
+                        }
+                    }
+                }
+            }
+            return list;
+
+        }
+
         public void UpdateStatus(Device device)
         {
             var connString = ConfigurationManager.ConnectionStrings["N2CMS"].ConnectionString;

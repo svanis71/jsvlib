@@ -4,11 +4,19 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Configuration;
+using JSVLib.Logging;
 
 namespace www.fam_svanstrom.se.Services
 {
     public class TempratureDataService
     {
+        ILog _logger;
+ 
+        public TempratureDataService()
+        {
+            _logger = new JsvLogger(this.GetType());
+        }
+
         public class CurrentWeather
         {
             public DateTime LatestObservationDate { get; set; }
@@ -52,14 +60,20 @@ namespace www.fam_svanstrom.se.Services
 
         public void SaveTemp(double indoorTemprature, double outdoorTemprature, double indoorHumidity)
         {
+            _logger.DebugFormat("SaveTemp in");
             var latestSaved = FetchWeatherInfo();
+
             var diffIt = indoorTemprature - latestSaved.IndoorTemprature;
             var diffOt = outdoorTemprature - latestSaved.OutdoorTemprature;
             var diffIh = indoorHumidity - latestSaved.IndoorHumidity;
 
+            _logger.DebugFormat("diffIt = {0}, diffOt = {1}, diffIh = {2}", diffIt, diffOt, diffIh);
+
             // Only save if something has changed
             if( diffIt < 0.01 && diffOt < 0.01 && diffIh < 0.01)
                 return;
+
+            _logger.Debug("Write to database");
 
             var connString = ConfigurationManager.ConnectionStrings["N2CMS"].ConnectionString;         
             using(var conn = new SqlConnection(connString))
