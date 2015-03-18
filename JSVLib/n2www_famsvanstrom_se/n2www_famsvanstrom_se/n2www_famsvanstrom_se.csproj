@@ -247,6 +247,7 @@
     <Content Include="App_Data\Hem.n2.xml.gz.txt" />
     <Content Include="App_Data\n2cms.sdf" />
     <Content Include="App_Data\Root_Node.n2.xml.gz.txt" />
+    <Content Include="app_offline.htm" />
     <Content Include="Content\css\Site.css" />
     <Content Include="Content\css\slider-base.css" />
     <Content Include="Content\fonts\glyphiconshalflings-regular.svg" />
