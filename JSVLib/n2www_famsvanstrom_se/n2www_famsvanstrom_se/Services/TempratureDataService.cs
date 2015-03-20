@@ -88,6 +88,7 @@ namespace www.fam_svanstrom.se.Services
                     cmd.ExecuteNonQuery();
                 }
             }
+            _logger.InfoFormat("Temprature changed: {0}", outdoorTemprature);
         }
     }
 }

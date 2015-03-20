@@ -38,8 +38,7 @@ namespace JSVLib.Logging
 
 	    public JsvLogger(Type t)
 	    {
-	        if (ConfigurationManager.AppSettings != null)
-	            TraceLevel = ConfigurationManager.AppSettings["TraceLevel"] ?? "Info";
+	        TraceLevel = ConfigurationManager.AppSettings["TraceLevel"] ?? "Info";
 
 	        _typeToLog = t;
 
