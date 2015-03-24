@@ -3,14 +3,15 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
+    <title>fam-svanstrom.se - @ViewBag.Title</title>
 	<link href='http://fonts.googleapis.com/css?family=Oxygen:400,700,300' rel='stylesheet' type='text/css'>
-    @Styles.Render("~/Content/css")
+    <link rel="stylesheet" type="text/less" href="@Url.Content("~/Content/less/Site.less")"/>
+	@RenderSection("head", required: false)            
 </head>
 <body>
 	<section class="page">
 		@RenderBody()
-		@RenderSection("scripts", required: false)
+		@RenderSection("scripts", required: false)            
 	</section>
 </body>
 </html>

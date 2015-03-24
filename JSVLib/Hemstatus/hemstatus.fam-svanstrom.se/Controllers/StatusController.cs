@@ -52,32 +52,27 @@ namespace hemstatus.fam_svanstrom.se.Controllers
         }
 
         // POST api/status
-        public void Post([FromBody]PostStatusRequestData indata)
+        public string Post([FromBody]PostStatusRequestData indata)
         {
+            var ret = string.Empty;
             try
             {
+                var deviceStatusRepository = new DeviceStatusRepository();
                 _logger.Debug("Enter Post");
-
-                if (indata != null)
-                {
-
-                    //foreach (var device in indata)
-                    //{
-                    //    if(device.Id <= 0) // Something was very wrong
-                    //        continue;
-                        //_repository.Modify(devArray);
-                    //}
-                    
-                }
-                else
-                {
-                    _logger.Error("Input to post was null :-(");
-                }
+                _logger.Debug("Incoming POST: {0}", indata.ToString());
+                Debug.WriteLine(indata.ToString());
+                new TempratureDataService().SaveTemp(indata.IndoorTemprature, indata.OutdoorTemprature,
+                                                     indata.IndoorHumidity);
+                var devs = indata.DeviceArray.Select(dev => dev.Device).ToList();
+                deviceStatusRepository.UpdateStatus(devs);
+                ret = deviceStatusRepository.GetChangedStatus();
             }
             catch (Exception ex)
             {
                 _logger.Error("FATAL ERROR: {0}", ex.ToString());
+                ret = ex.Message;
             }
+            return ret;
         }
 
         // DELETE api/status/5

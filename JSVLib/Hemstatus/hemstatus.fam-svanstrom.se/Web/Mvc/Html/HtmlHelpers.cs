@@ -5,6 +5,8 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
+using hemstatus.fam_svanstrom.se.Svanstrom;
 
 namespace hemstatus.fam_svanstrom.se.Web.Mvc.Html
 {
@@ -12,7 +14,7 @@ namespace hemstatus.fam_svanstrom.se.Web.Mvc.Html
     {
         public static IHtmlString LightbulbCheckboxFor<TModel, TProperty>(this HtmlHelper<TModel> helper,
                                                                           Expression<Func<TModel, TProperty>> expression,
-            Dictionary<string, object> htmlAttributes = null)
+            object htmlAttributes = null)
         {
             var inputBuilder = new TagBuilder("input");
             var model = ModelMetadata.FromLambdaExpression(expression, helper.ViewData);
@@ -21,13 +23,25 @@ namespace hemstatus.fam_svanstrom.se.Web.Mvc.Html
             string id = "checkbox_" + rnd.Next();
             string title = string.Empty;
 
-            if (htmlAttributes != null) 
-                inputBuilder.MergeAttributes(htmlAttributes);
+            if (htmlAttributes != null)
+                inputBuilder.MergeAttributes(new RouteValueDictionary(htmlAttributes));
             title = inputBuilder.Attributes["title"];
 
             inputBuilder.Attributes.Add("type", "checkbox");
-            if((bool)model.Model)
-                inputBuilder.Attributes.Add("checked", "");
+            if (model.Model is DeviceStatus)
+            {
+                if((DeviceStatus)model.Model == DeviceStatus.On)
+                    inputBuilder.Attributes.Add("checked", "");
+            }
+            else if(model.Model is bool)
+            {
+                if ((bool)model.Model)
+                    inputBuilder.Attributes.Add("checked", "");
+            }
+            else
+            {
+                throw new ArgumentException("Model must be of type DeviceStatus or bool.");
+            }
 
             inputBuilder.AddCssClass("lightbulb");
             

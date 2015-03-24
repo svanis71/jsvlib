@@ -1,0 +1,36 @@
+﻿* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html {
+    font-family: 'Oxygen', sans-serif;
+    font-size: medium;
+    color: @base_text_color;
+    background: @backcolor;
+}
+
+body {
+}
+
+div, section, header, footer, article {
+    display: block;
+}
+
+hr {
+    border-color: lighten(@backcolor, 30%);
+}
+
+a 
+{
+    color: @a_base;
+    text-decoration: none;
+    :visited {
+        color: lighten(@a_base, 30%);
+    }
+    :hover {
+        color: saturate(@a_base, 15%);
+    }
+}

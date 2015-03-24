@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.Web;
 using hemstatus.fam_svanstrom.se.Extensions;
 using hemstatus.fam_svanstrom.se.Services;
+using hemstatus.fam_svanstrom.se.Svanstrom;
 
 namespace hemstatus.fam_svanstrom.se.Models
 {

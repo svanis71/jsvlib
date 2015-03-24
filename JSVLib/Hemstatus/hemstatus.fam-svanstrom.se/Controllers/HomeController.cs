@@ -14,10 +14,12 @@ namespace hemstatus.fam_svanstrom.se.Controllers
 
         public ActionResult Index()
         {
-            var repo = new DeviceRepository();
-            var devs = new DeviceModelRepo();
-            devs.AddRange(repo.GetAll().Select(device => new DeviceModel(device)));
-            return View(devs);
+            //var repo = new DeviceRepository();
+            //var devs = new DeviceModelRepo();
+            //devs.AddRange(repo.GetAll().Select(device => new DeviceModel(device)));
+
+            HomeViewModel vy = new HomeViewModel();
+            return View(vy);
         }
     }
 }

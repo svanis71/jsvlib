@@ -3,35 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using hemstatus.fam_svanstrom.se.Svanstrom;
 
 namespace hemstatus.fam_svanstrom.se.Models
 {
-    public enum DeviceStatus
-    {
-        On,
-        Off
-    }
-
     public class DeviceModelRepo : List<DeviceModel>
     {
         
-    }
-
-    public class DeviceModel 
-    {
-        private Device device;
-
-        public DeviceModel(Device device)
-        {
-            Id = device.Id;
-            Name = device.Name;
-            Status = device.Status == DeviceStatus.On;
-        }
-
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public bool Status { get; set; }
-
     }
 
     [Serializable]
