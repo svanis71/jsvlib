@@ -21,5 +21,10 @@ namespace hemstatus.fam_svanstrom.se.Controllers
             HomeViewModel vy = new HomeViewModel();
             return View(vy);
         }
+
+        public ViewResult House()
+        {
+            return View("House");
+        }
     }
 }

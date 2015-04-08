@@ -8,10 +8,10 @@ namespace hemstatus.fam_svanstrom.se.Models
 {
     public class PostStatusRequestData
     {
-        public DeviceModel[] DeviceArray { get; set; }
         public double OutdoorTemprature { get; set; }
         public double IndoorTemprature { get; set; }
         public double IndoorHumidity { get; set; }
+        public DeviceModel[] DeviceArray { get; set; }
 
         private string DumpDeviceArrayToString()
         {
@@ -19,7 +19,7 @@ namespace hemstatus.fam_svanstrom.se.Models
             ret.Append("[");
             foreach (var dev in DeviceArray)
             {
-                ret.AppendLine(dev.ToString());
+                ret.AppendLine(dev.AsDevice().ToString());
             }
             ret.Append("]");
             return ret.ToString();

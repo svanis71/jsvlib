@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
+using System.Web;
 using System.Web.Http;
 using hemstatus.fam_svanstrom.se.Models;
 using hemstatus.fam_svanstrom.se.Services;
@@ -54,16 +55,15 @@ namespace hemstatus.fam_svanstrom.se.Controllers
         // POST api/status
         public string Post([FromBody]PostStatusRequestData indata)
         {
-            var ret = string.Empty;
+            string ret;
             try
             {
                 var deviceStatusRepository = new DeviceStatusRepository();
-                _logger.Debug("Enter Post");
                 _logger.Debug("Incoming POST: {0}", indata.ToString());
                 Debug.WriteLine(indata.ToString());
                 new TempratureDataService().SaveTemp(indata.IndoorTemprature, indata.OutdoorTemprature,
                                                      indata.IndoorHumidity);
-                var devs = indata.DeviceArray.Select(dev => dev.Device).ToList();
+                var devs = indata.DeviceArray.Select(dev => dev.AsDevice()).ToList();
                 deviceStatusRepository.UpdateStatus(devs);
                 ret = deviceStatusRepository.GetChangedStatus();
             }

@@ -1,31 +1,14 @@
 ﻿@import url("myvars.less");
 @import url("elements.less");
+@import url("layout.less");
 @import url("lightbulb.less");
 @import url("weather.less");
-
-.header {
-    width: 95%;
-    margin: 0 auto;
-}
-
-.page {
-    width: 90%;
-    margin: 0 auto;
-    background: @wrapper_background;
-}
-
-.content {
-    width: 65%;
-}
-
-.page-right-aside {
-    width: 35%;
-    float: right;
-}
+@import url("features.less");
 
 nav.top-navbar 
 {
     border-bottom: thin solid @navborder;
+    padding-top: 1em;
     width: 100%;
 
     ul {
@@ -73,19 +56,6 @@ nav.submenu-navbar {
     }
 }
 
-.status-checkbox-group {
-    width: 50%;
-    display: inline-block;
-}
 
-.house-section {
-    display:inline-block;
-    cursor: pointer;
-    > img {
-        width: 25%;
-    }
-}
 
-.nomargin { margin: 0;}
-.nopadding { padding: 0; }
-.nooutline { outline: 0; }
+

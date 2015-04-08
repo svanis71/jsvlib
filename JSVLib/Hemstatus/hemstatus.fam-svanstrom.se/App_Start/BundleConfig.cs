@@ -18,6 +18,11 @@ namespace hemstatus.fam_svanstrom.se
                         "~/Scripts/jquery.unobtrusive*",
                         "~/Scripts/jquery.validate*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/ssn/js").IncludeDirectory("~/Scripts/ssn", "*.js"));
+            bundles.Add(new ScriptBundle("~/bundles/mobile").Include("~/Scripts/detectmobile.js"));
+            bundles.Add(new ScriptBundle("~/bundles/site").Include("~/Scripts/site.js"));
+            bundles.Add(new StyleBundle("~/bundles/ssn/css").IncludeDirectory("~/Content/ssngen", "*.css"));
+
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(

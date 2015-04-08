@@ -1,33 +1,7 @@
-﻿@using hemstatus.fam_svanstrom.se.Web.Mvc.Html
-@model hemstatus.fam_svanstrom.se.Models.HomeViewModel
+﻿<article class="content">
+    <header>
+        <h1>Familjen Svanströms ställe</h1>
+    </header>
+    <section></section>
 
-<article class="article">
-    <section class="weather-box">
-        <header>Klimat</header>
-        <section class="temprature">
-            <section class="sensor-label">Inomhus</section>
-            <section class="sensor-value">@Model.Weather.IndoorTemprature&#176;C</section>
-        </section>
-        <section class="temprature">
-            <section class="sensor-label">Utomhus</section>
-            <section class="sensor-value">@Model.Weather.OutdoorTemprature&#176;C</section>
-        </section>
-        <section class="temprature">
-            <section class="sensor-label">Luftfuktighet inne</section>
-            <section class="sensor-value">@Model.Weather.IndoorHumidity %</section>
-        </section>
-    </section>
-    <section class="status-checkbox-group">
-        @foreach (var dev in Model.Devices) { 
-            @Html.LightbulbCheckboxFor(b => dev.Status, new { @title = dev.Name, @id = "checkbox_" + dev.Id + "_" + dev.Name })
-        }
-    </section>
-    @Html.RenderPartial("House")
 </article>
-
-@section scripts {
-
-
-
-
-}

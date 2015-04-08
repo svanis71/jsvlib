@@ -1,17 +1,37 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>fam-svanstrom.se - @ViewBag.Title</title>
 	<link href='http://fonts.googleapis.com/css?family=Oxygen:400,700,300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/less" href="@Url.Content("~/Content/less/Site.less")"/>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/less/Site.less")"/>
 	@RenderSection("head", required: false)            
 </head>
 <body>
-	<section class="page">
+    <header id="header" class="header">
+        <section id="top" class="top">
+            <section class="jsvdate-section"><section class="jsvdate-date"></section><section class="jsvdate-time"></section></section>
+        </section>
+        <nav class="top-navbar">
+            <ul>
+                <li><a href="@Url.Action("Index", "Hemma")">Läget hemma</a></li>
+                <li><a href="@Url.Action("Index", "ProjectEuler")">Project Euler</a></li>
+            </ul>
+        </nav>
+        <nav class="submenu"></nav>
+    </header>
+    @if (IsSectionDefined("banner"))
+    {
+        <section id="banner" class="banner">
+            @RenderSection("banner")
+        </section>
+    }
+ 	<section class="page">
 		@RenderBody()
-		@RenderSection("scripts", required: false)            
-	</section>
+	     @RenderSection("scripts", required: false) 
+         @Scripts.Render("~/bundles/site")           
+	 </section>
 </body>
 </html>

@@ -1,0 +1,26 @@
+﻿<section class="jsvdate-section"><section class="jsvdate-date"></section><section class="jsvdate-time"></section></section>
+
+@section scripts
+<script type="text/javascript">
+    var jsvDate = {
+        dateSections: document.getElementsByClassName("jsvdate-date"),
+        timeSections: document.getElementsByClassName("jsvdate-time"),
+        timerId: 0
+    };
+    
+    jsv.prototype.showTime = function() {
+        var time = new Date();
+        var curDate = time.getFullYear() + "-" + time.getMonth() + "-" + time.getDay();
+        var curTime = time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
+        for (var i = 0; i < dateSections.length; i++) {
+            dateSections[i].innerText = curDate;
+        }
+        for (var i = 0; i < timeSections.length; i++) {
+            timeSections[i].innerText = curTime;
+        }
+        timerId = setInterval(1000, jsvDate.showTime);
+    };
+    document.addEventListener("DOMContentLoaded", function(event) {
+        jsvDate.showTime();
+    });
+</script>

@@ -1,0 +1,61 @@
+﻿@using hemstatus.fam_svanstrom.se.Web.Mvc.Html
+@model hemstatus.fam_svanstrom.se.Models.HomeViewModel
+
+<article class="article">
+    <header class="header">
+        <h1>Läget hemma</h1>
+    </header>
+    <section class="weather-box">
+        <header><h2>Klimat</h2></header>
+        <section class="temprature">
+            <section class="sensor-label">Inomhus</section>
+            <section class="sensor-value">@Model.Weather.IndoorTemprature&#176;C</section>
+        </section>
+        <section class="temprature">
+            <section class="sensor-label">Utomhus</section>
+            <section class="sensor-value">@Model.Weather.OutdoorTemprature&#176;C</section>
+        </section>
+        <section class="temprature">
+            <section class="sensor-label">Luftfuktighet inne</section>
+            <section class="sensor-value">@Model.Weather.IndoorHumidity %</section>
+        </section>
+    </section>
+    <section class="devices">
+        <header><h2>Status på kontakterna</h2></header>        
+        <section class="status-checkbox-group">
+            @foreach (var dev in Model.Devices) { 
+                @Html.LightbulbCheckboxFor(b => dev.Status, new { @title = dev.Name, @id = "checkbox_" + dev.Id + "_" + dev.Name })
+            }
+        </section>
+        @{
+            Html.RenderPartial("House", Model);
+        }
+    </section>
+</article>
+
+@section scripts {
+
+<script type="text/javascript">
+    var postData = {
+        OutdoorTemprature: 4.30,
+        IndoorTemprature: 20.30,
+        IndoorHumidity: 39.00,
+        DeviceArray: [{
+                Id: 1,
+                Name: "Device 1",
+                Status: true
+            },
+            {
+                Id: 2,
+                Name: "Device 2",
+                Status: true
+            }]
+    };
+    
+    document.addEventListener("DOMContentLoaded", function (event) {
+        console.log("DOM fully loaded and parsed");
+    });
+    
+</script>    
+
+}

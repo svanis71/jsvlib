@@ -4,6 +4,7 @@ namespace hemstatus.fam_svanstrom.se.Models
 {
     public class DeviceModel 
     {
+        public DeviceModel() {}
         public DeviceModel(Device device)
         {
             Device = new Device()
@@ -17,11 +18,19 @@ namespace hemstatus.fam_svanstrom.se.Models
             Status = device.Status == DeviceStatus.On;
         }
 
-        public Device Device { get; private set; }
-
         public int Id { get; set; }
         public string Name { get; set; }
         public bool Status { get; set; }
-
+        public Device Device { get; private set; }
+        public Device AsDevice()
+        {
+            return new Device()
+                {
+                    Id = Id,
+                    Name = Name,
+                    Status = Status ? DeviceStatus.On : DeviceStatus.Off
+                };
+        }
+        
     }
 }

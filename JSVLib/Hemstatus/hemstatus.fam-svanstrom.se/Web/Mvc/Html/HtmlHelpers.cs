@@ -16,6 +16,7 @@ namespace hemstatus.fam_svanstrom.se.Web.Mvc.Html
                                                                           Expression<Func<TModel, TProperty>> expression,
             object htmlAttributes = null)
         {
+            var section = new TagBuilder("section");
             var inputBuilder = new TagBuilder("input");
             var model = ModelMetadata.FromLambdaExpression(expression, helper.ViewData);
             var rnd = new Random();
@@ -59,9 +60,12 @@ namespace hemstatus.fam_svanstrom.se.Web.Mvc.Html
 
             labelBuilder.InnerHtml = titleBuilder.ToString();
 
-            var html = new StringBuilder(inputBuilder.ToString());
+            var html = new StringBuilder(inputBuilder.ToString(TagRenderMode.SelfClosing));
             html.Append(labelBuilder.ToString());
-            return new MvcHtmlString(html.ToString());
+
+            section.InnerHtml = html.ToString();
+            section.AddCssClass("lightbulb-container");
+            return new MvcHtmlString(section.ToString());
         }
     }
 }
