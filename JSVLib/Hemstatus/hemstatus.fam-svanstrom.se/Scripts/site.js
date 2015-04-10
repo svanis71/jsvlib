@@ -32,9 +32,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
         var burger = document.querySelector("a#burger");
         burger.addEventListener("click", function() {
         var isOpen = this.getAttribute("data-isopen") == "true";
+	this.setAttribute("data-isopen", 
+		isOpen ? "false" : "true");
         var lis = document.querySelectorAll(".topmenu li:not(.burger)");
         for (var i = 0; i < lis.length; i++) {
-            lis.style.display = isOpen ? "none" : "block";
+            lis[i].style.display = isOpen ? "none" : "block";
         }
             
         });
