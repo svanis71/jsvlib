@@ -15,12 +15,13 @@
             <section class="jsvdate-section"><section class="jsvdate-date"></section><section class="jsvdate-time"></section></section>
         </section>
         <nav class="top-navbar">
-            <ul>
+            <ul class="topmenu">
+                <li class="burger"><a href="#" id="burger" data-isopen="false"><img src="@Url.Content("~/Content/img/burger.png")" class="burger"/></a></li>
+                <li><a href="/"><img src="@Url.Content("~/Content/img/gohome.png")" alt="Hem" class="nav-home"/></a></li>
                 <li><a href="@Url.Action("Index", "Hemma")">Läget hemma</a></li>
                 <li><a href="@Url.Action("Index", "ProjectEuler")">Project Euler</a></li>
             </ul>
         </nav>
-        <nav class="submenu"></nav>
     </header>
     @if (IsSectionDefined("banner"))
     {

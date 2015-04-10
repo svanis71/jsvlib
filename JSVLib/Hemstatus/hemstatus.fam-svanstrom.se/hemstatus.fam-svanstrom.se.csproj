@@ -148,6 +148,7 @@
     <Compile Include="Models\PostStatusRequestData.cs" />
     <Compile Include="Models\Problem.cs" />
     <Compile Include="Models\Problem1.cs" />
+    <Compile Include="Models\Problem2.cs" />
     <Compile Include="Models\ProblemList.cs" />
     <Compile Include="Models\StatusChangeRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -160,8 +161,10 @@
     <Compile Include="Web\Mvc\Html\HtmlHelpers.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\img\burger.png" />
     <Content Include="Content\img\glodlampa.png" />
     <Content Include="Content\img\glodlampa_av.png" />
+    <Content Include="Content\img\gohome.png" />
     <Content Include="Content\img\Hus.png" />
     <Content Include="Content\ssngen\ssngen.css" />
     <Content Include="Global.asax" />
@@ -205,6 +208,9 @@
     <Content Include="Content\less\layout.less" />
     <Content Include="Content\less\euler.less" />
     <Content Include="Content\less\features.less" />
+    <Content Include="Content\less\navigation.less" />
+    <Content Include="Content\less\navigation-tablet.less" />
+    <Content Include="Content\less\navigation-desktop.less" />
     <None Include="Properties\PublishProfiles\Debug.pubxml" />
     <Content Include="Views\Home\Index.cshtml" />
     <None Include="Properties\PublishProfiles\Release.pubxml" />

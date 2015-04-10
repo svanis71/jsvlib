@@ -10,7 +10,8 @@ namespace hemstatus.fam_svanstrom.se.Models
         {
             _problemList = new List<IProblemSolver>()
                 {
-                    new Problem1()
+                    new Problem1(),
+                    new Problem2()
                 };
         }
 

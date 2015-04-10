@@ -21,13 +21,17 @@ namespace hemstatus.fam_svanstrom.se.Controllers
         public StatusController()
             : this(new DeviceRepository())
         {
-            
+            _logger = new Logger(GetType(), true);
         }
 
         public StatusController(DeviceRepository repository)
         {
             _repository = repository;
-            _logger = new Logger(GetType(), true);
+        }
+
+        internal ILogger Logger
+        {
+            get { return _logger; }
         }
 
         // GET api/status
@@ -58,8 +62,13 @@ namespace hemstatus.fam_svanstrom.se.Controllers
             string ret;
             try
             {
+                if (indata == null)
+                {
+                    Logger.Error("indata was null!");
+                    throw new ArgumentNullException("indata", "Indata to post was null");
+                }
                 var deviceStatusRepository = new DeviceStatusRepository();
-                _logger.Debug("Incoming POST: {0}", indata.ToString());
+                Logger.Debug("Incoming POST: {0}", indata.ToString());
                 Debug.WriteLine(indata.ToString());
                 new TempratureDataService().SaveTemp(indata.IndoorTemprature, indata.OutdoorTemprature,
                                                      indata.IndoorHumidity);
@@ -69,7 +78,7 @@ namespace hemstatus.fam_svanstrom.se.Controllers
             }
             catch (Exception ex)
             {
-                _logger.Error("FATAL ERROR: {0}", ex.ToString());
+                Logger.Error("FATAL ERROR: {0}", ex.ToString());
                 ret = ex.Message;
             }
             return ret;
