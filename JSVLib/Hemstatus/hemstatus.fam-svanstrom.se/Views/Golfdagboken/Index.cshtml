@@ -1,0 +1,35 @@
+﻿
+<section class="calender">
+    
+</section>
+
+@section scripts {
+    <script type="text/javascript">
+        function jsvCalendar(containerSelector, attributes) {
+            var self = this;
+            var curYear = year;
+            var curMonth = month;
+            var curDate = 1;
+            var containers = document.querySelectorAll(containerSelector);
+            
+            if (year == 'undefined' || year == null) {
+                var today = new Date();
+                curYear = today.getFullYear();
+                curMonth = today.getMonth();    
+            }
+            
+            var _render = function() {
+                var date = new Date(curYear, curMonth, 1, 0, 0, 1, 0);
+                var mainSection = document.createElement("section");
+                mainSection.className = "jsv-calendar-large-month";
+
+
+                for (var i = 0; i < containers.length; i++) {
+                    containers.appendChild(mainSection);
+                }
+                
+
+            };
+        }
+    </script>    
+}

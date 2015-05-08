@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace hemstatus.fam_svanstrom.se.Controllers
 {
+    [Authorize]
     public class GolfdagbokenController : Controller
     {
         //

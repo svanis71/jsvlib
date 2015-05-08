@@ -218,6 +218,7 @@
     <Content Include="Views\Hemma\House.cshtml" />
     <Content Include="Views\ProjectEuler\Index.cshtml" />
     <Content Include="Views\Clock\Clock.cshtml" />
+    <Content Include="Views\Golfdagboken\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
