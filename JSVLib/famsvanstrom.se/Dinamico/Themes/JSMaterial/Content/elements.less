@@ -1,0 +1,62 @@
+﻿* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html {
+    font-family: 'Oxygen', sans-serif;
+    font-size: medium;
+    color: @color;
+    background: @backcolor;
+}
+
+body {
+}
+
+div, section, header, footer, article {
+    display: block;
+}
+
+hr {
+    border-color: @hr_color;
+}
+
+a 
+{
+    color: @a_color;
+    text-decoration: none;
+    &:visited {
+        color: @a_color;
+    }
+    &:hover {
+        color: @a_hover;
+        text-decoration: underline;
+    }
+}
+
+h1 {
+    font-size: 2.0em;
+}
+
+h2 {
+    font-size: 1.7em;
+}
+
+h3 {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+ul {
+    -webkit-margin-start: 0;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-padding-start: 0;
+}

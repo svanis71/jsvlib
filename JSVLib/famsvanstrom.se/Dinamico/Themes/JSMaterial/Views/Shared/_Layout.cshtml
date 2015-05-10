@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    @{
+        Content.PrependDefinition(re =>
+        {
+            re.Tab("Content", "Content");
+            re.PublishedRange().Container("Metadata");
+        });
+    }
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>fam-svanstrom.se - @ViewBag.Title</title>
+    <link href='//fonts.googleapis.com/css?family=Oxygen:400,700,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="@Url.ThemedContent("~/Content/site.less")"/>
+	@RenderSection("head", required: false)            
+</head>
+<body>
+    @{ Html.ControlPanel().Render(); }
+    <header id="header" class="header">
+        <section id="top" class="top">
+            <div class="top-item"><a href="@Content.Traverse.StartPage.Url"><i class="fa fa-home"></i></a></div>
+            <div class="top-item search"><input type="search" id="q" placeholder="Sök"/></div>
+            <div class="top-item"><i class="fa fa-lock"></i></div>
+            <div class="top-item jsvdate-section"><section class="jsvdate-date"></section><section class="jsvdate-time"></section></div>
+        </section>
+    </header>
+    <section id="banner" class="banner">
+        @{Html.DroppableZone("Banner").Render();}
+    </section>
+    <section id="page" class="page">
+        @if (IsSectionDefined("main"))
+        { 
+            <section id="main-content" class="main">
+                @RenderSection("main")
+                @RenderSection("scripts", required: false)
+            </section>
+        }
+        else
+        {
+            <section id="main-content" class="main">
+                @{ Html.RenderPartial("LayoutPartials/PreContent"); }
+                <article id="content" class="content">
+                    @RenderBody()
+                    @RenderSection("scripts", required: false)
+                </article>
+                @{ Html.RenderPartial("LayoutPartials/PostContent"); }
+            </section>
+        }
+
+    </section>
+    <footer id="footer">
+    </footer>
+    <script src="~/Scripts/jsvdate.js"></script>
+    <script src="~/Scripts/load.js"></script>
+</body>
+</html>

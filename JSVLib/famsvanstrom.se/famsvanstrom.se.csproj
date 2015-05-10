@@ -217,6 +217,10 @@
     <Content Include="Dinamico\Themes\JSMaterial\Views\StartPage\Index.cshtml" />
     <Content Include="Dinamico\Themes\JSMaterial\Views\StartPage\NotFound.cshtml" />
     <Content Include="Dinamico\Themes\JSMaterial\Views\LanguageIntersection\Index.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\DevicesPage\Index.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Weather\Index.cshtml" />
+    <Content Include="Dinamico\Themes\JSMaterial\Views\Weather\Index.cshtml" />
+    <Content Include="Dinamico\Themes\JSMaterial\Content\banner.less" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />
@@ -241,12 +245,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Dinamico\Controllers\ContentPagesController.cs" />
     <Compile Include="Dinamico\Controllers\ContentPartsController.cs" />
+    <Compile Include="Dinamico\Controllers\DevicesPageController.cs" />
     <Compile Include="Dinamico\Controllers\FallbackController.cs" />
     <Compile Include="Dinamico\Controllers\FreeFormController.cs" />
     <Compile Include="Dinamico\Controllers\LanguageIntersectionController.cs" />
     <Compile Include="Dinamico\Controllers\MembershipController.cs" />
     <Compile Include="Dinamico\Controllers\StartPageController.cs" />
     <Compile Include="Dinamico\Controllers\TestController.cs" />
+    <Compile Include="Dinamico\Controllers\WeatherController.cs" />
     <Compile Include="Dinamico\Defaults.cs" />
     <Compile Include="Dinamico\GlobalMvcStarter.cs" />
     <Compile Include="Dinamico\Models\AccountModels.cs" />
@@ -270,6 +276,8 @@
     <Compile Include="Models\DeviceRepository.cs" />
     <Compile Include="Models\HomeViewModel.cs" />
     <Compile Include="Models\IProblemSolver.cs" />
+    <Compile Include="Models\Pages\DevicesPageModel.cs" />
+    <Compile Include="Models\Partials\WeatherPartialModel.cs" />
     <Compile Include="Models\PostStatusRequestData.cs" />
     <Compile Include="Models\Problem.cs" />
     <Compile Include="Models\Problem1.cs" />
@@ -411,6 +419,14 @@
     <Folder Include="Controllers\" />
     <Folder Include="Dinamico\Themes\JSMaterial\Scripts\" />
     <Folder Include="Dinamico\Themes\JSMaterial\Views\Shared\LayoutPartials\" />
+    <Folder Include="Views\DevicesPage\" />
+    <Folder Include="Views\Weather\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyLib\MyLib.csproj">
+      <Project>{439E7A6A-499E-47D7-BF53-5DCF4038C631}</Project>
+      <Name>MyLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -425,7 +441,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>62775</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:52741/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

@@ -1,0 +1,9 @@
+﻿@model Dinamico.Models.LanguageIntersection
+
+@section main {
+    <article id="main" class="page clearfix">
+	    @{ Html.RenderPartial("LayoutPartials/PreContent"); }
+	    @Content.Render.Tokens("Text").Wrap(@<div id="content">@item.RenderContents()</div>)
+	    @{ Html.RenderPartial("LayoutPartials/PostContent"); }
+    </article>
+}
