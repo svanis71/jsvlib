@@ -59,15 +59,15 @@ namespace famsvanstrom.se.Services
         public SmhiForecastService(string coordinate)
         {
             var coords = coordinate.Split(';');
-            _longitude = coords[0];
-            _lattitude = coords[1];
+            _lattitude = coords[0];
+            _longitude = coords[1];
         }
 
         public IEnumerable<SmhiWheatherForcast> GetForecast(int hours = 4, int hourInterval = 3)
         {
             var forecastList = new List<SmhiWheatherForcast>();
             var url = new Uri(string.Format("http://opendata-download-metfcst.smhi.se/api/category/pmp1.5g" +
-                "/version/1/geopoint/lat/{0}/lon/{1}/data.json", _longitude, _lattitude));
+                "/version/1/geopoint/lat/{0}/lon/{1}/data.json",_lattitude, _longitude));
             using (var wc = new WebClient())
             {
                 string data = wc.DownloadString(url);

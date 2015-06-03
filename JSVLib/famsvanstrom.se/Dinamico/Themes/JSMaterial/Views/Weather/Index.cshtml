@@ -44,54 +44,30 @@
 </section>
 
 <script type="text/javascript">
-    function tst() {
-        var url = "/Weather/GetForecast/56.2;15.541667";
+    my.position = { lat: "56.2", lon: "15.541667" };
+    my.WeatherForecast = function () {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (p) {
+                var coords = p.coords;
+                my.position.lat = coords.latitude;
+                my.position.lon = coords.longitude;
+            });
+        }
+        var url = "/Weather/GetForecast/" + my.position.lat + ";" + my.position.lon;
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function() {
             if (xhr.status == 200 && xhr.readyState == 4) {
-                var fc = JSON.parse(xhr.responseText);
-            }
-        };
-        xhr.open("GET", url, true);
-        xhr.send();
-    }
-
-    my.WeatherForecast = function() {
-        var vader;
-        var forecast = [];
-
-        var url = "http://opendata-download-metfcst.smhi.se/api/category/pmp1.5g/version/1/geopoint/lat/56.2/lon/15.541667/data.json";
-        //var url = "http://www.klart.se/widget/get_widget/e1e3d3b540b1495f83a12098f542ac0a?v=11002";
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function() {
-            if (xhr.status == 200 && xhr.readyState == 4) {
-                vader = JSON.parse(xhr.responseText);
-                var now = new Date();
-                var forecasts = vader.timeseries;
-                var idx = 0;
-                for (; idx < 72; idx++) {
-                    var ftime = new Date(Date.parse(forecasts[idx].validTime));
-                    if (ftime > now) break;
-                }
-                for (var f = 0; f < 4; f++) {
-                    var fc = forecasts[idx + f];
+                var vaderData = JSON.parse(xhr.responseText);
+                for (var f = 0; f < vaderData.length; f++) {
+                    var forecast = vaderData[f];
                     var timeid = "hour" + (f + 1) + "-time";
                     var tempratureid = "hour" + (f + 1) + "-temprature";
                     
                     var timespanElement = document.getElementById(timeid);
                     var tempraturespanElement = document.getElementById(tempratureid);
-                    
-                    var secsSince1970 = Date.parse(fc.validTime);
-                    var temp = fc.t;
-                    
-                    var ft = new Date(secsSince1970);
-                    var hour = ft.getHours().toString().padLeft('0', 2);
-                    var minute = ft.getMinutes().toString().padLeft('0', 2);
-
-                    timespanElement.innerText = hour + ":" + minute;
-                    tempraturespanElement.innerText = temp;
+                    timespanElement.innerText = forecast.Time;
+                    tempraturespanElement.innerText = forecast.Temprature;
                 }
-                //vader = xhr.responseText;
             }
         };
         xhr.open("GET", url, true);
