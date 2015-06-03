@@ -1,0 +1,31 @@
+﻿@using System.Web.Optimization
+@model famsvanstrom.se.Models.Pages.SsnTestPage
+
+@section head {
+    <link href="@Url.ThemedContent("~/Content/ssn.less")" rel="stylesheet" type="text/css"/>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/ssn/ssntest.js"></script>
+}
+
+@section main {
+<section class="ssntest-app" ng-app="ssnChecksumApp" ng-controller="PnrController">
+  <section class="input-area">
+    <section class="label">
+      <label for="pnr-input">@Model.Label</label>
+    </section>
+    <section class="input">
+      <input type="text" class="pnr-input {{pnrClass}}" id="pnr-input" maxlength="13" autofocus  placeholder="@Model.Placeholder" ng-model="pnr" value="{{pnr}}"/>
+    </section>
+  </section>
+  <section class="result-area">
+    <span class="checksum">
+      {{checksum}}
+    </span>
+  </section>
+<section class="hack"></section>
+</section>
+}
+
+@section scripts {
+    
+}

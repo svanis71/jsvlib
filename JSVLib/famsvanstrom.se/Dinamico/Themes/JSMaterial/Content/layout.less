@@ -1,8 +1,15 @@
-﻿.header {
+﻿@wrapper_width: 98%;
+
+.header {
     width: 100%;
     height: 5em;
     background: @header_back;
-    margin: 0 auto;
+
+    .header-content {
+        width: @wrapper_width;
+        margin: 0 auto;
+    }
+
     h1 {
         text-align: center;
         margin-bottom: 1.0em;
@@ -19,11 +26,20 @@
     }
 }
 
+.site-title {
+    font-size: 3em;
+    color: @title_color;
+    font-weight: bold;
+}
 
-.page {
-    width: 80%;
+.wrapper {
+    width: @wrapper_width;
     margin: 0 auto;
     background: @wrapper_background;
+}
+
+.page {
+    width: 100%;
 }
 
 .main {
@@ -32,8 +48,11 @@
 
 .banner {
     margin-top: 0.5em;
-    height: 1.4em;
+    height: 2.4em;
     background: @banner_background;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .nomargin { margin: 0;}
@@ -53,13 +72,19 @@ section {
         display: flex;
         flex-wrap: nowrap;
         justify-content: flex-start;
-        height: 5em;
+        height: 6em;
         border: solid medium #555555;
         border-radius: 0.7em;
+        box-shadow: 0.1em 0.1em 0.1em 0.1em darken(@wrapper_background, 20%);
         margin: 1em 1em 1em 1em;
         overflow: hidden;
-        max-width: 35%;
-        min-width: 35%;
+        width: 70%;
+
+        &:hover {
+            transform: scale(1.1, 1.1);
+            box-shadow: 0.2em 0.3em #aaaaaa;
+            transition: transform 1s;
+        }
 
         .big-box-item {
         }
@@ -68,16 +93,15 @@ section {
             display: flex;
             flex-flow: row;
             justify-content: center;
-            align-items: center;
-            width: 30%;
+            align-items: stretch;
+            width: 25%;
 
             img {
-                width: 100%;
             }
         }
 
         .big-box-title {
-            width: 70%;
+            width: 75%;
             padding: 1em;
 
             h1 {
@@ -92,7 +116,7 @@ section {
     }
 }
 
-.ulbig-boxes {
+.ul.big-boxes {
     ul {
         li {
             list-style: none;
@@ -110,3 +134,4 @@ section {
         }
     }
 }
+

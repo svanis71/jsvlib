@@ -1,3 +1,5 @@
-﻿document.addEventListener("DOMContentLoaded", function(event) {
+﻿var my = {};
+
+document.addEventListener("DOMContentLoaded", function (event) {
     new JsvDateTime().show();
 });

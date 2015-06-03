@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using N2
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -7,6 +8,7 @@
         {
             re.Tab("Content", "Content");
             re.PublishedRange().Container("Metadata");
+            re.Title("fam-svanstrom.se");
         });
     }
     <meta charset="UTF-8">
@@ -16,45 +18,47 @@
     <link href='//fonts.googleapis.com/css?family=Oxygen:400,700,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="@Url.ThemedContent("~/Content/site.less")"/>
-	@RenderSection("head", required: false)            
+    <script src="@Url.Content("~/Scripts/utils.js")"></script>
+    <script src="@Url.Content("~/Scripts/jsvdate.js")"></script>
+    <script src="@Url.Content("~/Scripts/load.js")"></script>
+    @RenderSection("head", required: false)
 </head>
 <body>
     @{ Html.ControlPanel().Render(); }
     <header id="header" class="header">
-        <section id="top" class="top">
-            <div class="top-item"><a href="@Content.Traverse.StartPage.Url"><i class="fa fa-home"></i></a></div>
-            <div class="top-item search"><input type="search" id="q" placeholder="Sök"/></div>
-            <div class="top-item"><i class="fa fa-lock"></i></div>
-            <div class="top-item jsvdate-section"><section class="jsvdate-date"></section><section class="jsvdate-time"></section></div>
+        <section class="header-content">
+            @{Html.RenderPartial("LayoutPartials/Top");}
+            <section class="site-title">@Content.Traverse.StartPage.Title
+            </section>
         </section>
     </header>
     <section id="banner" class="banner">
         @{Html.DroppableZone("Banner").Render();}
     </section>
-    <section id="page" class="page">
-        @if (IsSectionDefined("main"))
-        { 
-            <section id="main-content" class="main">
-                @RenderSection("main")
-                @RenderSection("scripts", required: false)
-            </section>
-        }
-        else
-        {
-            <section id="main-content" class="main">
-                @{ Html.RenderPartial("LayoutPartials/PreContent"); }
-                <article id="content" class="content">
-                    @RenderBody()
+    <div class="wrapper">
+        <section id="page" class="page">
+            @if (IsSectionDefined("main"))
+            { 
+                <section id="main-content" class="main">
+                    @RenderSection("main")
                     @RenderSection("scripts", required: false)
-                </article>
-                @{ Html.RenderPartial("LayoutPartials/PostContent"); }
-            </section>
-        }
+                </section>
+            }
+            else
+            {
+                <section id="main-content" class="main">
+                    @{ Html.RenderPartial("LayoutPartials/PreContent"); }
+                    <article id="content" class="content">
+                        @RenderBody()
+                        @RenderSection("scripts", required: false)
+                    </article>
+                    @{ Html.RenderPartial("LayoutPartials/PostContent"); }
+                </section>
+            }
 
-    </section>
-    <footer id="footer">
-    </footer>
-    <script src="~/Scripts/jsvdate.js"></script>
-    <script src="~/Scripts/load.js"></script>
+        </section>
+        <footer id="footer">
+        </footer>
+    </div>
 </body>
 </html>

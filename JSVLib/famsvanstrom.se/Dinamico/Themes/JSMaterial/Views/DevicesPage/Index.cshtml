@@ -1,0 +1,18 @@
+﻿@using famsvanstrom.se.Web.Mvc.Html
+@model famsvanstrom.se.Models.Pages.DevicesPageModel
+
+@section head {
+    <link rel="stylesheet" href="@Url.ThemedContent("~/Content/lightbulb.less")"/>    
+}
+
+@section main {
+        <section class="status-checkbox-group">
+            @foreach (var dev in Model.Devices) { 
+                @Html.LightbulbCheckboxFor(b => dev.Status, new { @title = dev.Name, @id = "checkbox_" + dev.Id + "_" + dev.Name })
+            }
+        </section>
+}
+
+@section scripts {
+    
+}

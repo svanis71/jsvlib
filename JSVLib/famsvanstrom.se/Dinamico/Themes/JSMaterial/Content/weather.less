@@ -1,4 +1,21 @@
-﻿.weather-box {
+﻿@item_margin_left: 1em;
+
+.weather {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+
+    .temprature {
+        margin-left: @item_margin_left;
+        display: flex;
+
+        .sensor-label {
+            margin-right: 0.2em;
+        }
+    }
+}
+
+.weather-box {
     background: rgb(0,36,0); /* Old browsers */
     background: -moz-linear-gradient(top,  rgba(0,36,0,1) 0%, rgba(0,87,0,1) 17%, rgba(0,138,0,1) 33%, rgba(82,177,82,1) 67%, rgba(131,199,131,1) 83%, rgba(180,221,180,1) 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,36,0,1)), color-stop(17%,rgba(0,87,0,1)), color-stop(33%,rgba(0,138,0,1)), color-stop(67%,rgba(82,177,82,1)), color-stop(83%,rgba(131,199,131,1)), color-stop(100%,rgba(180,221,180,1))); /* Chrome,Safari4+ */
@@ -73,4 +90,52 @@
         }
     }
 
+}
+
+@forecast_item_margin: 0.2em;
+.forecast {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    margin-left: @item_margin_left;
+
+    .forecast-caption {
+        font-weight: bold;
+        margin-right: @forecast_item_margin * 1.2;
+    }
+
+    .forecast-hour-section {
+        padding-left: 1em;
+        padding-right: 1em;
+        display: flex;
+        justify-content: flex-start;
+
+        .forecast-time {
+            margin-right: @forecast_item_margin;
+        }
+
+        .forecast-temprature {
+            .forecast-hour-temprature {
+                &:after {
+                    content: "\B0";
+                }
+            }
+
+            margin-right: @forecast_item_margin;
+        }
+
+        .forecast-rainpercent {
+            margin-right: @forecast_item_margin;
+        }
+
+        .forecast-wind {
+            margin-right: @forecast_item_margin;
+        }
+    }
+
+    @media screen and (max-width: 920px) {
+        .f4, .f2 {
+            display: none;
+        }
+    }
 }

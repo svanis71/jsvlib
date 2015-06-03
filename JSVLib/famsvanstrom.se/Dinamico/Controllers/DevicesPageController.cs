@@ -16,6 +16,7 @@ namespace famsvanstrom.se.Dinamico.Controllers
         // GET: /DevicesPage/
         public override ActionResult Index()
         {
+            CurrentItem = new DevicesPageModel();
             return View(CurrentItem);
         }
 	}

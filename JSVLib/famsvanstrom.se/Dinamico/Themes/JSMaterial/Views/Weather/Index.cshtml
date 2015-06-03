@@ -1,7 +1,105 @@
 ﻿@model famsvanstrom.se.Models.Partials.WeatherPartialModel
 
 <section class="weather">
-    <section class="indoor-temp"></section>
-    <section class="outdoor-temp"></section>
-    <section class="indoor-humdity"></section>
+    <section class="temprature">
+        <section class="sensor-label">@Model.IndoorTempratureLabel</section>
+        <section class="sensor-value">@Model.Weather.IndoorTemprature&#176;C</section>
+    </section>
+    <section class="temprature">
+        <section class="sensor-label">@Model.OutdoorTempratureLabel</section>
+        <section class="sensor-value">@Model.Weather.OutdoorTemprature&#176;C</section>
+    </section>
+    <section class="temprature">
+        <section class="sensor-label">@Model.IndoorHumidityLabel</section>
+        <section class="sensor-value">@Model.Weather.IndoorHumidity %</section>
+    </section>
 </section>
+
+<section class="forecast">
+    <section class="forecast-caption">Väderprognos Nättraby:</section>
+    <section class="forecast-hour-section f1">
+        <section class="forecast-time"><span id="hour1-time" class="forecast-hour-time"></span></section>
+        <section class="forecast-temprature"><span id="hour1-temprature" class="forecast-hour-temprature"></span></section>
+        <section class="forecast-rainpercent"><span id="hour1-rainpercent" class="forecast-hour-rainpercent"></span><span id="hour1-thunder" class="forecast-hour-thunder-probability"></span></section>
+        <section class="forecast-wind"><span id="hour1-wind" class="forecast-hour-wind"></span><span id="hour1-gust" class="forecast-hour-gust"></span></section>
+    </section>
+    <section class="forecast-hour-section f2">
+        <section class="forecast-time"><span id="hour2-time" class="forecast-hour-time"></span></section>
+        <section class="forecast-temprature"><span id="hour2-temprature" class="forecast-hour-temprature"></span></section>
+        <section class="forecast-rainpercent"><span id="hour2-rainpercent" class="forecast-hour-rainpercent"></span><span id="hour2-thunder" class="forecast-hour-thunder-probability"></span></section>
+        <section class="forecast-wind"><span id="hour2-wind" class="forecast-hour-wind"></span><span id="hour2-gust" class="forecast-hour-gust"></span></section>
+    </section>
+    <section class="forecast-hour-section f3">
+        <section class="forecast-time"><span id="hour3-time" class="forecast-hour-time"></span></section>
+        <section class="forecast-temprature"><span id="hour3-temprature" class="forecast-hour-temprature"></span></section>
+        <section class="forecast-rainpercent"><span id="hour3-rainpercent" class="forecast-hour-rainpercent"></span><span id="hour3-thunder" class="forecast-hour-thunder-probability"></span></section>
+        <section class="forecast-wind"><span id="hour3-wind" class="forecast-hour-wind"></span><span id="hour3-gust" class="forecast-hour-gust"></span></section>
+    </section>
+    <section class="forecast-hour-section f4">
+        <section class="forecast-time"><span id="hour4-time" class="forecast-hour-time"></span></section>
+        <section class="forecast-temprature"><span id="hour4-temprature" class="forecast-hour-temprature"></span></section>
+        <section class="forecast-rainpercent"><span id="hour4-rainpercent" class="forecast-hour-rainpercent"></span><span id="hour4-thunder" class="forecast-hour-thunder-probability"></span></section>
+        <section class="forecast-wind"><span id="hour4-wind" class="forecast-hour-wind"></span><span id="hour4-gust" class="forecast-hour-gust"></span></section>
+    </section>
+</section>
+
+<script type="text/javascript">
+    function tst() {
+        var url = "/Weather/GetForecast/56.2;15.541667";
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.status == 200 && xhr.readyState == 4) {
+                var fc = JSON.parse(xhr.responseText);
+            }
+        };
+        xhr.open("GET", url, true);
+        xhr.send();
+    }
+
+    my.WeatherForecast = function() {
+        var vader;
+        var forecast = [];
+
+        var url = "http://opendata-download-metfcst.smhi.se/api/category/pmp1.5g/version/1/geopoint/lat/56.2/lon/15.541667/data.json";
+        //var url = "http://www.klart.se/widget/get_widget/e1e3d3b540b1495f83a12098f542ac0a?v=11002";
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.status == 200 && xhr.readyState == 4) {
+                vader = JSON.parse(xhr.responseText);
+                var now = new Date();
+                var forecasts = vader.timeseries;
+                var idx = 0;
+                for (; idx < 72; idx++) {
+                    var ftime = new Date(Date.parse(forecasts[idx].validTime));
+                    if (ftime > now) break;
+                }
+                for (var f = 0; f < 4; f++) {
+                    var fc = forecasts[idx + f];
+                    var timeid = "hour" + (f + 1) + "-time";
+                    var tempratureid = "hour" + (f + 1) + "-temprature";
+                    
+                    var timespanElement = document.getElementById(timeid);
+                    var tempraturespanElement = document.getElementById(tempratureid);
+                    
+                    var secsSince1970 = Date.parse(fc.validTime);
+                    var temp = fc.t;
+                    
+                    var ft = new Date(secsSince1970);
+                    var hour = ft.getHours().toString().padLeft('0', 2);
+                    var minute = ft.getMinutes().toString().padLeft('0', 2);
+
+                    timespanElement.innerText = hour + ":" + minute;
+                    tempraturespanElement.innerText = temp;
+                }
+                //vader = xhr.responseText;
+            }
+        };
+        xhr.open("GET", url, true);
+        xhr.send();
+    };
+
+    document.addEventListener("DOMContentLoaded", function (event) {
+        my.WeatherForecast();
+    });
+
+</script>
