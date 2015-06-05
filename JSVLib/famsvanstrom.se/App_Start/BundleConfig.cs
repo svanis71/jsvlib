@@ -9,8 +9,11 @@ namespace famsvanstrom.se.App_Start
         {
             bundles.Add(new ScriptBundle("~/bundles/ssn").Include("~/Scripts/ssn/ssntest.js"));
             bundles.Add(new ScriptBundle("~/bundles/mobile").Include("~/Scripts/detectmobile.js"));
-            bundles.Add(new ScriptBundle("~/bundles/site").Include("~/Scripts/site.js"));
-            bundles.Add(new ScriptBundle("~/bundles/angular").Include("angular.min.js"));
+            bundles.Add(new ScriptBundle("~/bundles/site").Include("~/Scripts/weather.js", 
+                "~/Scripts/utils.js", 
+                "~/Scripts/jsvdate.js", 
+                "~/Scripts/load.js"));
+            bundles.Add(new ScriptBundle("~/bundles/angular").Include("~/Scripts/angular.min.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.

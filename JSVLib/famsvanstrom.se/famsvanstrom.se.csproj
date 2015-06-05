@@ -38,6 +38,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="dotless.Core, Version=1.4.4.0, Culture=neutral, PublicKeyToken=96b446c9e63eae34, processorArchitecture=MSIL">
       <HintPath>..\packages\dotless.1.4.4\lib\dotless.Core.dll</HintPath>
       <Private>True</Private>
@@ -84,7 +88,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
@@ -151,6 +155,10 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -202,6 +210,8 @@
     <Content Include="Dinamico\Themes\Default\lib\jquery\jquery.highlight-3.js" />
     <Content Include="Dinamico\Themes\Default\Scripts\Site.js" />
     <Content Include="Dinamico\Themes\Default\Thumbnail.JPG" />
+    <Content Include="Content\font\weathericons-regular-webfont.svg" />
+    <Content Include="Scripts\site.js" />
     <Content Include="Dinamico\Themes\Responsive\bak\Content\Site.css" />
     <Content Include="Dinamico\Themes\Responsive\bak\img\glyphicons-halflings-white.png" />
     <Content Include="Dinamico\Themes\Responsive\bak\img\glyphicons-halflings.png" />
@@ -996,6 +1006,7 @@
     <Content Include="Scripts\load.js" />
     <Content Include="Scripts\ssn\ssntest.js" />
     <Content Include="Scripts\utils.js" />
+    <Content Include="Scripts\weather.js" />
     <Content Include="Web.config" />
     <Content Include="Dinamico\Themes\JSMaterial\Views\Web.config" />
     <Content Include="Dinamico\Themes\JSMaterial\Views\Shared\_Layout.cshtml" />
@@ -1041,6 +1052,17 @@
     <Content Include="Dinamico\Themes\JSMaterial\Content\layout-phone960.less" />
     <Content Include="Dinamico\Themes\JSMaterial\Content\layout-tablet.less" />
     <Content Include="Dinamico\Themes\JSMaterial\Content\layout.less" />
+    <Content Include="Dinamico\Themes\JSMaterial\Views\Shared\LayoutPartials\Head.cshtml" />
+    <Content Include="Content\font\weathericons-regular-webfont.eot" />
+    <Content Include="Content\font\weathericons-regular-webfont.ttf" />
+    <Content Include="Content\font\weathericons-regular-webfont.woff" />
+    <Content Include="Content\font\WeatherIcons-Regular.otf" />
+    <Content Include="Content\weather-icons\icon-classes.less" />
+    <Content Include="Content\weather-icons\README.md" />
+    <Content Include="Content\weather-icons\variables.less" />
+    <Content Include="Content\weather-icons\weather-icons.less" />
+    <Content Include="Content\weather-icons\weather-icons.min.less" />
+    <None Include="Properties\PublishProfiles\www.pubxml" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />

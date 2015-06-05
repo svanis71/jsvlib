@@ -11,7 +11,12 @@ namespace famsvanstrom.se.Services
     {
         public string Time { get; set; }
         public double Temprature { get; set; }
-        public double RainProbability { get; set; }
+        public string WeatherCss { get; set; }
+        public int WindDirection { get; set; }
+        public int CloudLevel { get; set; }
+        public int AverageWind { get; set; }
+        public int GustWind { get; set; }
+        public double Rain { get; set; }
         public double ThunderProbabilty { get; set; }
         public int AirPressure { get; set; }
     }
@@ -28,7 +33,7 @@ namespace famsvanstrom.se.Services
 
     public class Timeserie
     {
-        public double gust { get; set; } // Byvin
+        public double gust { get; set; } // Byvind
         public double hcc { get; set; } // Höga moln mängd
         public double lcc { get; set; } // Läga moln mängd
         public double mcc { get; set; } // Medelhöga moln mängd
@@ -82,10 +87,15 @@ namespace famsvanstrom.se.Services
                     {
                         if (cnt%hourInterval == 0)
                         {
-                            forecastList.Add(new SmhiWheatherForcast()
+                            var theForecast = new SmhiWheatherForcast()
                                 {
-                                    Time = itm.validTime.ToString("HH:mm"), Temprature = itm.t, AirPressure = (int) itm.msl, RainProbability = itm.pit, ThunderProbabilty = itm.tstm
-                                });
+                                    Time = itm.validTime.ToString("HH:mm"), Temprature = itm.t, AirPressure = (int) itm.msl, ThunderProbabilty = itm.tstm,
+                                    AverageWind = (int)itm.ws, GustWind = (int)itm.gust, Rain = itm.pit
+                                };
+                            theForecast.CloudLevel = CloudLevel((int)itm.tcc);
+                            theForecast.WindDirection = WindDir((int)itm.wd);
+                            theForecast.WeatherCss = FindOutWeatherCss(theForecast.CloudLevel, theForecast.Rain);
+                            forecastList.Add(theForecast);
                             idx++;
                         }
                         cnt++;
@@ -93,6 +103,34 @@ namespace famsvanstrom.se.Services
                 }
             }
             return forecastList.Take(hours);
+        }
+
+        private static string FindOutWeatherCss(int cloudLevel, double rain)
+        {
+            var css = string.Empty;
+            if (cloudLevel == 0)
+                css = "wi-day-sunny";
+            if (cloudLevel == 1 && rain < 0.07)
+                css = "wi-day-sunny-overcast";
+            if (cloudLevel == 1 && rain > 0.07)
+                css = "wi-day-showers";
+            return css;
+        }
+
+        private static int WindDir(int windDir)
+        {
+            windDir -= windDir%15;
+            return windDir;
+        }
+
+        private int CloudLevel(int totalClouds)
+        {
+            var clouds = totalClouds;
+            int cloudLevel = 0;
+            if (clouds > 0) cloudLevel = 1;
+            if (clouds > 3) cloudLevel = 2;
+            if (clouds > 7) cloudLevel = 3;
+            return cloudLevel;
         }
     }
 }
