@@ -1,4 +1,16 @@
-﻿using famsvanstrom.se.Svanstrom;
+﻿// // famsvanstrom.se: DeviceModel.cs
+// // Author: Johan Svanström
+// // Created: 2015-05-07
+// //
+// // Last changed: 2015-06-09
+// //
+// // Description:
+
+#region
+
+using famsvanstrom.se.Svanstrom;
+
+#endregion
 
 namespace famsvanstrom.se.Models
 {

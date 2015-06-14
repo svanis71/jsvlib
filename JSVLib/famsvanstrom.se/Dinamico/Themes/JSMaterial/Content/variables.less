@@ -5,8 +5,54 @@
 @wrapper_background: darken(@backcolor, 5%);
 @banner_background: @backcolor;
 @header_back: #44ee44;
- 
+
+@box-shadow-color: darken(@wrapper_background, 20%);
+
 @a_color: #222244;
 @a_hover: darken(@a_color, 30%);
 
 @hr_color: darken(@backcolor, 40%);
+
+/* Mixins */
+.base_font-size {
+    @media screen {
+        font-size: 0.8em; 
+        @media (min-width: 1024px) {
+            font-size: 1.2em;
+        }
+    }
+}
+
+.wrapper-width {
+    @media screen {
+        width: 98%; 
+        @media (min-width: 721px) {
+            width: 90%;
+        }
+    }
+}
+
+.flexbox(@direction, @wrap, @justify-content) {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: @direction @wrap;
+    flex-flow: @direction @wrap;
+    -webkit-justify-content: @justify-content;
+    justify-content: @justify-content;
+}
+
+.flex-items(@grow, @shrink, @basis) {
+    -webkit-flex: @grow @shrink, @basis;
+    -ms-flex: @grow @shrink, @basis;
+    flex: @grow @shrink, @basis;
+}
+
+.bigbox-hover-animation(@scale-x, @scale-y, @duration) {
+    -webkit-transform: scale(@scale-x, @scale-y);
+    -ms-transform: scale(@scale-x, @scale-y);
+    transform: scale(@scale-x, @scale-y);
+    -webkit-transition: transform @duration;
+    transition: transform @duration;
+}

@@ -1,8 +1,20 @@
+// // famsvanstrom.se: FreeFormRegistration.cs
+// // Author: Johan Svanström
+// // Created: 2015-04-30
+// //
+// // Last changed: 2015-06-09
+// //
+// // Description:
+
+#region
+
 using System.Web.UI.WebControls;
 using Dinamico.Controllers;
 using Dinamico.Models;
 using N2.Definitions.Runtime;
 using N2.Web.Mvc;
+
+#endregion
 
 namespace Dinamico.Registrations
 {

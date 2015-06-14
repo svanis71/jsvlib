@@ -1,6 +1,18 @@
-﻿using System;
+﻿// // famsvanstrom.se: Device.cs
+// // Author: Johan Svanström
+// // Created: 2015-05-07
+// //
+// // Last changed: 2015-06-09
+// //
+// // Description:
+
+#region
+
+using System;
 using System.Collections.Generic;
 using famsvanstrom.se.Svanstrom;
+
+#endregion
 
 namespace famsvanstrom.se.Models
 {

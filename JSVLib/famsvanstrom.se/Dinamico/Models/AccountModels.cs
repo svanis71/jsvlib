@@ -1,13 +1,23 @@
+// // famsvanstrom.se: AccountModels.cs
+// // Author: Johan Svanström
+// // Created: 2015-04-30
+// //
+// // Last changed: 2015-06-09
+// //
+// // Description:
+
+#region
+
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
-using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using N2.Engine;
+
+#endregion
 
 namespace Dinamico.Models
 {
@@ -246,7 +256,7 @@ namespace Dinamico.Models
 
         public override bool IsValid(object value)
         {
-            string valueAsString = value as string;
+            var valueAsString = value as string;
             return (valueAsString != null && valueAsString.Length >= _minCharacters);
         }
 

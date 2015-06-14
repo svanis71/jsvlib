@@ -1,12 +1,21 @@
-﻿using System;
+﻿// // famsvanstrom.se: DevicesPageModel.cs
+// // Author: Johan Svanström
+// // Created: 2015-05-09
+// //
+// // Last changed: 2015-06-09
+// //
+// // Description:
+
+#region
+
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using Dinamico;
 using Dinamico.Models;
 using N2;
 using N2.Details;
 using famsvanstrom.se.Services;
+
+#endregion
 
 namespace famsvanstrom.se.Models.Pages
 {
@@ -14,7 +23,7 @@ namespace famsvanstrom.se.Models.Pages
     [WithEditableTemplateSelection(ContainerName = Defaults.Containers.Metadata)]
     public class DevicesPageModel : ContentPage
     {
-        private DeviceStatusRepository _repo;
+        private readonly DeviceStatusRepository _repo;
 
         public DevicesPageModel()
         {

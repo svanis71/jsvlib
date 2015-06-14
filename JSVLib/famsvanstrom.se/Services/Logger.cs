@@ -1,5 +1,17 @@
-﻿using System;
+﻿// // famsvanstrom.se: Logger.cs
+// // Author: Johan Svanström
+// // Created: 2015-05-07
+// //
+// // Last changed: 2015-06-09
+// //
+// // Description:
+
+#region
+
+using System;
 using System.IO;
+
+#endregion
 
 namespace famsvanstrom.se.Services
 {
@@ -13,8 +25,8 @@ namespace famsvanstrom.se.Services
     [Serializable]
     public class Logger : ILogger
     {
-        private bool _isDebug;
-        private Type _sourceType;
+        private readonly bool _isDebug;
+        private readonly Type _sourceType;
 
         public Logger(Type sourceType)
             : this(sourceType, false)

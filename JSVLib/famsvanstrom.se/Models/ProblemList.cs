@@ -1,4 +1,16 @@
-﻿using System.Collections.Generic;
+﻿// // famsvanstrom.se: ProblemList.cs
+// // Author: Johan Svanström
+// // Created: 2015-05-07
+// //
+// // Last changed: 2015-06-09
+// //
+// // Description:
+
+#region
+
+using System.Collections.Generic;
+
+#endregion
 
 namespace famsvanstrom.se.Models
 {

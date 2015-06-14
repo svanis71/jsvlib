@@ -1,12 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
+﻿// // famsvanstrom.se: WeatherController.cs
+// // Author: Johan Svanström
+// // Created: 2015-05-10
+// //
+// // Last changed: 2015-06-09
+// //
+// // Description:
+
+#region
+
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using N2.Web;
 using N2.Web.Mvc;
 using famsvanstrom.se.Models.Partials;
 using famsvanstrom.se.Services;
+
+#endregion
 
 namespace famsvanstrom.se.Dinamico.Controllers
 {
@@ -24,7 +33,7 @@ namespace famsvanstrom.se.Dinamico.Controllers
         public ActionResult GetForecast(string id)
         {
             var forecasts = new SmhiForecastService(id).GetForecast().ToArray();
-            return Json(forecasts, JsonRequestBehavior.AllowGet);
+            return PartialView(forecasts); //Json(forecasts, JsonRequestBehavior.AllowGet);
         }
 	}
 }

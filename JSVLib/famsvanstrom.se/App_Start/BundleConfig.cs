@@ -1,4 +1,16 @@
-﻿using System.Web.Optimization;
+﻿// // famsvanstrom.se: BundleConfig.cs
+// // Author: Johan Svanström
+// // Created: 2015-05-07
+// //
+// // Last changed: 2015-06-09
+// //
+// // Description:
+
+#region
+
+using System.Web.Optimization;
+
+#endregion
 
 namespace famsvanstrom.se.App_Start
 {

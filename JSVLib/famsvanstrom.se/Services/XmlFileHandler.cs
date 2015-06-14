@@ -1,8 +1,20 @@
-﻿using System;
+﻿// // famsvanstrom.se: XmlFileHandler.cs
+// // Author: Johan Svanström
+// // Created: 2015-05-07
+// //
+// // Last changed: 2015-06-09
+// //
+// // Description:
+
+#region
+
+using System;
 using System.IO;
 using System.Web;
 using System.Xml.Serialization;
 using famsvanstrom.se.Extensions;
+
+#endregion
 
 namespace famsvanstrom.se.Services
 {

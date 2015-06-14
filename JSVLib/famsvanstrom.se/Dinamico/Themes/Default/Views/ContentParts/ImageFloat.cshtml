@@ -30,99 +30,108 @@
 
 @{
 
-	Content.Define(ie =>
-	{
-		ie.Title = "Image";
-		ie.IconUrl = "{IconsUrl}/photo.png";
-		ie.Image("Image");
-		ie.Enum("Float", typeof(N2.Web.BlockAlignment)).DefaultValue(N2.Web.BlockAlignment.Middle);
-		ie.FreeText("Caption");
-		ie.Text("AltText").DefaultValue("");
-		ie.Text("CssClass");
-		ie.Link("LinkHref");
-	});
+    Content.Define(ie =>
+        {
+            ie.Title = "Image";
+            ie.IconUrl = "{IconsUrl}/photo.png";
+            ie.Image("Image");
+            ie.Enum("Float", typeof (N2.Web.BlockAlignment)).DefaultValue(N2.Web.BlockAlignment.Middle);
+            ie.FreeText("Caption");
+            ie.Text("AltText").DefaultValue("");
+            ie.Text("CssClass");
+            ie.Link("LinkHref");
+        });
 
-	var Float = N2.Web.BlockAlignment.None;
-	var image = Model.GetDetail<string>("Image", "(null)");
-	var caption = Model.GetDetail<string>("Caption", "(null)");
-	var altText = Model.GetDetail<string>("AltText", "(null)");
-	var cssClass = Model.GetDetail<string>("CssClass", "");
+    var Float = N2.Web.BlockAlignment.None;
+    var image = Model.GetDetail<string>("Image", "(null)");
+    var caption = Model.GetDetail<string>("Caption", "(null)");
+    var altText = Model.GetDetail<string>("AltText", "(null)");
+    var cssClass = Model.GetDetail<string>("CssClass", "");
 
-	try
-	{
-		Float = (N2.Web.BlockAlignment)Enum.Parse(typeof(N2.Web.BlockAlignment), (Model.GetDetail("Float") ?? N2.Web.BlockAlignment.Middle).ToString());
-	}
-	catch
-	{
-		Float = N2.Web.BlockAlignment.Middle;
-	}
+    try
+    {
+        Float = (N2.Web.BlockAlignment) Enum.Parse(typeof (N2.Web.BlockAlignment), (Model.GetDetail("Float") ?? N2.Web.BlockAlignment.Middle).ToString());
+    }
+    catch
+    {
+        Float = N2.Web.BlockAlignment.Middle;
+    }
 
-	bool HasImage = !String.IsNullOrWhiteSpace(image);
-	bool HasCaption = !String.IsNullOrWhiteSpace(caption);
+    bool HasImage = !String.IsNullOrWhiteSpace(image);
+    bool HasCaption = !String.IsNullOrWhiteSpace(caption);
 }
 
 @switch (Float)
 {
-	case N2.Web.BlockAlignment.Left:
-		<div class="img-block img-responsive img-block-left @cssClass" style="float: left;">
-			@if (Content.Has.LinkHref) 
-			{ 
-			<a href="@Content.Data.LinkHref"><img class="img-responsive" src="@image" alt="@altText" /></a>
-			}
-			else 
-			{ 
-				<img class="img-responsive" src="@image" alt="@altText" /> 
-			}
+    case N2.Web.BlockAlignment.Left:
+        <div class="img-block img-responsive img-block-left @cssClass" style="float: left;">
+            @if (Content.Has.LinkHref)
+            {
+                <a href="@Content.Data.LinkHref"><img class="img-responsive" src="@image" alt="@altText" /></a>
+            }
+            else
+            {
+                <img class="img-responsive" src="@image" alt="@altText" />
+            }
 
-			@if (HasCaption) 
-			{ 
-			   @Html.Raw(caption) 
-			}
-		</div>
-		break;
+            @if (HasCaption)
+            {
+                @Html.Raw(caption)
+            }
+        </div>
+        break;
 
-	case N2.Web.BlockAlignment.Right:
-		<div class="img-block img-responsive img-block-right @cssClass" style="float: right;">
-			@if (Content.Has.LinkHref) 
-			{ 
-			<a href="@Content.Data.LinkHref"><img class="img-responsive" src="@image" alt="@altText" /></a>
-			}
-			else 
-			{ 
-			<img class="img-responsive" src="@image" alt="@altText" /> 
-			}
+    case N2.Web.BlockAlignment.Right:
+        <div class="img-block img-responsive img-block-right @cssClass" style="float: right;">
+            @if (Content.Has.LinkHref)
+            {
+                <a href="@Content.Data.LinkHref"><img class="img-responsive" src="@image" alt="@altText" /></a>
+            }
+            else
+            {
+                <img class="img-responsive" src="@image" alt="@altText" />
+            }
 
-			@if (HasCaption) { @Html.Raw(caption) }
-		</div>
-		break;
+            @if (HasCaption)
+            {
+                @Html.Raw(caption)
+            }
+        </div>
+        break;
 
-	case N2.Web.BlockAlignment.Middle:
-		<div class="img-block img-responsive img-block-middle @cssClass" style="text-align: center;">
-			@if (Content.Has.LinkHref)
-			{ 
-			<a href="@Content.Data.LinkHref"><img class="img-responsive" src="@image" alt="@altText" /></a>
-			}
-			else 
-			{ 
-			<img class="img-responsive" src="@image" alt="@altText" /> 
-			}
+    case N2.Web.BlockAlignment.Middle:
+        <div class="img-block img-responsive img-block-middle @cssClass" style="text-align: center;">
+            @if (Content.Has.LinkHref)
+            {
+                <a href="@Content.Data.LinkHref"><img class="img-responsive" src="@image" alt="@altText" /></a>
+            }
+            else
+            {
+                <img class="img-responsive" src="@image" alt="@altText" />
+            }
 		
-			@if (HasCaption) { @Html.Raw(caption) }
-		</div>
-		break;
+            @if (HasCaption)
+            {
+                @Html.Raw(caption)
+            }
+        </div>
+        break;
 
-	default:
-		<div class="img-block img-responsive img-block-default @cssClass">
-			@if (Content.Has.LinkHref) 
-			{
-				<a href="@Content.Data.LinkHref"><img class="img-responsive" src="@image" alt="@altText" /></a>
-			}
-			else 
-			{ 
-				<img class="img-responsive" src="@image" alt="@altText" /> 
-			}
+    default:
+        <div class="img-block img-responsive img-block-default @cssClass">
+            @if (Content.Has.LinkHref)
+            {
+                <a href="@Content.Data.LinkHref"><img class="img-responsive" src="@image" alt="@altText" /></a>
+            }
+            else
+            {
+                <img class="img-responsive" src="@image" alt="@altText" />
+            }
 		
-			@if (HasCaption) { @Html.Raw(caption) }
-		</div>
-		break;
+            @if (HasCaption)
+            {
+                @Html.Raw(caption)
+            }
+        </div>
+        break;
 }

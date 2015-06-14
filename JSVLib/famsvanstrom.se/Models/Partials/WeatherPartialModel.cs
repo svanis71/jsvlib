@@ -1,13 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿// // famsvanstrom.se: WeatherPartialModel.cs
+// // Author: Johan Svanström
+// // Created: 2015-05-09
+// //
+// // Last changed: 2015-06-09
+// //
+// // Description:
+
+#region
+
 using Dinamico;
 using Dinamico.Models;
 using N2;
 using N2.Details;
 using N2.Persistence;
 using famsvanstrom.se.Services;
+
+#endregion
 
 namespace famsvanstrom.se.Models.Partials
 {

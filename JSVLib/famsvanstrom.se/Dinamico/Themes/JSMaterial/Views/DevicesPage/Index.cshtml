@@ -6,11 +6,12 @@
 }
 
 @section main {
-        <section class="status-checkbox-group">
-            @foreach (var dev in Model.Devices) { 
-                @Html.LightbulbCheckboxFor(b => dev.Status, new { @title = dev.Name, @id = "checkbox_" + dev.Id + "_" + dev.Name })
-            }
-        </section>
+    <section class="status-checkbox-group">
+        @foreach (var dev in Model.Devices)
+        {
+            @Html.LightbulbCheckboxFor(b => dev.Status, new {@title = dev.Name, @id = "checkbox_" + dev.Id + "_" + dev.Name})
+        }
+    </section>
 }
 
 @section scripts {

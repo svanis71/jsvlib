@@ -1,13 +1,21 @@
-﻿using System;
+﻿// // famsvanstrom.se: MyHtmlHelpers.cs
+// // Author: Johan Svanström
+// // Created: 2015-05-07
+// //
+// // Last changed: 2015-06-09
+// //
+// // Description:
+
+#region
+
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Dinamico.Models;
-using MyLib.Logging;
 using N2;
-using famsvanstrom.se.Services;
+
+#endregion
 
 namespace famsvanstrom.se.Web.Mvc.Html
 {

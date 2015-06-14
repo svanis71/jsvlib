@@ -1,4 +1,10 @@
-using System;
+// // famsvanstrom.se: FreeForm.cs
+// // Author: Johan Svanström
+// // Created: 2015-04-30
+// //
+// // Last changed: 2015-06-09
+// //
+// // Description:
 
 namespace Dinamico.Models
 {

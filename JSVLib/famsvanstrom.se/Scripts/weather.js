@@ -13,6 +13,12 @@ my.WeatherForecast = function () {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
         if (xhr.status == 200 && xhr.readyState == 4) {
+            var code = xhr.responseText; //.replace(/(\<script.*\>)(.*)(\<\/script\>)/g, "$2");
+            var fcSection = document.getElementsByClassName("w-forecast");
+            for (var i = 0; i < fcSection.length; i++) {
+                fcSection[i].innerHTML = code;
+            }
+            /*         
             var vaderData = JSON.parse(xhr.responseText);
             my.vader = vaderData;
             for (var f = 0; f < vaderData.length; f++) {
@@ -25,6 +31,7 @@ my.WeatherForecast = function () {
                 timespanElement.innerText = forecast.Time;
                 tempraturespanElement.innerText = forecast.Temprature;
             }
+            */
         }
     };
     xhr.open("GET", url, true);

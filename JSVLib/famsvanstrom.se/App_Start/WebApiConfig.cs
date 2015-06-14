@@ -1,7 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿// // famsvanstrom.se: WebApiConfig.cs
+// // Author: Johan Svanström
+// // Created: 2015-05-23
+// //
+// // Last changed: 2015-06-09
+// //
+// // Description:
+
+#region
+
 using System.Web.Http;
+
+#endregion
 
 namespace famsvanstrom.se
 {

@@ -1,12 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
+﻿// // famsvanstrom.se: HemmaStatusController.cs
+// // Author: Johan Svanström
+// // Created: 2015-05-23
+// //
+// // Last changed: 2015-06-09
+// //
+// // Description:
+
+#region
+
 using System.Diagnostics;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using famsvanstrom.se.Models;
 using famsvanstrom.se.Services;
+
+#endregion
 
 namespace famsvanstrom.se.Dinamico.Controllers
 {

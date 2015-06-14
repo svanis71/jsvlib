@@ -1,6 +1,18 @@
-﻿using System;
+﻿// // famsvanstrom.se: ExtensionMethods.cs
+// // Author: Johan Svanström
+// // Created: 2015-05-07
+// //
+// // Last changed: 2015-06-09
+// //
+// // Description:
+
+#region
+
+using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+
+#endregion
 
 namespace famsvanstrom.se.Extensions
 {

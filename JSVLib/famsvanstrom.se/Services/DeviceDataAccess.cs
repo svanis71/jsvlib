@@ -1,9 +1,17 @@
-﻿using famsvanstrom.se.Models;
-using System;
-using System.Collections.Generic;
+﻿// // famsvanstrom.se: DeviceDataAccess.cs
+// // Author: Johan Svanström
+// // Created: 2015-05-07
+// //
+// // Last changed: 2015-06-09
+// //
+// // Description:
+
+#region
+
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
+using famsvanstrom.se.Models;
+
+#endregion
 
 namespace hemstatus.fam_svanstrom.se.Services
 {
@@ -11,8 +19,8 @@ namespace hemstatus.fam_svanstrom.se.Services
     {
         public void SaveAllDevices(Device[] devices)
         {
-            using (SqlConnection conn = new SqlConnection("DB"))
-            using(SqlCommand cmd = new SqlCommand("INSERT INTO DeviceStatus (Id, Name, Status) VALUES (:id, :name, :status)", conn))
+            using (var conn = new SqlConnection("DB"))
+            using(var cmd = new SqlCommand("INSERT INTO DeviceStatus (Id, Name, Status) VALUES (:id, :name, :status)", conn))
             {
                 foreach(var device in devices)
                 {

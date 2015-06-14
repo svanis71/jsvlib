@@ -1,6 +1,17 @@
-﻿using System.Reflection;
-using System.Runtime.CompilerServices;
+﻿// // famsvanstrom.se: AssemblyInfo.cs
+// // Author: Johan Svanström
+// // Created: 2015-04-30
+// //
+// // Last changed: 2015-06-09
+// //
+// // Description:
+
+#region
+
+using System.Reflection;
 using System.Runtime.InteropServices;
+
+#endregion
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information

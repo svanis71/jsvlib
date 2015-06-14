@@ -1,16 +1,25 @@
-using System;
+// // famsvanstrom.se: TestController.cs
+// // Author: Johan Svanström
+// // Created: 2015-04-30
+// //
+// // Last changed: 2015-06-09
+// //
+// // Description:
+
+#region
+
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
 using System.IO;
-using N2.Edit.FileSystem;
+using System.Linq;
+using System.Web.Mvc;
 using System.Web.Routing;
-using N2.Web.Mvc.Html;
 using Dinamico.Models;
 using N2.Definitions.Runtime;
 using N2.Definitions.Static;
+using N2.Edit.FileSystem;
 using N2.Web.Mvc;
+
+#endregion
 
 namespace Dinamico.Controllers
 {
@@ -21,9 +30,9 @@ namespace Dinamico.Controllers
 
         public ActionResult Index()
         {
-            StringWriter sw = new StringWriter();
-            IFileSystem files = N2.Context.Current.Resolve<IFileSystem>();
-            List<ContentRegistration> expressions = new List<ContentRegistration>();
+            var sw = new StringWriter();
+            var files = N2.Context.Current.Resolve<IFileSystem>();
+            var expressions = new List<ContentRegistration>();
             foreach (var file in files.GetFiles("~/Dinamico/Themes/Default/Views/ContentPages/").Where(f => f.Name.EndsWith(".cshtml")))
             {
                 var cctx = new ControllerContext(ControllerContext.HttpContext, new RouteData(), new ContentPagesController());

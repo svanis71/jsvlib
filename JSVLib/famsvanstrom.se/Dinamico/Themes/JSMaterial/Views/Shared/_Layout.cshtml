@@ -1,57 +1,56 @@
 ﻿@using System.Web.Optimization
-@using N2
 <!DOCTYPE html>
 
 <html>
-<head>
-    @{
-        Content.PrependDefinition(re =>
-        {
-            re.Tab("Content", "Content");
-            re.PublishedRange().Container("Metadata");
-            re.Title("fam-svanstrom.se");
-        });
-    }
-    @{Html.RenderPartial("LayoutPartials/Head");}
-    @RenderSection("head", required: false)
-</head>
-<body>
-    @{ Html.ControlPanel().Render(); }
-    <header id="header" class="header">
-        <section class="header-content">
-            @{Html.RenderPartial("LayoutPartials/Top");}
-            <section class="site-title">@Content.Traverse.StartPage.Title
+    <head>
+        @{
+            Content.PrependDefinition(re =>
+                {
+                    re.Tab("Content", "Content");
+                    re.PublishedRange().Container("Metadata");
+                    re.Title("fam-svanstrom.se");
+                });
+        }
+        @{Html.RenderPartial("LayoutPartials/Head");}
+        @RenderSection("head", required: false)
+    </head>
+    <body>
+        @{ Html.ControlPanel().Render(); }
+        <header id="header" class="header">
+            <section class="header-content">
+                @{Html.RenderPartial("LayoutPartials/Top");}
+                <section class="site-title">@Content.Traverse.StartPage.Title
+                </section>
             </section>
+        </header>
+        <section id="banner" class="banner">
+            @{Html.DroppableZone("Banner").Render();}
         </section>
-    </header>
-    <section id="banner" class="banner">
-        @{Html.DroppableZone("Banner").Render();}
-    </section>
-    <div class="wrapper">
-        <section id="page" class="page">
-            @if (IsSectionDefined("main"))
-            { 
-                <section id="main-content" class="main">
-                    @RenderSection("main")
-                    @RenderSection("scripts", required: false)
-                </section>
-            }
-            else
-            {
-                <section id="main-content" class="main">
-                    @{ Html.RenderPartial("LayoutPartials/PreContent"); }
-                    <article id="content" class="content">
-                        @RenderBody()
+        <div class="wrapper">
+            <section id="page" class="page">
+                @if (IsSectionDefined("main"))
+                {
+                    <section id="main-content" class="main">
+                        @RenderSection("main")
                         @RenderSection("scripts", required: false)
-                    </article>
-                    @{ Html.RenderPartial("LayoutPartials/PostContent"); }
-                </section>
-            }
+                    </section>
+                }
+                else
+                {
+                    <section id="main-content" class="main">
+                        @{ Html.RenderPartial("LayoutPartials/PreContent"); }
+                        <article id="content" class="content">
+                            @RenderBody()
+                            @RenderSection("scripts", required: false)
+                        </article>
+                        @{ Html.RenderPartial("LayoutPartials/PostContent"); }
+                    </section>
+                }
 
-        </section>
-        <footer id="footer">
-        </footer>
-        @Scripts.Render("~/bundles/site")
-    </div>
-</body>
+            </section>
+            <footer id="footer">
+            </footer>
+            @Scripts.Render("~/bundles/site")
+        </div>
+    </body>
 </html>

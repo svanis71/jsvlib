@@ -1,54 +1,14 @@
-﻿@wrapper_width: 90%;
-
-.header {
-    .header-content {
-        width: @wrapper_width;
-        margin: 0 auto;
-    }
-}
-
-.wrapper {
-    width: @wrapper_width;
-    margin: 0 auto;
-}
-
-.banner {
-    height: 1.4em;
-    background: @banner_background;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-}
+﻿@import url('variables.less');
 
 section {
     .big-boxes {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        .flexbox(row, wrap, center);
         width: 90%;
         margin: 0 auto;
     }
-
     .big-box {
         height: 5em;
         width: 45%;
-
-        &:hover {
-            transform: scale(1.1, 1.1);
-            box-shadow: 0.2em 0.3em #aaaaaa;
-            transition: transform 1s;
-        }
-
-        .big-box-item {
-        }
-
-        .big-box-image {
-            img {
-            }
-        }
-
-        .big-box-title {
-        }
     }
 }
 

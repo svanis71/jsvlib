@@ -1,6 +1,18 @@
-﻿using System;
-using System.Data.SqlClient;
+﻿// // famsvanstrom.se: TempratureDataService.cs
+// // Author: Johan Svanström
+// // Created: 2015-05-07
+// //
+// // Last changed: 2015-06-09
+// //
+// // Description:
+
+#region
+
+using System;
 using System.Configuration;
+using System.Data.SqlClient;
+
+#endregion
 
 namespace famsvanstrom.se.Services
 {

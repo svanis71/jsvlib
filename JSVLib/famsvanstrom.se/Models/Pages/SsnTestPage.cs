@@ -1,8 +1,20 @@
-﻿using Dinamico;
+﻿// // famsvanstrom.se: SsnTestPage.cs
+// // Author: Johan Svanström
+// // Created: 2015-05-29
+// //
+// // Last changed: 2015-06-09
+// //
+// // Description:
+
+#region
+
+using Dinamico;
 using Dinamico.Models;
 using N2;
 using N2.Details;
 using N2.Persistence;
+
+#endregion
 
 namespace famsvanstrom.se.Models.Pages
 {

@@ -1,8 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿// // famsvanstrom.se: ClockController.cs
+// // Author: Johan Svanström
+// // Created: 2015-05-12
+// //
+// // Last changed: 2015-06-09
+// //
+// // Description:
+
+#region
+
 using System.Web.Mvc;
+
+#endregion
 
 namespace famsvanstrom.se.Dinamico.Controllers
 {

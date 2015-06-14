@@ -1,19 +1,30 @@
+// // famsvanstrom.se: PermissionDeniedHandler.cs
+// // Author: Johan Svanström
+// // Created: 2015-04-30
+// //
+// // Last changed: 2015-06-09
+// //
+// // Description:
+
+#region
+
 using System;
-using Castle.Core;
+using N2;
+using N2.Engine;
 using N2.Plugin;
 using N2.Security;
 using N2.Web;
-using N2.Engine;
-using N2;
+
+#endregion
 
 namespace Dinamico.Registrations
 {
     [Service]
     public class PermissionDeniedHandler : IAutoStart
     {
-        ISecurityEnforcer securityEnforcer;
-        IUrlParser parser;
-        IWebContext context;
+        readonly ISecurityEnforcer securityEnforcer;
+        readonly IUrlParser parser;
+        readonly IWebContext context;
 
         public PermissionDeniedHandler(ISecurityEnforcer securityEnforcer, IUrlParser parser, IWebContext context)
         {

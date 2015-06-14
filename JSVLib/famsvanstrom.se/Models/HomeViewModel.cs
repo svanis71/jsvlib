@@ -1,12 +1,24 @@
-﻿using System.Collections.Generic;
+﻿// // famsvanstrom.se: HomeViewModel.cs
+// // Author: Johan Svanström
+// // Created: 2015-05-07
+// //
+// // Last changed: 2015-06-09
+// //
+// // Description:
+
+#region
+
+using System.Collections.Generic;
 using famsvanstrom.se.Services;
+
+#endregion
 
 namespace famsvanstrom.se.Models
 {
     public class HomeViewModel
     {
-        TempratureDataService _tempratureDataService;
-        private DeviceStatusRepository _repo;
+        readonly TempratureDataService _tempratureDataService;
+        private readonly DeviceStatusRepository _repo;
 
         public HomeViewModel()
         {

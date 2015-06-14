@@ -1,3 +1,13 @@
+// // famsvanstrom.se: DeviceRepository.cs
+// // Author: Johan Svanström
+// // Created: 2015-05-07
+// //
+// // Last changed: 2015-06-09
+// //
+// // Description:
+
+#region
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -5,6 +15,8 @@ using System.Web;
 using famsvanstrom.se.Extensions;
 using famsvanstrom.se.Services;
 using famsvanstrom.se.Svanstrom;
+
+#endregion
 
 namespace famsvanstrom.se.Models
 {
