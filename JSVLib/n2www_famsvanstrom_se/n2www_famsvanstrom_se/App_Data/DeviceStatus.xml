@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<ArrayOfDevice xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Device>
+    <Id>1</Id>
+    <Name>Kitchen</Name>
+    <Status>On</Status>
+  </Device>
+  <Device>
+    <Id>2</Id>
+    <Name>Wall</Name>
+    <Status>Off</Status>
+  </Device>
+  <Device>
+    <Id>3</Id>
+    <Name>Window</Name>
+    <Status>On</Status>
+  </Device>
+  <Device>
+    <Id>4</Id>
+    <Name>Bookshelf</Name>
+    <Status>On</Status>
+  </Device>
+</ArrayOfDevice>

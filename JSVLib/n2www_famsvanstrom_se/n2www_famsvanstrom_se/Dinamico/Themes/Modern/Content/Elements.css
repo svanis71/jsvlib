@@ -1,0 +1,10 @@
+﻿@import "../../Default/Content/Elements.css";
+
+.menuLine
+{
+    width: 1024px;
+    height: 30px;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    outline: 0px;
+}

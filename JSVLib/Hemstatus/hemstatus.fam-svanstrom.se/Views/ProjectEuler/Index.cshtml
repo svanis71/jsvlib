@@ -1,0 +1,52 @@
+﻿@model IEnumerable<hemstatus.fam_svanstrom.se.Models.Problem>
+
+<article class="article">
+    <ul class="problem-list">
+        @foreach (var problem in Model)
+        {
+            <li>
+                <section class="result-card">
+                    <header>
+                        <section class="problem-label">Problem</section>
+                        <section class="problem-number">@problem.Number</section>
+                        <section class="problem-label">Beskrivning</section>
+                        <section class="problem-description">@Html.Raw(problem.Description)</section>
+                    </header>
+                    <section class="problem-result">
+                        <section class="problem-answer">
+                            <section class="problem-label">Svar</section>
+                            <section>@problem.Result</section>
+                        </section>
+                        <section class="problem-duration">
+                            <section class="problem-label">Svarstid</section>
+                            <section class="duration">@problem.Duration</section>
+                        </section>
+                    </section>
+                    <section class="code-section">
+                        <section class="problem-label expander">Kod</section>
+                        <section class="code collapsable hidden">
+                            <pre>
+                               <code class="cs">
+@problem.Code
+                                </code>
+                            </pre>
+                        </section>
+                    </section>
+                </section>
+            </li>
+        }
+    </ul>    
+</article>
+
+@section head
+{
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/less/euler.less")"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/default.min.css">
+}
+
+@section scripts
+{
+    <script type="text/javascript" src="@Url.Content("~/Scripts/expander.js")"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+}
