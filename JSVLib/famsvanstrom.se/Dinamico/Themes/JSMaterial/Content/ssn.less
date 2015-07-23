@@ -1,19 +1,54 @@
-﻿.ssntest-app {
+﻿@import url("variables.less");
+
+@ssn-app-width: 75%;
+
+.ssntest-app {
+    .flexbox;
+    .flex-flow(column, nowrap);
+    .justify-content(center);
+    .align-items(center);
+
+    .app-header {
+        .center-width(@ssn-app-width);
+        border: solid thin @border_color;
+        background: #fff;
+        .my-box-shadow;
+        min-height: 5em;
+        margin-bottom: 1.3em;
+
+        h2 {
+            text-align: center;
+        }
+
+        .app-description {
+            text-align: center;
+        }
+    }
+
+
     .input-area {
         text-align: center;
+        width: @ssn-app-width;
+        margin-bottom: 1.3em;
 
         .label {
             font-size: 1.1em;
             margin-bottom: 1em;
         }
+
+        .input {
+            border: 1px solid #aaaaaa;
+            height: 4.5em;
+            background: #fff;
+            .my-box-shadow;
+        }
     }
 
     .result-area {
         background: #fff;
-        width: 40%;
+        .center-width(@ssn-app-width);
         text-align: center;
-        margin-left: 30%;
-        box-shadow: 0.2em 0.2em 0.1em 0.1em #aaaaaa;
+        .my-box-shadow;
         margin-bottom: 2em;
 
         .checksum {
@@ -23,14 +58,17 @@
     }
 
     .pnr-input {
-        height: 2.5em;
-        width: 40%;
+        height: 2.9em;
         font-size: 1.5em;
         text-align: center;
+        border: none;
+        width: 100%;
+        /*
+        width: 50%;
         border-radius: 0.3em;
         border: 1px solid #aaaaaa;
-        box-shadow: 0.1em 0.1em 0.1em 0.1em #aaaaaa;
-        margin-bottom: 2em;
+        .my-box-shadow;
+*/ margin-bottom: 2em;
     }
 
     .red {
@@ -41,9 +79,5 @@
     .green {
         background: #00cc00;
         color: #fff;
-    }
-
-    .hack {
-        height: 1px;
     }
 }

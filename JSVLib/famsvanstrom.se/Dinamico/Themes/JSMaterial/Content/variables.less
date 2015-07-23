@@ -1,24 +1,50 @@
-﻿@backcolor: #ffffff;
+﻿@smallPhone: ~"only screen and (max-width: 500px)";
+@phablet: ~"only screen and (min-width: 501px) and (max-width: 720px)"; 
+@tablet:    ~"only screen and (min-width: 720px) and (max-width: 959px)";
+@desktop:   ~"only screen and (min-width: 960px) and (max-width: 1199px)";
+@wide: ~"only screen and (min-width: 1200px)";
+
+@backcolor: #c8f4c8;
 @color: #222222;
 @title_color: #ffffff;
 
-@wrapper_background: darken(@backcolor, 5%);
+@wrapper_background: @backcolor;
 @banner_background: @backcolor;
 @header_back: #44ee44;
 
-@box-shadow-color: darken(@wrapper_background, 20%);
+@border_color: #bbb;
+@box-shadow-color: darken(@border_color, 20%);
 
 @a_color: #222244;
 @a_hover: darken(@a_color, 30%);
 
 @hr_color: darken(@backcolor, 40%);
 
+/* mixin for flex-flow */
+.flex-flow(@direction, @wrap) {
+    -webkit-flex-flow: @direction @wrap;
+    flex-flow: @direction @wrap;
+}
+
 /* Mixins */
+.center-horizontal {
+    margin: 0 auto;
+}
+
+.center-width(@width) {
+    width: @width;
+    .center-horizontal;
+}
+
+.my-box-shadow {
+    box-shadow: 0.2em 0.2em 0.1em 0.1em @box-shadow-color;
+}
+
 .base_font-size {
     @media screen {
         font-size: 0.8em; 
-        @media (min-width: 1024px) {
-            font-size: 1.2em;
+        @media (min-width: 1200px) {
+            font-size: 1.1em;
         }
     }
 }
@@ -32,13 +58,14 @@
     }
 }
 
-.flexbox(@direction, @wrap, @justify-content) {
+.flexbox {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-flex-flow: @direction @wrap;
-    flex-flow: @direction @wrap;
+}
+
+.justify-content(@justify-content) {
     -webkit-justify-content: @justify-content;
     justify-content: @justify-content;
 }
@@ -47,6 +74,11 @@
     -webkit-flex: @grow @shrink, @basis;
     -ms-flex: @grow @shrink, @basis;
     flex: @grow @shrink, @basis;
+}
+
+.align-items(@align) {
+    -webkit-align-items: @align;
+    align-items: @align;
 }
 
 .bigbox-hover-animation(@scale-x, @scale-y, @duration) {

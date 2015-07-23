@@ -17,7 +17,8 @@ ssnGen.getModulo10 = function (ssnToTest) {
         checkSum += tmp;
         multiplier = 3 - multiplier;
     }
-    return 10 - (checkSum % 10);
+    var lastDigit = 10 - (checkSum % 10);
+    return lastDigit < 10 ? lastDigit : 0;
 };
 
 var ssnApp = angular.module('ssnChecksumApp', []);

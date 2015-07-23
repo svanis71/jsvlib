@@ -1,0 +1,28 @@
+﻿@using System.Web.Optimization
+@model famsvanstrom.se.Models.Pages.GamePage
+
+<section id="game-content-area" class="page clearfix">
+    @{ Html.RenderPartial("LayoutPartials/PreContent"); }
+    @Content.Render.Tokens("Text").Wrap(@<div id="content">@item.RenderContents()</div>)
+    @{ Html.RenderPartial("LayoutPartials/PostContent"); }
+</section>
+
+<h1 class="game-title">@Model.Title</h1>
+<section class="game-canvas-container"></section>
+
+@section scripts {
+    @Scripts.Render("~/bundles/game")
+    <script>
+        jsvgame.title = "@Model.Title";
+        jsvgame.summary = "@Model.Summary";
+    </script>
+    @{ var files = Model.JavaScriptFiles.Split(new string[] {Environment.NewLine, " "}, StringSplitOptions.RemoveEmptyEntries);}
+    @foreach (var jsFile in files)
+    {
+        <script src="@Url.Content("~/Scripts/games/" + Model.Game + "/" + jsFile)"></script>
+    }    
+}
+
+@section head {
+    <link rel="stylesheet" type="text/css" href="@Url.ThemedContent("~/Content/games.less")"/>
+}

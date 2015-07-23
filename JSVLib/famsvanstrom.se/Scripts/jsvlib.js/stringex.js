@@ -1,4 +1,10 @@
-﻿String.prototype.padLeft = function (c, n) {
+﻿String.prototype.rotate = function () {
+    var s1 = this.charAt(0);
+    var s2 = this.substring(1);
+    return s2 + s1;
+};
+
+String.prototype.padLeft = function (c, n) {
     var s = this;
     var len = s.length;
     var zeros = "";
@@ -24,20 +30,3 @@ String.prototype.contains = function (c) {
     }
     return found;
 };
-
-Number.prototype.isPrime = function () {
-    /*
-    def isPrime(n)
-        return false if n < 2
-        2.upto(Math.sqrt(n)) { |i| return false if n % i == 0 }
-        return true
-    end
-    */
-    if (this < 2)
-        return false;
-    for (var i = 2; i <= Math.sqrt(this) ; i++) {
-        if (this % i == 0) return false;
-    }
-    return true;
-
-}

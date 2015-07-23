@@ -1,10 +1,23 @@
-﻿<section id="top" class="top">
+﻿@using famsvanstrom.se.Web.Mvc.Html
+<section id="top" class="top">
     <div class="top-item"><a href="@Content.Traverse.StartPage.Url"><i class="fa fa-home"></i></a></div>
-    <div class="top-item search">
-        <input type="search" id="q" placeholder="Sök" /></div>
+@{
+    using (Html.BeginForm("Search", null, new {id = "search", n2item = Content.Traverse.StartPage}, FormMethod.Get, new {id = "searchform", @class = "navbar-form", role = "search"}))
+    {
+        <div class="top-item search">
+            <input type="search" name="q" placeholder="Sök" />
+
+        </div>
+    }
+}
     <div class="top-item"><i class="fa fa-lock"></i></div>
-    <div class="top-item jsvdate-section">
-        <section class="jsvdate-date"></section>
-        <section class="jsvdate-time"></section>
-    </div>
+        <div class="top-item jsvdate-section">
+            <section class="jsvdate-date"></section>
+            <section class="jsvdate-time"></section>
+        </div>
+    
+    </section>
+<section class="site-title">
+    @Html.Image("logo", Url.Content("~/Content/img/smilla640.png"), "Smilla@fam-svanstrom.se", null, new { @class = "logo"})
+    <a href="@Content.Traverse.StartPage.Url">@Content.Traverse.StartPage.Title</a>
 </section>

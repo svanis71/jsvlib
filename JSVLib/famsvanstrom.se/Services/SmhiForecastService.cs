@@ -56,7 +56,8 @@ namespace famsvanstrom.se.Services
                     {
                         var theForecast = new SmhiWeatherForecast()
                             {
-                                Time = itm.validTime.ToLocalTime().ToString("HH:mm"), Temprature = itm.t, AirPressure = (int) itm.msl, ThunderProbabilty = itm.tstm,
+                                Time = itm.validTime.ToLocalTime().ToString("HH:mm"), Temprature = Convert.ToInt32(itm.t), 
+                                AirPressure = (int) itm.msl, ThunderProbabilty = itm.tstm,
                                 AverageWind = (int)itm.ws, GustWind = (int)itm.gust, Rain = itm.pit
                             };
                         theForecast.CloudLevel = CloudLevel((int)itm.tcc);

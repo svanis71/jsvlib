@@ -9,7 +9,9 @@
 #region
 
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Dinamico.Models;
@@ -30,6 +32,42 @@ namespace famsvanstrom.se.Web.Mvc.Html
 
     public static class MyHtmlHelpers
     {
+        public const string BreadcrumbClass = "breadcrumb";
+        public const string BreadcrumbItemClass = "breadcrumb-item";
+        public const string BreadcrumbSeparatorClass = "breadcrumb-separator";
+
+        public static IHtmlString Breadcrumb(this HtmlHelper helper, ContentItem current, object htmlAttributes = null)
+        {
+            if (current.GetContentType() == typeof(StartPage))
+                return new MvcHtmlString("");
+            var section = new TagBuilder("section");
+            var sectionHtml = new StringBuilder();
+            var greater = new TagBuilder("span");
+            greater.AddCssClass(BreadcrumbSeparatorClass);
+            greater.SetInnerText(">>");
+            section.AddCssClass(BreadcrumbClass);
+            foreach (var page in N2.Find.EnumerateParents(current, N2.Find.StartPage).Reverse())
+            {
+                var a = new TagBuilder("a");
+                a.AddCssClass(BreadcrumbItemClass);
+                a.Attributes.Add("href", page.Url);
+                a.Attributes.Add("title", page.Title);
+                a.SetInnerText(page.Title);
+                if (sectionHtml.Length > 0)
+                    sectionHtml.Append(greater.ToString());
+                sectionHtml.Append(a.ToString());
+            }
+            // Extra >> berfore current page.
+            sectionHtml.Append(greater.ToString());
+            var currPageSpan = new TagBuilder("span");
+            currPageSpan.AddCssClass(BreadcrumbItemClass);
+            currPageSpan.SetInnerText(current.Title);
+            sectionHtml.Append(currPageSpan.ToString());
+
+            section.InnerHtml = sectionHtml.ToString();
+            return new MvcHtmlString(section.ToString());
+        }
+
         public static MvcHtmlString Image(this HtmlHelper helper, string id,
                                           object htmlAttributes)
         {

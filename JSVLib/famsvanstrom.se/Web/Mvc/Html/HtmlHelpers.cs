@@ -22,6 +22,7 @@ namespace famsvanstrom.se.Web.Mvc.Html
 {
     public static class HtmlHelpers
     {
+
         public static IHtmlString LightbulbCheckboxFor<TModel, TProperty>(this HtmlHelper<TModel> helper,
                                                                           Expression<Func<TModel, TProperty>> expression,
             object htmlAttributes = null)

@@ -14,6 +14,7 @@ using N2.Definitions.Runtime;
 using N2.Engine;
 using N2.Plugin;
 using N2.Web.Mvc;
+using famsvanstrom.se.Dinamico.Controllers;
 
 #endregion
 
@@ -45,6 +46,7 @@ namespace Dinamico
 			var reg = engine.RegisterViewTemplates<Controllers.ContentPagesController>();
             TryRegisterViewTemplate<Controllers.ContentPartsController>(reg);
             TryRegisterViewTemplate<Controllers.SlideshowController>(reg);
+            TryRegisterViewTemplate<GamesController>(reg);
         }
 
 	    private void TryRegisterViewTemplate<T>(ViewTemplateRegistrator registrator) where T : IController

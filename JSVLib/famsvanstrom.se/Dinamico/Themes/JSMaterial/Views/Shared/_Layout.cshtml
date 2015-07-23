@@ -1,4 +1,5 @@
 ﻿@using System.Web.Optimization
+@using famsvanstrom.se.Web.Mvc.Html
 <!DOCTYPE html>
 
 <html>
@@ -12,6 +13,7 @@
                 });
         }
         @{Html.RenderPartial("LayoutPartials/Head");}
+        @Scripts.Render("~/bundles/jsvlib")
         @RenderSection("head", required: false)
     </head>
     <body>
@@ -19,8 +21,6 @@
         <header id="header" class="header">
             <section class="header-content">
                 @{Html.RenderPartial("LayoutPartials/Top");}
-                <section class="site-title">@Content.Traverse.StartPage.Title
-                </section>
             </section>
         </header>
         <section id="banner" class="banner">
@@ -28,6 +28,7 @@
         </section>
         <div class="wrapper">
             <section id="page" class="page">
+                @Html.Breadcrumb(Content.Current.Page)
                 @if (IsSectionDefined("main"))
                 {
                     <section id="main-content" class="main">
@@ -52,5 +53,19 @@
             </footer>
             @Scripts.Render("~/bundles/site")
         </div>
+        
+        <script type="text/javascript">
+            var newsUrl = "http://news.google.se/news?pz=1&cf=all&ned=sv_se&hl=sv&output=rss";
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (xhr.status == 200 && xhr.readyState == 4) {
+                    var xml = xhr.responseText;
+                    debugger;
+                }
+            };
+            xhr.open("GET", newsUrl, true);
+            xhr.send();
+
+        </script>
     </body>
 </html>

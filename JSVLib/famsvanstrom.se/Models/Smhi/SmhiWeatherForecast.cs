@@ -10,7 +10,7 @@ namespace famsvanstrom.se.Models.Smhi
     public class SmhiWeatherForecast
     {
         public string Time { get; set; }
-        public double Temprature { get; set; }
+        public int Temprature { get; set; }
         public string WeatherCss { get; set; }
         public int WindDirection { get; set; }
         public int CloudLevel { get; set; }

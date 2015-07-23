@@ -168,9 +168,26 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\img\cloud.png" />
+    <Content Include="Content\img\games\breakout\ball1.png" />
+    <Content Include="Content\img\games\breakout\ball2.png" />
+    <Content Include="Content\img\games\breakout\Bat.png" />
+    <Content Include="Content\img\games\breakout\blue.png" />
+    <Content Include="Content\img\games\breakout\breakout.png" />
+    <Content Include="Content\img\games\breakout\green.png" />
+    <Content Include="Content\img\games\breakout\purple.png" />
+    <Content Include="Content\img\games\breakout\red.png" />
+    <Content Include="Content\img\games\breakout\yellow.png" />
     <Content Include="Content\img\glodlampa.png" />
     <Content Include="Content\img\glodlampa_av.png" />
     <Content Include="Content\img\pnrimg.png" />
+    <Content Include="Content\img\sky.png" />
+    <Content Include="Content\img\sky_large.png" />
+    <Content Include="Content\img\smilla face.png" />
+    <Content Include="Content\img\smilla face16.ico" />
+    <Content Include="Content\img\smilla face16.png" />
+    <Content Include="Content\img\smilla face48.png" />
+    <Content Include="Content\img\smilla.png" />
+    <Content Include="Content\img\smilla640.png" />
     <Content Include="Content\img\tellstick.png" />
     <Content Include="Content\img\thermometer.png" />
     <Content Include="Content\img\vagguttag.jpg" />
@@ -212,6 +229,21 @@
     <Content Include="Dinamico\Themes\Default\Scripts\Site.js" />
     <Content Include="Dinamico\Themes\Default\Thumbnail.JPG" />
     <Content Include="Content\font\weathericons-regular-webfont.svg" />
+    <Content Include="favicon.ico" />
+    <Content Include="Scripts\core\gameengine.js" />
+    <Content Include="Scripts\core\jcanvas.js" />
+    <Content Include="Scripts\core\TestLayer.js" />
+    <Content Include="Scripts\gameengine\engine.js" />
+    <Content Include="Scripts\games\breakout\Ball.js" />
+    <Content Include="Scripts\games\breakout\BreakoutLayer.js" />
+    <Content Include="Scripts\games\breakout\start.js" />
+    <Content Include="Scripts\games\fifteen\start.js" />
+    <Content Include="Scripts\games\stars\Star.js" />
+    <Content Include="Scripts\games\stars\StarsLayer.js" />
+    <Content Include="Scripts\jsvlib.js\jsv.canvas.js" />
+    <Content Include="Scripts\jsvlib.js\mathex.js" />
+    <Content Include="Scripts\jsvlib.js\reflector.js" />
+    <Content Include="Scripts\jsvlib.js\stringex.js" />
     <Content Include="Scripts\site.js" />
     <Content Include="Dinamico\Themes\Responsive\bak\Content\Site.css" />
     <Content Include="Dinamico\Themes\Responsive\bak\img\glyphicons-halflings-white.png" />
@@ -1004,9 +1036,8 @@
     <Content Include="Scripts\i18n\angular-locale_zu-za.js" />
     <Content Include="Scripts\i18n\angular-locale_zu.js" />
     <Content Include="Scripts\jsvdate.js" />
-    <Content Include="Scripts\load.js" />
     <Content Include="Scripts\ssn\ssntest.js" />
-    <Content Include="Scripts\utils.js" />
+    <Content Include="Scripts\jsvlib.js\numbers.js" />
     <Content Include="Scripts\weather.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -1067,7 +1098,12 @@
     <Content Include="Content\weather-icons\weather-icons.min.less" />
     <Content Include="Dinamico\Themes\JSMaterial\Views\Weather\GetForecast.cshtml" />
     <Content Include="Dinamico\Themes\JSMaterial\Content\layout-wide.less" />
+    <Content Include="Dinamico\Themes\JSMaterial\Views\Games\Index.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Games\Index.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Game\Index.cshtml" />
+    <Content Include="Dinamico\Themes\JSMaterial\Content\games.less" />
     <None Include="Properties\PublishProfiles\www.pubxml" />
+    <Content Include="Scripts\games\breakout\breakout.json" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />
@@ -1097,6 +1133,8 @@
     <Compile Include="Dinamico\Controllers\DevicesPageController.cs" />
     <Compile Include="Dinamico\Controllers\FallbackController.cs" />
     <Compile Include="Dinamico\Controllers\FreeFormController.cs" />
+    <Compile Include="Dinamico\Controllers\GameController.cs" />
+    <Compile Include="Dinamico\Controllers\GamesController.cs" />
     <Compile Include="Dinamico\Controllers\HemmaStatusController.cs" />
     <Compile Include="Dinamico\Controllers\LanguageIntersectionController.cs" />
     <Compile Include="Dinamico\Controllers\MembershipController.cs" />
@@ -1127,7 +1165,9 @@
     <Compile Include="Models\DeviceRepository.cs" />
     <Compile Include="Models\HomeViewModel.cs" />
     <Compile Include="Models\IProblemSolver.cs" />
+    <Compile Include="Models\Pages\GamePage.cs" />
     <Compile Include="Models\Pages\DevicesPageModel.cs" />
+    <Compile Include="Models\Pages\GamesPage.cs" />
     <Compile Include="Models\Pages\SsnTestPage.cs" />
     <Compile Include="Models\Partials\WeatherPartialModel.cs" />
     <Compile Include="Models\PostStatusRequestData.cs" />
@@ -1147,6 +1187,7 @@
     <Compile Include="Models\Smhi\Timeserie.cs" />
     <Compile Include="Services\XmlFileHandler.cs" />
     <Compile Include="Svanstrom\DeviceStatus.cs" />
+    <Compile Include="Svanstrom\N2\Detail\EditableGameAttribute.cs" />
     <Compile Include="Web\Mvc\Html\HtmlHelpers.cs" />
     <Compile Include="Web\Mvc\Html\MyHtmlHelpers.cs" />
   </ItemGroup>
@@ -1276,6 +1317,8 @@
     <Folder Include="Dinamico\Themes\JSMaterial\Scripts\" />
     <Folder Include="Views\Clock\" />
     <Folder Include="Views\DevicesPage\" />
+    <Folder Include="Views\Games\" />
+    <Folder Include="Views\Game\" />
     <Folder Include="Views\SsnTest\" />
     <Folder Include="Views\Weather\" />
   </ItemGroup>

@@ -1,0 +1,29 @@
+﻿@using Dinamico.Models
+@model famsvanstrom.se.Models.Pages.GamesPage
+
+@{
+    Content.Define(re => { re.Title = "Spelsidan"; });
+}
+
+@section main {
+    <header>
+        <section class="big-boxes">
+            @foreach (var itm in Content.Traverse.NavigatableChildPages<ContentPage>())
+            {
+                <a href="@itm.Url" class="big-box">
+                    <section class="big-box-image big-box-item"><img src="@itm.Image"/></section>
+                    <section class="big-box-title big-box-item ">
+                        <h1>@itm.Title</h1>
+                        <p>@itm.Summary</p>
+                    </section>
+                </a>
+            }
+        </section>
+    </header>
+    <article id="main" class="page clearfix">
+        @{ Html.RenderPartial("LayoutPartials/PreContent"); }
+        @Content.Render.Tokens("Text").Wrap(@<div id="content">@item.RenderContents()</div>)
+        @{ Html.RenderPartial("LayoutPartials/PostContent"); }
+    </article>
+}
+

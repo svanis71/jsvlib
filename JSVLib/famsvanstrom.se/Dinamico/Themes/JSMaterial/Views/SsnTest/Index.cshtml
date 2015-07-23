@@ -8,6 +8,10 @@
 
 @section main {
     <section class="ssntest-app" ng-app="ssnChecksumApp" ng-controller="PnrController">
+        <header class="app-header">
+            <h2>@Model.Title</h2>
+            <section class="app-description">@Content.Display.Text</section>
+        </header>
         <section class="input-area">
             <section class="label">
                 <label for="pnr-input">@Model.Label</label>
@@ -21,7 +25,6 @@
                 {{checksum}}
             </span>
         </section>
-        <section class="hack"></section>
     </section>
 }
 
