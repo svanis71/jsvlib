@@ -12,7 +12,6 @@ using famsvanstrom.se.Svanstrom.N2.Detail;
 
 namespace famsvanstrom.se.Models.Pages
 {
-
     [PageDefinition(Name="Ett spel", Title = "Spel", Description = "Min generella sidtemplate för javascriptspel.")]
     [WithEditableTemplateSelection(ContainerName = Defaults.Containers.Metadata)]
     [WithEditableTitle]

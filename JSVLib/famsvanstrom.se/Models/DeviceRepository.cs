@@ -55,7 +55,7 @@ namespace famsvanstrom.se.Models
                             device.Name = device.Name;
                         }
                     }
-                    catch(InvalidOperationException ioex)
+                    catch(InvalidOperationException)
                     {
                         _logger.Error("Indata has a duplicate key {0}", device.ToString());
                     }

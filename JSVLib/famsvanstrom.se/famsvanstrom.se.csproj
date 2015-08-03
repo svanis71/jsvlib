@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -167,6 +168,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Sql\dbscripts.sql" />
     <Content Include="Content\img\cloud.png" />
     <Content Include="Content\img\games\breakout\ball1.png" />
     <Content Include="Content\img\games\breakout\ball2.png" />
@@ -1312,7 +1314,6 @@
     <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
     <Folder Include="Dinamico\Themes\JSMaterial\Scripts\" />
     <Folder Include="Views\Clock\" />
@@ -1337,7 +1338,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>62775</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:52741/</IISUrl>
+          <IISUrl>http://localhost:52742/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -39,7 +39,9 @@ namespace Dinamico.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm new password")]
+#pragma warning disable CS0618 // Type or member is obsolete
         [System.Web.Mvc.Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
+#pragma warning restore CS0618 // Type or member is obsolete
         public string ConfirmPassword { get; set; }
     }
 
@@ -78,7 +80,9 @@ namespace Dinamico.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
+#pragma warning disable CS0618 // Type or member is obsolete
         [System.Web.Mvc.Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+#pragma warning restore CS0618 // Type or member is obsolete
         public string ConfirmPassword { get; set; }
     }
     #endregion
@@ -127,7 +131,10 @@ namespace Dinamico.Models
             if (String.IsNullOrEmpty(password)) throw new ArgumentException("Value cannot be null or empty.", "password");
 
             return (_provider.ValidateUser(userName, password) && _provider.GetUser(userName, false).IsApproved)
+
+#pragma warning disable CS0618 // Type or member is obsolete
                 || FormsAuthentication.Authenticate(userName, password);
+#pragma warning restore CS0618 // Type or member is obsolete
         }
 
         public MembershipCreateStatus CreateUser(string userName, string password, string email)
