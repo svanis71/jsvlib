@@ -1,4 +1,4 @@
-﻿function Ball(params) {
+function Ball(params) {
     var self = this;
     var maxx = params.maxx - 16;
     var maxy = params.maxy - 16;
@@ -7,7 +7,9 @@
 
     var pos = { x: maxx / 2, y: maxy / 2 };
     var speed = { x: -2, y: 1 };
-    var urls = ["ball1.png", "ball2.png"];
+    var urls = ["ball1_0.png", "ball1_1.png", "ball1_2.png", "ball1_3.png", "ball1_4.png",];
+    var isAnimating = false;
+    var isAlive = true;
     var ballImgs = [];
     var fpsCount = 0;
     var loadCount = 0;
@@ -16,10 +18,10 @@
     for (var i = 0; i < urls.length; i++) {
         ballImgs.push(new Image());
         var href = "/Content/img/games/breakout/" + urls[i];
-        ballImgs[i].src = href;
         ballImgs[i].onload = function() {
             loadCount += 1;
         };
+        ballImgs[i].src = href;
         console.log("Loading " + href);
     }
     
@@ -27,7 +29,7 @@
     return {
         draw: function () {
             var imgToDraw = ballImgs[curFrame];
-            if (loadCount == ballImgs.length) {
+            if (isAnimating && loadCount == ballImgs.length) {
                 fpsCount += 1;
                 if (fpsCount > 15) {
                     fpsCount = 0;
@@ -35,8 +37,8 @@
                     //    ballImgs.push(imgToDraw);
                     curFrame = (curFrame + 1) % ballImgs.length;
                 }
-                context.drawImage(imgToDraw, pos.x, pos.y);
             }
+            context.drawImage(imgToDraw, pos.x, pos.y);
         },
         move: function() {
             pos.x += speed.x;
@@ -59,7 +61,7 @@
             }
         },
         testCollision: function(obj) {
-
+            var coords = obj.frame;
         }
     };
 }

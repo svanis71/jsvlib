@@ -1,14 +1,18 @@
-﻿@using System.Web.Optimization
-@model famsvanstrom.se.Models.Pages.GamePage
+﻿@model famsvanstrom.se.Models.Pages.GamePage
+@using System.Web.Optimization
 
-<section id="game-content-area" class="page clearfix">
-    @{ Html.RenderPartial("LayoutPartials/PreContent"); }
-    @Content.Render.Tokens("Text").Wrap(@<div id="content">@item.RenderContents()</div>)
-    @{ Html.RenderPartial("LayoutPartials/PostContent"); }
-</section>
+@section main {
 
-<h1 class="game-title">@Model.Title</h1>
-<section class="game-canvas-container"></section>
+    <section id="game-content-area" class="page clearfix">
+        @{ Html.RenderPartial("LayoutPartials/PreContent"); }
+        @Content.Render.Tokens("Text").Wrap(@<div id="content">@item.RenderContents()</div>)
+        @{ Html.RenderPartial("LayoutPartials/PostContent"); }
+    </section>
+
+    <h1 class="game-title">@Model.Title</h1>
+    <section class="game-canvas-container"></section>
+
+}
 
 @section scripts {
     @Scripts.Render("~/bundles/game")
