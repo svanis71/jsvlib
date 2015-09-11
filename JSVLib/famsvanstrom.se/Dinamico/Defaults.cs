@@ -1,21 +1,10 @@
-// // famsvanstrom.se: Defaults.cs
-// // Author: Johan Svanström
-// // Created: 2015-04-30
-// //
-// // Last changed: 2015-06-09
-// //
-// // Description:
-
-#region
-
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Dinamico.Models;
 using N2;
+using Dinamico.Models;
 using N2.Definitions;
-
-#endregion
 
 namespace Dinamico
 {

@@ -27,69 +27,55 @@ IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 *************************************************************************************************@
 
 @model Dinamico.Models.ContentPart
+@using N2.Web.Mvc.Html
 
 @{
     Content.Define(ie =>
         {
             ie.Title = "Delimited Data Display";
             ie.IconUrl = "{IconsUrl}/table.png";
-            ie.Text("Data").Configure(f =>
-                {
-                    f.Rows = 10;
-                    f.Columns = 60;
-                    f.TextMode = System.Web.UI.WebControls.TextBoxMode.MultiLine;
-                });
+            ie.Text("Data").Configure(f => { f.Rows = 10; f.Columns = 60; f.TextMode = System.Web.UI.WebControls.TextBoxMode.MultiLine; });
             ie.Text("Delimiter").Required().DefaultValue(",").Configure(f => f.MaxLength = 2);
             ie.CheckBox("Headers", "First row contains headers").DefaultValue(false);
             ie.CheckBox("Sort", "Sort data on the first column").DefaultValue(false);
-            ie.CheckBox("Bordered", "Show table borders").DefaultValue(false);
-            ie.CheckBox("Hover", "Highlight table rows on hover").DefaultValue(false);
-            ie.CheckBox("Condensed", "Condensed spacing").DefaultValue(false);
-            ie.CheckBox("Responsive", "Make table scroll horizontally on small devices").DefaultValue(false);
+	        ie.CheckBox("Bordered", "Show table borders").DefaultValue(false);
+	        ie.CheckBox("Hover", "Highlight table rows on hover").DefaultValue(false);
+			ie.CheckBox("Condensed", "Condensed spacing").DefaultValue(false);
+			ie.CheckBox("Responsive", "Make table scroll horizontally on small devices").DefaultValue(false);
         }
-        );
+    );
 
-    var du = new N2.Extensions.CsvImport(Model);
+    N2.Extensions.CsvImport du = new N2.Extensions.CsvImport(Model);
 
-    var tableClass = "table";
-    if (Content.Has.Bordered && Content.Data.Bordered)
-    {
-        tableClass += " table-bordered";
-    }
-    if (Content.Has.Hover && Content.Data.Hover)
-    {
-        tableClass += " table-hover";
-    }
-    if (Content.Has.Condensed && Content.Data.Condensed)
-    {
-        tableClass += " table-condensed";
-    }
-    if (Content.Has.Responsive && Content.Data.Responsive)
-    {
-        tableClass += " table-responsive";
-    }
+	var tableClass = "table";
+	if (Content.Has.Bordered && Content.Data.Bordered)
+	{
+		tableClass += " table-bordered";
+	}
+	if (Content.Has.Hover && Content.Data.Hover)
+	{
+		tableClass += " table-hover";
+	}
+	if (Content.Has.Condensed && Content.Data.Condensed)
+	{
+		tableClass += " table-condensed";
+	}
+	if (Content.Has.Responsive && Content.Data.Responsive)
+	{
+		tableClass += " table-responsive";
+	}
 }
 <table class="@tableClass">
-    @if (du.HasHeader)
-    {
-        <thead>
-            <tr>
-                @foreach (var str in du.HeaderRow)
-                {
-                    <th>@str</th>
-                }
-            </tr>
-        </thead>
-    }
+    @if (du.HasHeader) {
+    <thead>
+        <tr>
+            @foreach (string str in du.HeaderRow) {  <th>@str</th> }
+        </tr>
+    </thead> }
     <tbody>
-        @foreach (var row in du.Rows)
-        {
-            <tr>
-                @foreach (var col in row)
-                {
-                    <td>@col</td>
-                }
-            </tr>
-        }
+        @foreach (string[] row in du.Rows) { 
+        <tr>
+            @foreach (string col in row) { <td>@col</td> }
+        </tr> }
     </tbody>
 </table>

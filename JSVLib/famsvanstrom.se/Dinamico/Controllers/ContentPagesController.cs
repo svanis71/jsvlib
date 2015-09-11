@@ -1,18 +1,7 @@
-// // famsvanstrom.se: ContentPagesController.cs
-// // Author: Johan Svanström
-// // Created: 2015-04-30
-// //
-// // Last changed: 2015-06-09
-// //
-// // Description:
-
-#region
-
+using System;
 using System.Web.Mvc;
 using N2.Web;
 using N2.Web.Mvc;
-
-#endregion
 
 namespace Dinamico.Controllers
 {

@@ -31,57 +31,59 @@ IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 @{
 
     Content.Define(ie =>
-        {
-            ie.Title = "Content Tile";
-            ie.IconUrl = "{IconsUrl}/brick.png";
-            ie.Enum("Float", typeof (N2.Web.BlockAlignment))
-              .DefaultValue(N2.Web.BlockAlignment.Middle);
-
-            ie.Container("Advanced", cr =>
-                {
-                    cr.Text("CssClass");
-                    cr.Text("InlineStyle");
-                });
-        });
-
-    var InlineStyles = (String) Content.Data.InlineStyle ?? String.Empty;
-    var CssClass = (String) Content.Data.CssClass ?? String.Empty;
-    var Float = N2.Web.BlockAlignment.Middle;
-    try
     {
-        var blockType = typeof (N2.Web.BlockAlignment);
-        var blockValue = (Model.GetDetail("Float") ?? N2.Web.BlockAlignment.Middle).ToString();
-        Float = (N2.Web.BlockAlignment) Enum.Parse(blockType, blockValue);
+        ie.Title = "Content Tile";
+        ie.IconUrl = "{IconsUrl}/brick.png";
+        ie.Enum("Float", typeof(N2.Web.BlockAlignment))
+            .DefaultValue(N2.Web.BlockAlignment.Middle);
+
+		ie.Container("Advanced", cr =>
+		{
+			cr.Text("CssClass");
+			cr.Text("InlineStyle");
+		});
+	});
+
+    var InlineStyles = (String)Content.Data.InlineStyle ?? String.Empty;
+    var CssClass = (String)Content.Data.CssClass ?? String.Empty;
+	var Float = N2.Web.BlockAlignment.Middle;
+    try
+	{
+		var blockType = typeof (N2.Web.BlockAlignment);
+		var blockValue = (Model.GetDetail("Float") ?? N2.Web.BlockAlignment.Middle).ToString();
+        Float = (N2.Web.BlockAlignment)Enum.Parse(blockType, blockValue);
     }
     catch
     {
         Float = N2.Web.BlockAlignment.Middle;
     }
+
 }
 
 @switch (Float)
 {
-    case N2.Web.BlockAlignment.Left:
-        <div class="content-block content-block-left @CssClass" style="float: left; @InlineStyles">
-            @{ Html.DroppableZone("Content").Render(); }
-        </div>
-        break;
-
-    case N2.Web.BlockAlignment.Right:
-        <div class="content-block content-block-right @CssClass" style="float: right; @InlineStyles">
-            @{ Html.DroppableZone("Content").Render(); }
-        </div>
-        break;
-
-    case N2.Web.BlockAlignment.Middle:
-        <div class="content-block content-block-middle @CssClass" style="text-align: center; @InlineStyles">
-            @{ Html.DroppableZone("Content").Render(); }
-        </div>
-        break;
-
-    default:
-        <div class="content-block content-block-default @CssClass" style="@InlineStyles">
-            @{ Html.DroppableZone("Content").Render(); }
-        </div>
-        break;
+	case N2.Web.BlockAlignment.Left:
+		<div class="content-block content-block-left @CssClass" style="float: left; @InlineStyles">
+			@{ Html.DroppableZone("Content").Render(); }
+		</div>
+		break;
+        
+	case N2.Web.BlockAlignment.Right:
+		<div class="content-block content-block-right @CssClass" style="float: right; @InlineStyles">
+			@{ Html.DroppableZone("Content").Render(); }
+		</div>
+		break;
+        
+	case N2.Web.BlockAlignment.Middle:
+		<div class="content-block content-block-middle @CssClass" style="text-align: center; @InlineStyles">
+			@{ Html.DroppableZone("Content").Render(); }
+		</div>
+		break;
+        
+	default:
+		<div class="content-block content-block-default @CssClass" style="@InlineStyles">
+			@{ Html.DroppableZone("Content").Render(); }
+		</div>
+		break;
+        
 }

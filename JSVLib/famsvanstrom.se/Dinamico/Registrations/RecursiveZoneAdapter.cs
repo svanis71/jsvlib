@@ -1,20 +1,8 @@
-// // famsvanstrom.se: RecursiveZoneAdapter.cs
-// // Author: Johan Svanström
-// // Created: 2015-04-30
-// //
-// // Last changed: 2015-06-09
-// //
-// // Description:
-
-#region
-
-using System.Linq;
-using Dinamico.Models;
 using N2;
-using N2.Engine;
 using N2.Web.Parts;
-
-#endregion
+using N2.Engine;
+using Dinamico.Models;
+using System.Linq;
 
 namespace Dinamico.Registrations
 {

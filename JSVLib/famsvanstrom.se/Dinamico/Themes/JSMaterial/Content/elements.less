@@ -1,18 +1,22 @@
-﻿@import url('variables.less');
+@import url('variables.less');
 
-* {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    margin: 0;
-}
-
-html {
+html { 
+    box-sizing: border-box; 
     font-family: 'Oxygen', sans-serif;
     .base_font-size;
     color: @color;
     background: @backcolor;
 }
+
+* {
+    margin: 0;
+    box-sizing: inherit;
+} 
+*:before, *:after { 
+    box-sizing: inherit; 
+}
+
+img { box-sizing: content-box; }
 
 div, section, header, footer, article {
     display: block;

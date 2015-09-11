@@ -1,23 +1,13 @@
-// // famsvanstrom.se: AccountModels.cs
-// // Author: Johan Svanström
-// // Created: 2015-04-30
-// //
-// // Last changed: 2015-06-09
-// //
-// // Description:
-
-#region
-
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
+using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using N2.Engine;
-
-#endregion
 
 namespace Dinamico.Models
 {
@@ -39,9 +29,7 @@ namespace Dinamico.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm new password")]
-#pragma warning disable CS0618 // Type or member is obsolete
         [System.Web.Mvc.Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
-#pragma warning restore CS0618 // Type or member is obsolete
         public string ConfirmPassword { get; set; }
     }
 
@@ -80,9 +68,7 @@ namespace Dinamico.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
-#pragma warning disable CS0618 // Type or member is obsolete
         [System.Web.Mvc.Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
-#pragma warning restore CS0618 // Type or member is obsolete
         public string ConfirmPassword { get; set; }
     }
     #endregion
@@ -131,10 +117,7 @@ namespace Dinamico.Models
             if (String.IsNullOrEmpty(password)) throw new ArgumentException("Value cannot be null or empty.", "password");
 
             return (_provider.ValidateUser(userName, password) && _provider.GetUser(userName, false).IsApproved)
-
-#pragma warning disable CS0618 // Type or member is obsolete
                 || FormsAuthentication.Authenticate(userName, password);
-#pragma warning restore CS0618 // Type or member is obsolete
         }
 
         public MembershipCreateStatus CreateUser(string userName, string password, string email)
@@ -263,7 +246,7 @@ namespace Dinamico.Models
 
         public override bool IsValid(object value)
         {
-            var valueAsString = value as string;
+            string valueAsString = value as string;
             return (valueAsString != null && valueAsString.Length >= _minCharacters);
         }
 

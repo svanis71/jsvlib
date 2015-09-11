@@ -5,28 +5,28 @@
 <!--[if IE 9 ]>    <html lang="@Content.Current.LanguageCode" class="no-js ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="@Content.Current.LanguageCode" class="no-js"> <!--<![endif]-->
 <head>
-    @{ Html.RenderPartial("LayoutPartials/Head"); }
-    @{ Html.Resources().StyleSheet(N2.Resources.Register.TwitterBootstrapCssPath); }
-    @{ Html.Resources().JQuery(); }
-    @{ Html.Resources().JavaScript(N2.Resources.Register.TwitterBootstrapJsPath); }
-    @{ Html.Resources().JavaScript(Url.ThemedContent("~/Scripts/site.js")); }
-    @{
-        Content.PrependDefinition(re =>
-            {
-                re.Tab("Content", "Content");
-                re.PublishedRange().Container("Metadata");
-            });
-    }
-    @RenderSection("head", required: false)
+@{ Html.RenderPartial("LayoutPartials/Head"); }
+@{ Html.Resources().StyleSheet(N2.Resources.Register.TwitterBootstrapCssPath); }
+@{ Html.Resources().JQuery(); }
+@{ Html.Resources().JavaScript(N2.Resources.Register.TwitterBootstrapJsPath); }
+@{ Html.Resources().JavaScript(Url.ThemedContent("~/Scripts/site.js")); }
+@{
+	Content.PrependDefinition(re =>
+	{
+		re.Tab("Content", "Content");
+		re.PublishedRange().Container("Metadata");
+	});
+	}
+@RenderSection("head", required: false)
 </head>
 <body data-spy="scroll" data-target=".subnav" data-offset="50">
-@{ Html.ControlPanel().Render(); }
+	@{ Html.ControlPanel().Render(); }
 
-@{ Html.RenderPartial("LayoutPartials/Navbar"); }
+	@{ Html.RenderPartial("LayoutPartials/Navbar"); }
 
-<div class="container">
+	<div class="container">
 	
-    @*<!-- Masthead
+	@*<!-- Masthead
 	================================================== -->
 	<header class="jumbotron subhead" id="overview">
 	<h1>Scaffolding</h1>
@@ -43,10 +43,10 @@
 	</div>
 	</header>*@
 
-    @RenderSection("main", required: false)
-    @RenderBody()
+	@RenderSection("main", required: false)
+	@RenderBody()
 
-</div>
+	</div>
 
 @*	<div id="wrapper" class="clearfix">
 	@if (IsSectionDefined("page"))

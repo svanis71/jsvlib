@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -16,6 +17,7 @@ namespace famsvanstrom.se.Dinamico.Controllers
         // GET: /Game/
         public override ActionResult Index()
         {
+            // Dummy comment
             if (CurrentItem == null)
             {
                 // no item to render, 404 error
@@ -24,5 +26,6 @@ namespace famsvanstrom.se.Dinamico.Controllers
             }
             return View(CurrentItem.TemplateKey, CurrentItem);
         }
+
 	}
 }

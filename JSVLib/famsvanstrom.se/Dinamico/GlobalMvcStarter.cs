@@ -1,22 +1,9 @@
-// // famsvanstrom.se: GlobalMvcStarter.cs
-// // Author: Johan Svanström
-// // Created: 2015-04-30
-// //
-// // Last changed: 2015-06-09
-// //
-// // Description:
-
-#region
-
 using System.Web.Mvc;
 using System.Web.Routing;
 using N2.Definitions.Runtime;
 using N2.Engine;
 using N2.Plugin;
 using N2.Web.Mvc;
-using famsvanstrom.se.Dinamico.Controllers;
-
-#endregion
 
 namespace Dinamico
 {
@@ -46,7 +33,6 @@ namespace Dinamico
 			var reg = engine.RegisterViewTemplates<Controllers.ContentPagesController>();
             TryRegisterViewTemplate<Controllers.ContentPartsController>(reg);
             TryRegisterViewTemplate<Controllers.SlideshowController>(reg);
-            TryRegisterViewTemplate<GamesController>(reg);
         }
 
 	    private void TryRegisterViewTemplate<T>(ViewTemplateRegistrator registrator) where T : IController

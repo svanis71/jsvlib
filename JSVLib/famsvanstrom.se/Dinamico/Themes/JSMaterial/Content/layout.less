@@ -51,7 +51,7 @@
         padding-right: 0.5em;
 
         &:hover {
-/*            animation-name: smilla-animation;
+            /*            animation-name: smilla-animation;
             animation-duration: 3s; */
             transform: rotateY(360deg);
             transform-style: preserve-3d;
@@ -86,6 +86,7 @@
 .breadcrumb {
     text-align: center;
     padding-bottom: 1.5em;
+
     .breadcrumb-item {
         font-size: 80%;
     }
@@ -122,10 +123,12 @@ section {
         .flexbox;
         .flex-flow(row, nowrap);
         .justify-content(flex-start);
+        .align-items(center);
         background: #fff;
-        height: 6em;
-        border: solid medium #555555;
-        border-radius: 0.7em;
+        height: 10em;
+        border: solid medium @border_color;
+        border-right: solid 0.7em @box-right-border-color;
+        border-radius: 0.2em;
         box-shadow: 0.1em 0.1em 0.1em 0.1em @box-shadow-color;
         margin: 1em 1em 1em 1em;
         overflow: hidden;
@@ -144,7 +147,9 @@ section {
             .flex-flow(row, nowrap);
             .justify-content(center);
             .align-items(stretch);
-            width: 25%;
+            width: 7em;
+            height: 7em;
+            padding: 0.3em;
 
             img {
                 width: 100%;
@@ -158,10 +163,15 @@ section {
             h1 {
                 font-size: 1.0em;
                 font-weight: bold;
+                text-align: center;
+                text-decoration: underline;
+                margin-bottom: 0.5em;
             }
 
             p {
-                font-size: 0.7em;
+                font-size: 0.9em;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
         }
     }

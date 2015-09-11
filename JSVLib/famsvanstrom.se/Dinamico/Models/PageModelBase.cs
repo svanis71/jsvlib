@@ -1,20 +1,12 @@
-// // famsvanstrom.se: PageModelBase.cs
-// // Author: Johan Svanström
-// // Created: 2015-04-30
-// //
-// // Last changed: 2015-06-09
-// //
-// // Description:
-
-#region
-
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 using N2;
-using N2.Definitions;
 using N2.Details;
-using N2.Integrity;
 using N2.Web.UI;
-
-#endregion
+using N2.Integrity;
+using N2.Definitions;
 
 namespace Dinamico.Models
 {

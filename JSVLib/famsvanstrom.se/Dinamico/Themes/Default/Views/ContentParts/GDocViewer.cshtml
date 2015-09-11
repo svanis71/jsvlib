@@ -27,40 +27,40 @@ IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 *************************************************************************************************@
 
 @model Dinamico.Models.ContentPart
-@{
-    Content.Define(re =>
-        {
-            re.Title = "Google Docs Viewer";
-            re.IconUrl = "{IconsUrl}/page_white_acrobat.png";
-            re.FileUpload("File");
-            re.Text("Width").DefaultValue("100%").Required();
-            re.Text("Height").DefaultValue("450px").Required();
-            re.Text("BaseURL", "Override Base URL (optional)");
-        });
+@{ 
+	Content.Define(re =>
+	{
+		re.Title = "Google Docs Viewer";
+		re.IconUrl = "{IconsUrl}/page_white_acrobat.png";
+		re.FileUpload("File");
+		re.Text("Width").DefaultValue("100%").Required();
+		re.Text("Height").DefaultValue("450px").Required();
+		re.Text("BaseURL", "Override Base URL (optional)");
+	});
+	
+	var G_URL = "http://docs.google.com/viewer?embedded=true&url=" 
+		+ (Content.Has.BaseURL ? Content.Data.BaseURL : (Request.Url.GetComponents(UriComponents.SchemeAndServer, UriFormat.UriEscaped)))
+		+ (Content.Data.File);
 
-    var G_URL = "http://docs.google.com/viewer?embedded=true&url="
-                + (Content.Has.BaseURL ? Content.Data.BaseURL : (Request.Url.GetComponents(UriComponents.SchemeAndServer, UriFormat.UriEscaped)))
-                + (Content.Data.File);
-
-    var Width = (Content.Has.Width && !String.IsNullOrEmpty(Content.Data.Width)) ? Content.Data.Width : "100%";
-    var Height = (Content.Has.Height && !String.IsNullOrEmpty(Content.Data.Height)) ? Content.Data.Height : "450px";
+	var Width   = (Content.Has.Width  && !String.IsNullOrEmpty(Content.Data.Width )) ? Content.Data.Width  : "100%";
+	var Height  = (Content.Has.Height && !String.IsNullOrEmpty(Content.Data.Height)) ? Content.Data.Height : "450px";
 }
 
 @if (Request.IsLocal)
 {
-    <div class="alert alert-warning">
-        <p>Warning: Requests to localhost can't be resolved by the Google Docs web service.</p>
-    </div>
+	<div class="alert alert-warning">
+		<p>Warning: Requests to localhost can't be resolved by the Google Docs web service.</p>
+	</div>
 }
 @if (Content.Has.File)
 {
-    <iframe class="google-doc-viewer" style="width: @Width; height: @Height" src="@G_URL">
-    </iframe>
+	<iframe class="google-doc-viewer" style="width: @Width; height: @Height" src="@G_URL">
+	</iframe>
 }
 else
 {
-    <div class="alert alert-warning">
-        <h2>Embedded Document Viewer</h2>
-        <p>No file selected or no height specified.</p>
-    </div>
+	<div class="alert alert-warning">
+		<h2>Embedded Document Viewer</h2>
+		<p>No file selected or no height specified.</p>
+	</div>
 }

@@ -1,21 +1,13 @@
-// // famsvanstrom.se: StartPageRegistration.cs
-// // Author: Johan Svanström
-// // Created: 2015-04-30
-// //
-// // Last changed: 2015-06-09
-// //
-// // Description:
-
-#region
-
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using N2.Definitions.Runtime;
 using Dinamico.Models;
 using N2.Definitions;
-using N2.Definitions.Runtime;
-using N2.Details;
 using N2.Security;
+using N2.Details;
 using N2.Web.Mvc;
-
-#endregion
 
 namespace Dinamico.Dinamico.Registrations
 {

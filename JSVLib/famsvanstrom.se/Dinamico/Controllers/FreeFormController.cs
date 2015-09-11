@@ -1,13 +1,3 @@
-// // famsvanstrom.se: FreeFormController.cs
-// // Author: Johan Svanström
-// // Created: 2015-04-30
-// //
-// // Last changed: 2015-06-09
-// //
-// // Description:
-
-#region
-
 using System;
 using System.IO;
 using System.Linq;
@@ -17,8 +7,6 @@ using Dinamico.Models;
 using N2.Web.Mail;
 using N2.Web.Mvc;
 using N2.Web.Rendering;
-
-#endregion
 
 namespace Dinamico.Controllers
 {

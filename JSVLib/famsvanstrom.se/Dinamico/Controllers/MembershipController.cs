@@ -1,18 +1,13 @@
-// // famsvanstrom.se: MembershipController.cs
-// // Author: Johan Svanström
-// // Created: 2015-04-30
-// //
-// // Last changed: 2015-06-09
-// //
-// // Description:
-
-#region
-
+using System;
+using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
+using System.Linq;
+using System.Security.Principal;
+using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 using System.Web.Security;
 using Dinamico.Models;
-
-#endregion
 
 namespace Dinamico.Controllers
 {

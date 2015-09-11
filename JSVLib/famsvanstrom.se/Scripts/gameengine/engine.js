@@ -1,6 +1,22 @@
 ﻿/// <reference path="../jsvlib.js/jsv.canvas.js" />
 
 jsvgame = {};
+jsvgame.Point = function(x, y) {
+    var xPos = x || 0;
+    var yPos = y || 0;
+    var distanceTo = function(p2) {
+        var dx = p2.x - xPos;
+        var dy = p2.y - yPos;
+        return Math.sqrt(dx * dx + dy * dy);
+    };
+    return {
+        x: xPos,
+        y: yPos,
+        distanceTo: distanceTo
+    };
+};
+
+
 jsvgame.sprites = [];
 jsvgame.images = [];
 jsvgame.Events = {
@@ -10,6 +26,10 @@ jsvgame.Events = {
 jsvgame.GameResources = {
     atlas: null,
     atlasJSON: null
+};
+
+jsvgame.Entity = function() {
+    
 };
 
 jsvgame.Sprite = function (pName, x, y, w, h) {
@@ -103,6 +123,7 @@ jsvgame.GameEngine = function(settings) {
     var canvas = new JCanvas(canvasContainer, cw, ch, { "id": "c1", "class": "gameCanvas" });
     var context = canvas.context;
     var isRunning = false;
+    var images = engineSettings.images || [];
 
     // Screen layers
     var layers = [];
@@ -156,7 +177,7 @@ jsvgame.GameEngine = function(settings) {
         }
     };
 
-    self._loadImages = function (images) {
+    self._loadImages = function () {
 
         var loader = new jsvgame.AtlasLoader();
         for (var i = 0; i < images.length; i++) {
@@ -169,10 +190,12 @@ jsvgame.GameEngine = function(settings) {
     return {
         loadImages: self._loadImages,
         init: function () {
-            jsvgame.GameEventManager.observeOnAtlasReady(function() {
+            jsvgame.GameEventManager().observeOnAtlasReady(function(e) {
                 // Draw background from atlas
+                //context.drawImage(jsvgame.GameResources.atlas, 0, 0, );
+                console.log(e);
             });
-            loadImages();
+            this.loadImages();
             //background = new Image();
             //background.onload = function() {
             //    context.drawImage(background, 0, 0, cw, ch);

@@ -60,36 +60,40 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="N2, Version=2.7.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\N2CMS.Library.2.7\lib\net45\N2.dll</HintPath>
+    <Reference Include="N2, Version=2.7.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\fam-svanstrom.se-sln\packages\N2CMS.Library.2.7.5\lib\net45\N2.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="N2.Extensions, Version=2.6.3.8, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\N2CMS.Management.2.6.3.8\lib\N2.Extensions.dll</HintPath>
+    <Reference Include="N2.Extensions, Version=2.7.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\fam-svanstrom.se-sln\packages\N2CMS.Management.2.7.5\lib\N2.Extensions.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="N2.Management, Version=2.6.3.8, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\N2CMS.Management.2.6.3.8\lib\N2.Management.dll</HintPath>
+    <Reference Include="N2.Management, Version=2.7.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\fam-svanstrom.se-sln\packages\N2CMS.Management.2.7.5\lib\N2.Management.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="N2.Packaging, Version=2.6.3.8, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\N2CMS.Management.2.6.3.8\lib\N2.Packaging.dll</HintPath>
+    <Reference Include="N2.Management.Targeting, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\fam-svanstrom.se-sln\packages\N2CMS.Management.2.7.5\lib\N2.Management.Targeting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="N2.Packaging, Version=2.7.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\fam-svanstrom.se-sln\packages\N2CMS.Management.2.7.5\lib\N2.Packaging.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="N2.Razor, Version=2.7.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\N2CMS.Razor.2.7\lib\net45\N2.Razor.dll</HintPath>
+      <HintPath>..\fam-svanstrom.se-sln\packages\N2CMS.Razor.2.7\lib\net45\N2.Razor.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="N2.ReusableParts, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\N2CMS.ReusableParts.2.7\lib\NET40\N2.ReusableParts.dll</HintPath>
+      <HintPath>..\fam-svanstrom.se-sln\packages\N2CMS.ReusableParts.2.7\lib\NET40\N2.ReusableParts.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="N2.Search.Lucene, Version=2.6.3.8, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\N2CMS.Search.Lucene.2.6.3.8\lib\N2.Search.Lucene.dll</HintPath>
+    <Reference Include="N2.Search.Lucene, Version=2.7.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\fam-svanstrom.se-sln\packages\N2CMS.Search.Lucene.2.7.5\lib\N2.Search.Lucene.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\fam-svanstrom.se-sln\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\fam-svanstrom.se-sln\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
@@ -196,6 +200,7 @@
     <Content Include="Content\img\thermometer.png" />
     <Content Include="Content\img\vagguttag.jpg" />
     <Content Include="Content\img\wheater.png" />
+    <Content Include="Content\font\weathericons-regular-webfont.svg" />
     <Content Include="Dinamico\N2\readme.txt" />
     <Content Include="Dinamico\readme.txt" />
     <Content Include="Dinamico\Themes\Cloudy\bak\Content\Elements.css" />
@@ -232,23 +237,8 @@
     <Content Include="Dinamico\Themes\Default\lib\jquery\jquery.highlight-3.js" />
     <Content Include="Dinamico\Themes\Default\Scripts\Site.js" />
     <Content Include="Dinamico\Themes\Default\Thumbnail.JPG" />
-    <Content Include="Content\font\weathericons-regular-webfont.svg" />
-    <Content Include="favicon.ico" />
-    <Content Include="Scripts\core\gameengine.js" />
-    <Content Include="Scripts\core\jcanvas.js" />
-    <Content Include="Scripts\core\TestLayer.js" />
-    <Content Include="Scripts\gameengine\engine.js" />
-    <Content Include="Scripts\games\breakout\Ball.js" />
-    <Content Include="Scripts\games\breakout\BreakoutLayer.js" />
-    <Content Include="Scripts\games\breakout\start.js" />
-    <Content Include="Scripts\games\fifteen\start.js" />
-    <Content Include="Scripts\games\stars\Star.js" />
-    <Content Include="Scripts\games\stars\StarsLayer.js" />
-    <Content Include="Scripts\jsvlib.js\jsv.canvas.js" />
-    <Content Include="Scripts\jsvlib.js\mathex.js" />
-    <Content Include="Scripts\jsvlib.js\reflector.js" />
-    <Content Include="Scripts\jsvlib.js\stringex.js" />
-    <Content Include="Scripts\site.js" />
+    <Content Include="Dinamico\Themes\MyTheme\Content\Site.css" />
+    <Content Include="Dinamico\Themes\MyTheme\readme.txt" />
     <Content Include="Dinamico\Themes\Responsive\bak\Content\Site.css" />
     <Content Include="Dinamico\Themes\Responsive\bak\img\glyphicons-halflings-white.png" />
     <Content Include="Dinamico\Themes\Responsive\bak\img\glyphicons-halflings.png" />
@@ -264,13 +254,30 @@
     <Content Include="Dinamico\Themes\Terracotta\bak\Content\Mood.css" />
     <Content Include="Dinamico\Themes\Terracotta\bak\Content\Site.css" />
     <Content Include="Dinamico\Themes\Terracotta\Thumbnail.JPG" />
-    <Content Include="Global.asax" />
+    <Content Include="favicon.ico" />
     <Content Include="N2\history.txt" />
     <Content Include="N2\howto_develop.txt" />
     <Content Include="N2\howto_install.txt" />
     <Content Include="N2\license.txt" />
     <Content Include="N2\n2_readme.txt" />
     <Content Include="N2\upgrade.txt" />
+    <Content Include="Scripts\core\gameengine.js" />
+    <Content Include="Scripts\core\jcanvas.js" />
+    <Content Include="Scripts\core\TestLayer.js" />
+    <Content Include="Scripts\gameengine\engine.js" />
+    <Content Include="Scripts\games\breakout\Ball.js" />
+    <Content Include="Scripts\games\breakout\BreakoutLayer.js" />
+    <Content Include="Scripts\games\breakout\start.js" />
+    <Content Include="Scripts\games\fifteen\start.js" />
+    <Content Include="Scripts\games\stars\Star.js" />
+    <Content Include="Scripts\games\stars\StarsLayer.js" />
+    <Content Include="Scripts\i18n\angular-locale_sw-cd.js" />
+    <Content Include="Scripts\jsvlib.js\jsv.canvas.js" />
+    <Content Include="Scripts\jsvlib.js\mathex.js" />
+    <Content Include="Scripts\jsvlib.js\reflector.js" />
+    <Content Include="Scripts\jsvlib.js\stringex.js" />
+    <Content Include="Scripts\site.js" />
+    <Content Include="Global.asax" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-aria.js" />
@@ -1106,6 +1113,34 @@
     <Content Include="Dinamico\Themes\Default\Views\Games\Index.cshtml" />
     <Content Include="Dinamico\Themes\Default\Views\Game\Index.cshtml" />
     <Content Include="Dinamico\Themes\JSMaterial\Content\games.less" />
+    <Content Include="N2\web.config" />
+    <Content Include="N2\N2.zip" />
+    <Content Include="Dinamico\Themes\Web.config" />
+    <Content Include="Dinamico\Themes\MyTheme\Views\Web.config" />
+    <Content Include="Dinamico\Themes\Default\Views\Web.config" />
+    <Content Include="Dinamico\Themes\Default\Views\Shared\TokenTemplates\StartPage.cshtml" />
+    <Content Include="Dinamico\Themes\Terracotta\bak\Views\Web.config" />
+    <Content Include="Dinamico\Themes\Roadwork\bak\Views\Web.config" />
+    <Content Include="Dinamico\Themes\Roadwork\bak\Views\Shared\LayoutPartials\SubNavigation.cshtml" />
+    <Content Include="Dinamico\Themes\Roadwork\bak\Views\Shared\LayoutPartials\Logotype.cshtml" />
+    <Content Include="Dinamico\Themes\Responsive\bak\Views\Web.config" />
+    <Content Include="Dinamico\Themes\Default\Views\Shared\LayoutPartials\PostContent.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Shared\LayoutPartials\Logotype.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Shared\LayoutPartials\Head.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Shared\Error.cshtml" />
+    <Content Include="Dinamico\Themes\Default\Views\Membership\ChangePasswordSuccess.cshtml" />
+    <Content Include="Dinamico\Themes\Default\lib\jquery\jquery-1.10.2.min.map" />
+    <Content Include="Dinamico\Themes\Default\lib\bootstrap-3.0.3\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Dinamico\Themes\Default\lib\bootstrap-3.0.3\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Dinamico\Themes\Default\lib\bootstrap-3.0.3\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Dinamico\Themes\Dark\bak\Views\Web.config" />
+    <Content Include="Dinamico\Themes\Concrete\bak\Views\Web.config" />
+    <Content Include="Dinamico\Themes\Cloudy\bak\Views\Web.config" />
+    <Content Include="Dinamico\Themes\Cloudy\bak\Views\Shared\LayoutPartials\SubNavigation.cshtml" />
+    <Content Include="Dinamico\Themes\JSMaterial\Views\StartPage\Index2.cshtml" />
+    <None Include="N2\n2cms.configuration.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\PublishProfiles\www.pubxml" />
     <Content Include="Scripts\games\breakout\breakout.json" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
@@ -1140,6 +1175,7 @@
     <Compile Include="Dinamico\Controllers\GameController.cs" />
     <Compile Include="Dinamico\Controllers\GamesController.cs" />
     <Compile Include="Dinamico\Controllers\HemmaStatusController.cs" />
+    <Compile Include="Dinamico\Controllers\ImagesController.cs" />
     <Compile Include="Dinamico\Controllers\LanguageIntersectionController.cs" />
     <Compile Include="Dinamico\Controllers\MembershipController.cs" />
     <Compile Include="Dinamico\Controllers\SsnTestController.cs" />
@@ -1197,22 +1233,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
-    <Content Include="packages.config" />
-    <Content Include="N2\web.config" />
-    <Content Include="N2\N2.zip" />
-    <Content Include="Dinamico\Themes\Web.config" />
-    <Content Include="Dinamico\Themes\Terracotta\bak\Views\Web.config" />
-    <Content Include="Dinamico\Themes\Roadwork\bak\Views\Web.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Dinamico\Themes\Roadwork\bak\Views\Shared\LayoutPartials\TopNavigation.cshtml" />
-    <Content Include="Dinamico\Themes\Roadwork\bak\Views\Shared\LayoutPartials\SubNavigation.cshtml" />
-    <Content Include="Dinamico\Themes\Roadwork\bak\Views\Shared\LayoutPartials\Logotype.cshtml" />
     <Content Include="Dinamico\Themes\Roadwork\bak\Views\Shared\LayoutPartials\Footer.cshtml" />
-    <Content Include="Dinamico\Themes\Responsive\bak\Views\Web.config" />
     <Content Include="Dinamico\Themes\Responsive\bak\Views\Shared\LayoutPartials\Navbar.cshtml" />
     <Content Include="Dinamico\Themes\Responsive\bak\Views\Shared\_Layout.cshtml" />
     <Content Include="Dinamico\Themes\Responsive\bak\Views\ContentParts\ThreeColumns.cshtml" />
     <Content Include="Dinamico\Themes\Responsive\bak\Views\_ViewStart.cshtml" />
-    <Content Include="Dinamico\Themes\Default\Views\Web.config" />
     <Content Include="Dinamico\Themes\Default\Views\Test\Index.cshtml" />
     <Content Include="Dinamico\Themes\Default\Views\StartPage\NotFound.cshtml" />
     <Content Include="Dinamico\Themes\Default\Views\StartPage\Index.cshtml" />
@@ -1221,7 +1250,6 @@
     <Content Include="Dinamico\Themes\Default\Views\Slideshow\BootstrapGrid.cshtml" />
     <Content Include="Dinamico\Themes\Default\Views\Shared\TokenTemplates\TOC.cshtml" />
     <Content Include="Dinamico\Themes\Default\Views\Shared\TokenTemplates\SubsequentSiblings.cshtml" />
-    <Content Include="Dinamico\Themes\Default\Views\Shared\TokenTemplates\StartPage.cshtml" />
     <Content Include="Dinamico\Themes\Default\Views\Shared\TokenTemplates\Siblings.cshtml" />
     <Content Include="Dinamico\Themes\Default\Views\Shared\TokenTemplates\Search.cshtml" />
     <Content Include="Dinamico\Themes\Default\Views\Shared\TokenTemplates\Published.cshtml" />
@@ -1245,19 +1273,14 @@
     <Content Include="Dinamico\Themes\Default\Views\Shared\LayoutPartials\SiteMap.cshtml" />
     <Content Include="Dinamico\Themes\Default\Views\Shared\LayoutPartials\Search.cshtml" />
     <Content Include="Dinamico\Themes\Default\Views\Shared\LayoutPartials\PreContent.cshtml" />
-    <Content Include="Dinamico\Themes\Default\Views\Shared\LayoutPartials\PostContent.cshtml" />
-    <Content Include="Dinamico\Themes\Default\Views\Shared\LayoutPartials\Logotype.cshtml" />
     <Content Include="Dinamico\Themes\Default\Views\Shared\LayoutPartials\LogOn.cshtml" />
     <Content Include="Dinamico\Themes\Default\Views\Shared\LayoutPartials\Header.cshtml" />
-    <Content Include="Dinamico\Themes\Default\Views\Shared\LayoutPartials\Head.cshtml" />
     <Content Include="Dinamico\Themes\Default\Views\Shared\LayoutPartials\Footer.cshtml" />
     <Content Include="Dinamico\Themes\Default\Views\Shared\LayoutPartials\Content.cshtml" />
     <Content Include="Dinamico\Themes\Default\Views\Shared\LayoutPartials\BlogContent.cshtml" />
-    <Content Include="Dinamico\Themes\Default\Views\Shared\Error.cshtml" />
     <Content Include="Dinamico\Themes\Default\Views\Shared\_Layout.cshtml" />
     <Content Include="Dinamico\Themes\Default\Views\Membership\Register.cshtml" />
     <Content Include="Dinamico\Themes\Default\Views\Membership\LogOn.cshtml" />
-    <Content Include="Dinamico\Themes\Default\Views\Membership\ChangePasswordSuccess.cshtml" />
     <Content Include="Dinamico\Themes\Default\Views\Membership\ChangePassword.cshtml" />
     <Content Include="Dinamico\Themes\Default\Views\LanguageIntersection\Index.cshtml" />
     <Content Include="Dinamico\Themes\Default\Views\FreeForm\Submitted.cshtml" />
@@ -1288,25 +1311,14 @@
     <Content Include="Dinamico\Themes\Default\Views\ContentPages\News.cshtml" />
     <Content Include="Dinamico\Themes\Default\Views\ContentPages\Index.cshtml" />
     <Content Include="Dinamico\Themes\Default\Views\ContentPages\Container.cshtml" />
-    <Content Include="Dinamico\Themes\Default\lib\jquery\jquery-1.10.2.min.map" />
-    <Content Include="Dinamico\Themes\Default\lib\bootstrap-3.0.3\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Dinamico\Themes\Default\lib\bootstrap-3.0.3\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Dinamico\Themes\Default\lib\bootstrap-3.0.3\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Dinamico\Themes\Dark\bak\Views\Web.config" />
     <Content Include="Dinamico\Themes\Dark\bak\Views\Shared\LayoutPartials\PreContent.cshtml" />
     <Content Include="Dinamico\Themes\Dark\bak\Views\Shared\LayoutPartials\Header.cshtml" />
-    <Content Include="Dinamico\Themes\Concrete\bak\Views\Web.config" />
     <Content Include="Dinamico\Themes\Concrete\bak\Views\Shared\LayoutPartials\PreContent.cshtml" />
     <Content Include="Dinamico\Themes\Concrete\bak\Views\Shared\LayoutPartials\Header.cshtml" />
-    <Content Include="Dinamico\Themes\Cloudy\bak\Views\Web.config" />
     <Content Include="Dinamico\Themes\Cloudy\bak\Views\Shared\LayoutPartials\TopNavigation.cshtml" />
-    <Content Include="Dinamico\Themes\Cloudy\bak\Views\Shared\LayoutPartials\SubNavigation.cshtml" />
     <Content Include="Dinamico\Themes\Cloudy\bak\Views\Shared\LayoutPartials\PreContent.cshtml" />
     <Content Include="Dinamico\Themes\Cloudy\bak\Views\Shared\LayoutPartials\Header.cshtml" />
     <Content Include="Dinamico\Themes\_ViewStart.cshtml" />
-    <None Include="N2\n2cms.configuration.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

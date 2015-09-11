@@ -1,33 +1,22 @@
-// // famsvanstrom.se: StartPageController.cs
-// // Author: Johan Svanström
-// // Created: 2015-04-30
-// //
-// // Last changed: 2015-06-09
-// //
-// // Description:
-
-#region
-
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web.Mvc;
-using Dinamico.Dinamico.Registrations;
+using System.Web.Security;
 using Dinamico.Models;
 using N2;
+using N2.Security;
 using N2.Definitions;
 using N2.Engine.Globalization;
 using N2.Persistence.Search;
-using N2.Security;
 using N2.Web;
 using N2.Web.Mvc;
-
-#endregion
 
 namespace Dinamico.Controllers
 {
     /// <summary>
-    /// The registration <see cref="StartPageRegistration"/> is responsible for
+    /// The registration <see cref="Registrations.StartPageRegistration"/> is responsible for
     /// connecting this controller to the start page model.
     /// </summary>
     public class StartPageController : ContentController<StartPage>
@@ -66,7 +55,7 @@ namespace Dinamico.Controllers
 
             var hits = GetSearchResults(CurrentPage ?? this.Content.Traverse.StartPage, q, 50);
 
-            var results = new StringBuilder();
+            StringBuilder results = new StringBuilder();
             foreach (var hit in hits)
             {
                 results.Append("<li>").Append(Link.To(hit)).Append("</li>");
@@ -99,7 +88,7 @@ namespace Dinamico.Controllers
         [ContentOutputCache]
         public ActionResult Translations(int id)
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
 
             var item = Engine.Persister.Get(id);
             var lg = Engine.Resolve<LanguageGatewaySelector>().GetLanguageGateway(item);

@@ -28,62 +28,59 @@ IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 @model Dinamico.Models.ContentPart
 		   
-@{
-
-    Content.Define(ie =>
-        {
-            ie.Title = "Image and Text";
-            ie.IconUrl = "{IconsUrl}/text_padding_left.png";
-            ie.Text("Title", "Heading text").SortOrder(100);
-            ie.ImageUpload("Image").SortOrder(200);
-            ie.FreeText("Description").SortOrder(300);
-            ie.CheckBox("ImageFirst", "Image first").DefaultValue(true).SortOrder(400);
-            ie.CheckBox("HiddenPhone", "Hide image in mobile view (requires responsive CSS)").DefaultValue(false).SortOrder(500);
-        });
+@{ 
+ 
+    Content.Define(ie => {
+        ie.Title = "Image and Text";
+        ie.IconUrl = "{IconsUrl}/text_padding_left.png";
+        ie.Text("Title", "Heading text").SortOrder(100);
+        ie.ImageUpload("Image").SortOrder(200);
+        ie.FreeText("Description").SortOrder(300);
+        ie.CheckBox("ImageFirst", "Image first").DefaultValue(true).SortOrder(400);
+        ie.CheckBox("HiddenPhone", "Hide image in mobile view (requires responsive CSS)").DefaultValue(false).SortOrder(500);
+	});
 
     var imgCssClass = "img-polaroid";
-    if (Content.Has.HiddenPhone && Content.Data.HiddenPhone == true)
-    {
-        imgCssClass += " hidden-phone";
-    }
+    if (Content.Has.HiddenPhone && Content.Data.HiddenPhone == true) { imgCssClass += " hidden-phone"; }
+
 }
 
 @if (Content.Has.Title && !String.IsNullOrWhiteSpace(Content.Data.Title))
 {
-    <h3>@Content.Data.Title</h3>
+	<h3>@Content.Data.Title</h3>
 }
 
 @if (Content.Has.ImageFirst && Content.Data.ImageFirst)
 {
-    <div class="imageAndText container">
-        <div class="row">
-            @using (Html.BeginBootstrapXsDiv(3))
-            {
-                <img class="@imgCssClass" alt="@Content.Data.Title" src="@Content.Data.Image" />
-            }
-            @using (Html.BeginBootstrapXsDiv(9))
-            {
-                Html.DroppableZone("AboveText").Render();
-                @Content.Display.Description
-                Html.DroppableZone("BelowText").Render();
-            }
-        </div>
-    </div>
+	<div class="imageAndText container">
+		<div class="row">
+			@using (Html.BeginBootstrapXsDiv(3))
+			{
+				<img class="@imgCssClass" alt="@Content.Data.Title" src="@Content.Data.Image" />
+			}
+			@using (Html.BeginBootstrapXsDiv(9))
+			{
+				Html.DroppableZone("AboveText").Render();
+				@Content.Display.Description
+				Html.DroppableZone("BelowText").Render();
+			}
+		</div>
+	</div>
 }
 else
 {
-    <div class="imageAndText container">
-        <div class="row">
-            @using (Html.BeginBootstrapXsDiv(9))
-            {
-                Html.DroppableZone("AboveText").Render();
-                @Content.Display.Description
-                Html.DroppableZone("BelowText").Render();
-            }
-            @using (Html.BeginBootstrapXsDiv(3))
-            {
-                <img class="@imgCssClass" alt="@Content.Data.Title" src="@Content.Data.Image" />
-            }
-        </div>
-    </div>
+	<div class="imageAndText container">
+		<div class="row">
+			@using (Html.BeginBootstrapXsDiv(9))
+			{
+				Html.DroppableZone("AboveText").Render();
+				@Content.Display.Description
+				Html.DroppableZone("BelowText").Render();
+			}
+			@using (Html.BeginBootstrapXsDiv(3))
+			{
+				<img class="@imgCssClass" alt="@Content.Data.Title" src="@Content.Data.Image" />
+			}
+		</div>
+	</div>
 }
