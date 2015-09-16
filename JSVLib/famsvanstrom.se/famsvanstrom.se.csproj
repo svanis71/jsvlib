@@ -175,16 +175,7 @@
   <ItemGroup>
     <Content Include="App_Data\Sql\dbscripts.sql" />
     <Content Include="Content\img\cloud.png" />
-    <Content Include="Content\img\games\breakout\background.png" />
-    <Content Include="Content\img\games\breakout\ball1.png" />
-    <Content Include="Content\img\games\breakout\ball2.png" />
-    <Content Include="Content\img\games\breakout\Bat.png" />
-    <Content Include="Content\img\games\breakout\blue.png" />
     <Content Include="Content\img\games\breakout\breakout.png" />
-    <Content Include="Content\img\games\breakout\green.png" />
-    <Content Include="Content\img\games\breakout\purple.png" />
-    <Content Include="Content\img\games\breakout\red.png" />
-    <Content Include="Content\img\games\breakout\yellow.png" />
     <Content Include="Content\img\glodlampa.png" />
     <Content Include="Content\img\glodlampa_av.png" />
     <Content Include="Content\img\pnrimg.png" />
@@ -1138,6 +1129,7 @@
     <Content Include="Dinamico\Themes\Cloudy\bak\Views\Web.config" />
     <Content Include="Dinamico\Themes\Cloudy\bak\Views\Shared\LayoutPartials\SubNavigation.cshtml" />
     <Content Include="Dinamico\Themes\JSMaterial\Views\StartPage\Index2.cshtml" />
+    <Content Include="Content\img\games\breakout\breakout.tps" />
     <None Include="N2\n2cms.configuration.xsd">
       <SubType>Designer</SubType>
     </None>

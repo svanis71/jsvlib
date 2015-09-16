@@ -2,7 +2,7 @@
 
 {
 	"filename": "Bat.png",
-	"frame": {"x":2,"y":1284,"w":64,"h":16},
+	"frame": {"x":516,"y":370,"w":64,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":64,"h":16},
@@ -11,16 +11,52 @@
 },
 {
 	"filename": "background.png",
-	"frame": {"x":2,"y":2,"w":1280,"h":960},
-	"rotated": true,
+	"frame": {"x":2,"y":2,"w":512,"h":384},
+	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":1280,"h":960},
-	"sourceSize": {"w":1280,"h":960},
+	"spriteSourceSize": {"x":0,"y":0,"w":512,"h":384},
+	"sourceSize": {"w":512,"h":384},
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "ball1.png",
-	"frame": {"x":238,"y":1284,"w":16,"h":16},
+	"filename": "ball1_0.png",
+	"frame": {"x":684,"y":366,"w":16,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
+	"sourceSize": {"w":16,"h":16},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "ball1_1.png",
+	"frame": {"x":702,"y":366,"w":16,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
+	"sourceSize": {"w":16,"h":16},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "ball1_2.png",
+	"frame": {"x":712,"y":348,"w":16,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
+	"sourceSize": {"w":16,"h":16},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "ball1_3.png",
+	"frame": {"x":720,"y":366,"w":16,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
+	"sourceSize": {"w":16,"h":16},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "ball1_4.png",
+	"frame": {"x":730,"y":348,"w":16,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
@@ -29,7 +65,7 @@
 },
 {
 	"filename": "ball2.png",
-	"frame": {"x":256,"y":1284,"w":16,"h":16},
+	"frame": {"x":738,"y":366,"w":16,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
@@ -37,8 +73,26 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
+	"filename": "bat_armed.png",
+	"frame": {"x":580,"y":348,"w":62,"h":16},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":0,"w":62,"h":16},
+	"sourceSize": {"w":64,"h":16},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "bat_fire.png",
+	"frame": {"x":516,"y":348,"w":62,"h":20},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":0,"w":62,"h":20},
+	"sourceSize": {"w":64,"h":20},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
 	"filename": "blue.png",
-	"frame": {"x":68,"y":1284,"w":32,"h":16},
+	"frame": {"x":582,"y":366,"w":32,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":16},
@@ -47,7 +101,7 @@
 },
 {
 	"filename": "green.png",
-	"frame": {"x":102,"y":1284,"w":32,"h":16},
+	"frame": {"x":616,"y":366,"w":32,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":16},
@@ -56,7 +110,7 @@
 },
 {
 	"filename": "purple.png",
-	"frame": {"x":136,"y":1284,"w":32,"h":16},
+	"frame": {"x":644,"y":348,"w":32,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":16},
@@ -65,7 +119,7 @@
 },
 {
 	"filename": "red.png",
-	"frame": {"x":170,"y":1284,"w":32,"h":16},
+	"frame": {"x":650,"y":366,"w":32,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":16},
@@ -73,8 +127,26 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
+	"filename": "splash_0.png",
+	"frame": {"x":516,"y":2,"w":501,"h":171},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":24,"w":501,"h":171},
+	"sourceSize": {"w":512,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "splash_1.png",
+	"frame": {"x":516,"y":175,"w":501,"h":171},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":24,"w":501,"h":171},
+	"sourceSize": {"w":512,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
 	"filename": "yellow.png",
-	"frame": {"x":204,"y":1284,"w":32,"h":16},
+	"frame": {"x":678,"y":348,"w":32,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":16},
@@ -86,8 +158,8 @@
 	"version": "1.0",
 	"image": "breakout.png",
 	"format": "RGBA8888",
-	"size": {"w":964,"h":1302},
+	"size": {"w":1019,"h":388},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:8f30f50b8e14f0537b5d1790955a212c:d16c6bfd823260ea4a7e73dbedc68531:aa94e37632703bccd6a813800bf3159a$"
+	"smartupdate": "$TexturePacker:SmartUpdate:a233bf6d0c898765f5b8b21c14480a54:2cc884adcaa314d6bfbde25369fd3051:aa94e37632703bccd6a813800bf3159a$"
 }
 }
